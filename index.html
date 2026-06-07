@@ -3,6 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Theme: apply before render to avoid flash of wrong theme -->
+  <script>
+    (function(){
+      var t=localStorage.getItem('vato24-theme');
+      var d=window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.setAttribute('data-theme', t||(d?'dark':'light'));
+    })();
+  </script>
 
   <!-- Primary SEO -->
   <title>VaTo24 – Digitalagentur für Websites, KI &amp; Automatisierung | Unna, NRW</title>
@@ -94,10 +102,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
   <!-- Main CSS (Tailwind + Brand System) -->
-  <script type="module" crossorigin src="/assets/index-BnNQoy-U.js"></script>
-  <link rel="modulepreload" crossorigin href="/assets/footer-tqYAZL7L.js">
+  <script type="module" crossorigin src="/assets/index-BUjF9KPV.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/footer-vh9RchyU.js">
   <link rel="modulepreload" crossorigin href="/assets/animations-CetyjiHi.js">
-  <link rel="stylesheet" crossorigin href="/assets/footer-BsnbfBDX.css">
+  <link rel="stylesheet" crossorigin href="/assets/footer-o9cNlJG-.css">
 </head>
 <body class="bg-[#0f0f0f] text-white">
 

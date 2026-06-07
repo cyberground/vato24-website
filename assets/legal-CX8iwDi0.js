@@ -1,1 +1,0 @@
-import{i,a as t}from"./footer-tqYAZL7L.js";import{i as e}from"./animations-CetyjiHi.js";import"./nova-CruyNWnI.js";document.addEventListener("DOMContentLoaded",()=>{i(),t(),e({particles:!1,tilt:!1})});

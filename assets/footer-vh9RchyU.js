@@ -1,14 +1,14 @@
-(function(){const a=document.createElement("link").relList;if(a&&a.supports&&a.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))d(e);new MutationObserver(e=>{for(const t of e)if(t.type==="childList")for(const s of t.addedNodes)s.tagName==="LINK"&&s.rel==="modulepreload"&&d(s)}).observe(document,{childList:!0,subtree:!0});function c(e){const t={};return e.integrity&&(t.integrity=e.integrity),e.referrerPolicy&&(t.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?t.credentials="include":e.crossOrigin==="anonymous"?t.credentials="omit":t.credentials="same-origin",t}function d(e){if(e.ep)return;e.ep=!0;const t=c(e);fetch(e.href,t)}})();function b(){const p=[{label:"Leistungen",href:"/leistungen/"},{label:"Websites",href:"/websites/"},{label:"KI & Automatisierung",href:"/ki/"},{label:"Projekte",href:"/projekte/"},{label:"Blog",href:"/blog/"},{label:"Über uns",href:"/ueber-uns/"}],a=window.location.pathname.replace(/\/+$/,"")||"/";function c(r){const i=r.replace(/\/+$/,"")||"/";return i==="/"?a==="/":a===i||a.startsWith(i)}const d=p.map(({label:r,href:i})=>{const f=c(i);return`
+(function(){const a=document.createElement("link").relList;if(a&&a.supports&&a.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))c(t);new MutationObserver(t=>{for(const r of t)if(r.type==="childList")for(const s of r.addedNodes)s.tagName==="LINK"&&s.rel==="modulepreload"&&c(s)}).observe(document,{childList:!0,subtree:!0});function d(t){const r={};return t.integrity&&(r.integrity=t.integrity),t.referrerPolicy&&(r.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?r.credentials="include":t.crossOrigin==="anonymous"?r.credentials="omit":r.credentials="same-origin",r}function c(t){if(t.ep)return;t.ep=!0;const r=d(t);fetch(t.href,r)}})();function y(){const g=[{label:"Leistungen",href:"/leistungen/"},{label:"Websites",href:"/websites/"},{label:"KI & Automatisierung",href:"/ki/"},{label:"Projekte",href:"/projekte/"},{label:"Blog",href:"/blog/"},{label:"Über uns",href:"/ueber-uns/"}],a=window.location.pathname.replace(/\/+$/,"")||"/";function d(e){const i=e.replace(/\/+$/,"")||"/";return i==="/"?a==="/":a===i||a.startsWith(i)}const c=g.map(({label:e,href:i})=>{const f=d(i);return`
         <a
           href="${i}"
           class="nav-link${f?" nav-link--active":""}"
           ${f?'aria-current="page"':""}
-        >${r}</a>`}).join(""),e=p.map(({label:r,href:i})=>{const f=c(i);return`
+        >${e}</a>`}).join(""),t=g.map(({label:e,href:i})=>{const f=d(i);return`
         <a
           href="${i}"
           class="mobile-nav-link${f?" mobile-nav-link--active":""}"
           ${f?'aria-current="page"':""}
-        >${r}</a>`}).join(""),t=`
+        >${e}</a>`}).join(""),r=`
 <header id="site-header" role="banner">
   <style>
     /* ── Base ──────────────────────────────────────────── */
@@ -18,16 +18,28 @@
       left: 0;
       right: 0;
       z-index: 1000;
-      background: rgba(15, 15, 15, 0.95);
+      background: var(--header-bg, rgba(15, 15, 15, 0.95));
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(249, 115, 22, 0.2);
-      transition: box-shadow 0.3s ease, border-color 0.3s ease;
+      border-bottom: 1px solid var(--header-border, rgba(249, 115, 22, 0.2));
+      transition: box-shadow 0.3s ease, border-color 0.3s ease, background 0.3s ease;
     }
     #site-header.scrolled {
-      box-shadow: 0 4px 40px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 4px 40px rgba(0, 0, 0, 0.15);
       border-bottom-color: rgba(249, 115, 22, 0.35);
     }
+    /* Light mode overrides */
+    [data-theme="light"] #site-header.scrolled {
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    }
+    [data-theme="light"] .logo-wordmark { color: #111111; }
+    [data-theme="light"] .nav-link { color: #444444; }
+    [data-theme="light"] .nav-link:hover { color: #ea6c00; background: rgba(234,108,0,0.07); }
+    [data-theme="light"] .nav-link--active { color: #ea6c00; }
+    [data-theme="light"] .hamburger-line { background: #333333; }
+    [data-theme="light"] .mobile-menu-inner { background: rgba(250,250,248,0.99); }
+    [data-theme="light"] .mobile-nav-link { color: #333333; }
+    [data-theme="light"] .mobile-nav-link:hover { color: #ea6c00; }
 
     /* ── Logo ──────────────────────────────────────────── */
     .header-logo {
@@ -147,6 +159,43 @@
     }
     .header-cta:active {
       transform: translateY(0);
+    }
+
+    /* ── Theme Toggle ──────────────────────────────────── */
+    #theme-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 8px;
+      cursor: pointer;
+      color: #d1d5db;
+      transition: background 0.2s ease, border-color 0.2s ease,
+                  color 0.2s ease, transform 0.2s ease;
+      flex-shrink: 0;
+    }
+    #theme-toggle:hover {
+      background: rgba(249, 115, 22, 0.1);
+      border-color: rgba(249, 115, 22, 0.4);
+      color: #f97316;
+      transform: rotate(20deg);
+    }
+    #theme-toggle:focus-visible {
+      outline: 2px solid rgba(249, 115, 22, 0.6);
+      outline-offset: 2px;
+    }
+    /* Light mode: adjust toggle appearance */
+    [data-theme="light"] #theme-toggle {
+      border-color: rgba(0, 0, 0, 0.12);
+      color: #555555;
+    }
+    [data-theme="light"] #theme-toggle:hover {
+      background: rgba(234, 108, 0, 0.08);
+      border-color: rgba(234, 108, 0, 0.35);
+      color: #ea6c00;
     }
 
     /* ── Hamburger ─────────────────────────────────────── */
@@ -279,11 +328,35 @@
 
     <!-- Desktop Navigation -->
     <nav class="header-nav" aria-label="Hauptnavigation">
-      ${d}
+      ${c}
     </nav>
 
-    <!-- Right side: CTA + hamburger -->
+    <!-- Right side: Theme Toggle + CTA + hamburger -->
     <div style="display:flex;align-items:center;gap:8px;flex-shrink:0;">
+
+      <!-- Light/Dark Toggle -->
+      <button id="theme-toggle" aria-label="Theme wechseln" title="Light/Dark Mode">
+        <!-- Sun icon (shown in dark mode) -->
+        <svg id="icon-sun" width="17" height="17" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1" x2="12" y2="3"/>
+          <line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/>
+          <line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <!-- Moon icon (shown in light mode, hidden by default) -->
+        <svg id="icon-moon" width="17" height="17" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+             style="display:none;">
+          <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+        </svg>
+      </button>
+
       <a href="/kontakt/" class="header-cta" aria-label="Strategiegespräch vereinbaren">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
              stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
@@ -317,7 +390,7 @@
   <!-- Mobile Menu -->
   <div id="mobile-menu" role="navigation" aria-label="Mobile Navigation" aria-hidden="true">
     <div class="mobile-menu-inner">
-      ${e}
+      ${t}
       <div class="mobile-cta-wrap">
         <a href="/kontakt/" class="mobile-cta">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
@@ -341,7 +414,7 @@
 </header>
 <!-- Spacer: keeps content from hiding under fixed header -->
 <div style="height:72px;" aria-hidden="true"></div>
-`;document.body.insertAdjacentHTML("afterbegin",t);const s=document.getElementById("site-header"),n=document.getElementById("hamburger-btn"),o=document.getElementById("mobile-menu");function h(){s.classList.toggle("scrolled",window.scrollY>20)}window.addEventListener("scroll",h,{passive:!0}),h();function l(){o.classList.remove("open"),o.setAttribute("aria-hidden","true"),n.setAttribute("aria-expanded","false"),n.setAttribute("aria-label","Menü öffnen"),n.classList.remove("active")}function g(){o.classList.add("open"),o.setAttribute("aria-hidden","false"),n.setAttribute("aria-expanded","true"),n.setAttribute("aria-label","Menü schließen"),n.classList.add("active")}n&&o&&(n.addEventListener("click",()=>{o.classList.contains("open")?l():g()}),o.querySelectorAll("a").forEach(r=>{r.addEventListener("click",l)}),document.addEventListener("click",r=>{o.classList.contains("open")&&!s.contains(r.target)&&l()}),document.addEventListener("keydown",r=>{r.key==="Escape"&&o.classList.contains("open")&&(l(),n.focus())}))}function m(){const p=new Date().getFullYear(),a={linkedin:`<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+`;document.body.insertAdjacentHTML("afterbegin",r);const s=document.getElementById("site-header"),o=document.getElementById("hamburger-btn"),n=document.getElementById("mobile-menu");function m(){s.classList.toggle("scrolled",window.scrollY>20)}window.addEventListener("scroll",m,{passive:!0}),m();function l(){n.classList.remove("open"),n.setAttribute("aria-hidden","true"),o.setAttribute("aria-expanded","false"),o.setAttribute("aria-label","Menü öffnen"),o.classList.remove("active")}function p(){n.classList.add("open"),n.setAttribute("aria-hidden","false"),o.setAttribute("aria-expanded","true"),o.setAttribute("aria-label","Menü schließen"),o.classList.add("active")}o&&n&&(o.addEventListener("click",()=>{n.classList.contains("open")?l():p()}),n.querySelectorAll("a").forEach(e=>{e.addEventListener("click",l)}),document.addEventListener("click",e=>{n.classList.contains("open")&&!s.contains(e.target)&&l()}),document.addEventListener("keydown",e=>{e.key==="Escape"&&n.classList.contains("open")&&(l(),o.focus())}));const h=document.getElementById("theme-toggle"),u=document.getElementById("icon-sun"),v=document.getElementById("icon-moon");function b(e){document.documentElement.setAttribute("data-theme",e),localStorage.setItem("vato24-theme",e),e==="light"?(u.style.display="none",v.style.display="block",h.setAttribute("title","Dark Mode aktivieren"),h.setAttribute("aria-label","Dark Mode aktivieren")):(u.style.display="block",v.style.display="none",h.setAttribute("title","Light Mode aktivieren"),h.setAttribute("aria-label","Light Mode aktivieren"))}const x=localStorage.getItem("vato24-theme"),k=window.matchMedia("(prefers-color-scheme: dark)").matches;b(x||(k?"dark":"light")),h.addEventListener("click",()=>{const e=document.documentElement.getAttribute("data-theme")||"dark";b(e==="dark"?"light":"dark")}),window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",e=>{localStorage.getItem("vato24-theme")||b(e.matches?"dark":"light")})}function L(){const g=new Date().getFullYear(),a={linkedin:`<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
       <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
     </svg>`,instagram:`<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
       <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
@@ -356,12 +429,12 @@
       <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
     </svg>`,arrow:`<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
       <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-    </svg>`},c=[{label:"Websites & Sichtbarkeit",href:"/websites/"},{label:"SEO & Google Business",href:"/seo/"},{label:"KI & Automatisierung",href:"/ki/"},{label:"CMS-System",href:"/cms-system/"},{label:"Projekte anfragen",href:"/kontakt/"}],d=[{label:"Über VaTo24",href:"/ueber-uns/"},{label:"Blog & Ratgeber",href:"/blog/"},{label:"Projekte",href:"/projekte/"},{label:"Kontakt",href:"/kontakt/"},{label:"Strategiegespräch buchen",href:"/kontakt/"}],e=[{label:"Impressum",href:"/impressum/"},{label:"Datenschutz",href:"/datenschutz/"},{label:"AGB",href:"/agb/"}],t=({label:l,href:g})=>`<li>
-      <a href="${g}" class="vf-nav-link">
+    </svg>`},d=[{label:"Websites & Sichtbarkeit",href:"/websites/"},{label:"SEO & Google Business",href:"/seo/"},{label:"KI & Automatisierung",href:"/ki/"},{label:"CMS-System",href:"/cms-system/"},{label:"Projekte anfragen",href:"/kontakt/"}],c=[{label:"Über VaTo24",href:"/ueber-uns/"},{label:"Blog & Ratgeber",href:"/blog/"},{label:"Projekte",href:"/projekte/"},{label:"Kontakt",href:"/kontakt/"},{label:"Strategiegespräch buchen",href:"/kontakt/"}],t=[{label:"Impressum",href:"/impressum/"},{label:"Datenschutz",href:"/datenschutz/"},{label:"AGB",href:"/agb/"}],r=({label:l,href:p})=>`<li>
+      <a href="${p}" class="vf-nav-link">
         <span class="vf-nav-arrow">${a.arrow}</span>
         ${l}
       </a>
-    </li>`,s=c.map(t).join(""),n=d.map(t).join(""),o=e.map(({label:l,href:g})=>`<a href="${g}" class="vf-legal-link">${l}</a>`).join('<span class="vf-legal-sep" aria-hidden="true">|</span>'),h=`
+    </li>`,s=d.map(r).join(""),o=c.map(r).join(""),n=t.map(({label:l,href:p})=>`<a href="${p}" class="vf-legal-link">${l}</a>`).join('<span class="vf-legal-sep" aria-hidden="true">|</span>'),m=`
 <footer id="site-footer" role="contentinfo">
   <style>
     /* ── Root vars ── */
@@ -686,7 +759,7 @@
       <div>
         <h3 class="vf-col-title">Unternehmen</h3>
         <ul class="vf-nav-list">
-          ${n}
+          ${o}
         </ul>
       </div>
 
@@ -742,13 +815,13 @@
     <!-- ── Bottom bar ── -->
     <div class="vf-bottom">
       <p class="vf-copy">
-        &copy; ${p} VaTo24 – Marketingagentur |
+        &copy; ${g} VaTo24 – Marketingagentur |
         <strong>Dennis Isermann</strong>
       </p>
       <nav class="vf-legal" aria-label="Rechtliche Links">
-        ${o}
+        ${n}
       </nav>
     </div>
 
   </div><!-- /vf-inner -->
-</footer>`;document.body.insertAdjacentHTML("beforeend",h)}export{m as a,b as i};
+</footer>`;document.body.insertAdjacentHTML("beforeend",m)}export{L as a,y as i};
