@@ -1,14 +1,14 @@
 <?php
 /**
- * Nova CMS — AI Chat Endpoint
+ * Nova CMS — Chat Endpoint
+ * Nutzt Claude Runner statt direktem API-Key
  *
  * POST JSON: {message, context: {novaId, page, currentContent, elementType}}
- * Returns:   {message: string, applyData: null|{changeType, newContent}}
+ * Returns:   {message, applyData: null|{changeType, newContent}}
  */
 
 require_once __DIR__ . '/config.php';
 
-// ---- Headers ----------------------------------------------------------------
 header('Content-Type: application/json; charset=utf-8');
 header('Cache-Control: no-store');
 header('X-Content-Type-Options: nosniff');
@@ -19,26 +19,34 @@ function json_out(array $data, int $status = 200): never {
     exit;
 }
 
-// ---- Session auth check -----------------------------------------------------
+// ---- Session-Auth -----------------------------------------------------------
 session_name(NOVA_SESSION_NAME);
-session_set_cookie_params([
-    'lifetime' => 0,
-    'path'     => '/',
-    'secure'   => isset($_SERVER['HTTPS']),
-    'httponly' => true,
-    'samesite' => 'Strict',
-]);
+session_set_cookie_params(['lifetime' => 0, 'path' => '/', 'secure' => isset($_SERVER['HTTPS']), 'httponly' => true, 'samesite' => 'Strict']);
 session_start();
 
 if (empty($_SESSION['nova_authenticated'])) {
     json_out(['success' => false, 'error' => 'Nicht authentifiziert.'], 401);
 }
 
-// ---- Parse request ----------------------------------------------------------
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     json_out(['error' => 'Nur POST erlaubt.'], 405);
 }
 
+// ---- Rate Limiting (Chat) --------------------------------------------------
+$chatRateFile = sys_get_temp_dir() . '/nova_chat_' . md5($_SERVER['REMOTE_ADDR'] ?? 'unknown') . '.json';
+$now = time();
+$chatLog = [];
+if (file_exists($chatRateFile)) {
+    $chatLog = json_decode(file_get_contents($chatRateFile), true) ?: [];
+}
+$chatLog = array_filter($chatLog, fn($t) => $t > $now - 3600);
+if (count($chatLog) >= NOVA_MAX_CHAT_PER_HOUR) {
+    json_out(['message' => 'Stundenlimit erreicht (max. ' . NOVA_MAX_CHAT_PER_HOUR . ' Nachrichten/Stunde). Bitte warten.', 'applyData' => null], 429);
+}
+$chatLog[] = $now;
+file_put_contents($chatRateFile, json_encode(array_values($chatLog)));
+
+// ---- Request parsen --------------------------------------------------------
 $body = file_get_contents('php://input');
 $data = json_decode($body, true);
 
@@ -53,111 +61,147 @@ if (empty($userMessage)) {
     json_out(['error' => 'Nachricht darf nicht leer sein.'], 400);
 }
 
-if (empty(CLAUDE_API_KEY)) {
-    json_out(['message' => 'Kein ANTHROPIC_API_KEY konfiguriert. Bitte in der Serverumgebung setzen.', 'applyData' => null], 503);
-}
+// ---- Permissions laden -----------------------------------------------------
+$permissions = json_decode(NOVA_PERMISSIONS, true);
 
-// ---- Build system prompt ----------------------------------------------------
-$novaId       = htmlspecialchars($context['novaId']       ?? 'keines ausgewählt');
-$pageName     = htmlspecialchars($context['page']         ?? 'Unbekannte Seite');
-$elementType  = htmlspecialchars($context['elementType']  ?? 'unbekannt');
+$novaId         = $context['novaId']         ?? '';
+$pageName       = $context['page']           ?? '';
+$elementType    = $context['elementType']    ?? '';
 $currentContent = mb_substr($context['currentContent'] ?? '', 0, 500);
 
-$systemPrompt = <<<SYSTEM
-Du bist Nova, der KI-Website-Assistent von VaTo24. Du hilfst dabei, Website-Inhalte professionell zu bearbeiten.
+// Seite gesperrt?
+if (!empty($pageName) && in_array($pageName, $permissions['blocked_pages'] ?? [])) {
+    json_out(['message' => 'Diese Seite ist gesperrt und kann nicht bearbeitet werden. (Rechtliche Seiten sind schreibgeschützt)', 'applyData' => null], 403);
+}
 
-Aktuell ausgewähltes Element:
-- Element-ID: {$novaId}
-- Seite: {$pageName}
-- Typ: {$elementType}
+// Seite erlaubt?
+$allowedPages = $permissions['allowed_pages'] ?? [];
+if (!empty($pageName) && !empty($allowedPages) && !array_key_exists($pageName, $allowedPages)) {
+    json_out(['message' => 'Diese Seite ist für Nova-Bearbeitung nicht freigegeben.', 'applyData' => null], 403);
+}
+
+// Element gesperrt?
+if (!empty($novaId) && in_array($novaId, $permissions['blocked_nova_ids'] ?? [])) {
+    json_out(['message' => "Das Element '{$novaId}' ist schreibgeschützt und kann nicht geändert werden.", 'applyData' => null], 403);
+}
+
+// ---- System-Prompt aufbauen (inkl. Permissions) ----------------------------
+$persona   = $permissions['persona'] ?? [];
+$allowedCT = implode(', ', $permissions['allowed_change_types'] ?? ['text', 'html', 'href']);
+$blockedTopics = implode("\n- ", $permissions['blocked_topics'] ?? []);
+$maxLen    = $permissions['max_content_length'] ?? 2000;
+$allowedHtmlTags = implode(', ', $permissions['allowed_html_tags'] ?? []);
+
+$novaIdDisplay      = htmlspecialchars($novaId ?: 'keines ausgewählt');
+$pageDisplay        = htmlspecialchars($pageName ?: 'Unbekannte Seite');
+$elementTypeDisplay = htmlspecialchars($elementType ?: 'unbekannt');
+
+$systemPrompt = <<<SYSTEM
+Du bist {$persona['name']}, {$persona['role']}.
+Ton: {$persona['tone']}.
+Marke: {$persona['brand']}.
+
+## Aktuell ausgewähltes Element
+- Element-ID (data-nova-id): {$novaIdDisplay}
+- Seite: {$pageDisplay}
+- Typ: {$elementTypeDisplay}
 - Aktueller Inhalt: {$currentContent}
 
-Deine Aufgabe:
+## Deine Aufgabe
 Wenn der Benutzer eine Änderung beschreibt:
-1. Fasse kurz zusammen, was du verstanden hast (1-2 Sätze)
-2. Zeige den neuen Text/Inhalt in einem Code-Block
+1. Fasse in 1-2 Sätzen zusammen, was du verstanden hast
+2. Zeige den neuen Inhalt als Code-Block
 3. Frage: "Soll ich diese Änderung übernehmen? [Ja / Nein]"
 
-Wenn der Benutzer mit "Ja" oder "ja" bestätigt:
-- Antworte mit genau diesem Format: NOVA_APPLY:{"changeType":"text","newContent":"...der neue Inhalt..."}
-- Verwende "text" für normale Texte und Überschriften
-- Verwende "html" nur wenn HTML-Formatierung nötig ist (Fettdruck, Listen etc.)
-- Verwende "href" für Links, "src" für Bilder
-- Das System übernimmt die Änderung dann automatisch
+Wenn der Benutzer mit "Ja" bestätigt, antworte mit:
+NOVA_APPLY:{"changeType":"text","newContent":"...neuer Inhalt..."}
 
-Wichtige Regeln:
-- Halte Antworten kurz und klar (max 3-4 Sätze)
-- Behalte den Stil und Ton der VaTo24-Website bei (professionell, modern, deutsch)
-- Keine vollständigen HTML-Dokumente im newContent — nur den reinen Elementinhalt
-- Bei "html"-Typ: nur erlaubte Tags: p, strong, em, a, br, ul, li, h2, h3, h4, span
+Erlaubte changeTypes: {$allowedCT}
+Bei "html": nur diese Tags erlaubt: {$allowedHtmlTags}
+Max. Inhaltslänge: {$maxLen} Zeichen
+
+## Verbotene Themen (diese Anfragen lehnst du höflich ab)
+- {$blockedTopics}
+
+## Stil-Regeln
+- Antworte immer auf Deutsch
+- Kurz und präzise (max. 3-4 Sätze)
+- VaTo24-Stil: professionell, modern, vertrauenswürdig
+- Kein vollständiges HTML im newContent — nur den reinen Elementinhalt
 SYSTEM;
 
-// ---- Call Claude API --------------------------------------------------------
-$messages = [
-    ['role' => 'user', 'content' => $userMessage],
-];
-
+// ---- Claude Runner aufrufen ------------------------------------------------
 $requestBody = json_encode([
-    'model'      => CLAUDE_MODEL,
-    'max_tokens' => 1024,
-    'system'     => $systemPrompt,
-    'messages'   => $messages,
+    'prompt'        => $userMessage,
+    'system_prompt' => $systemPrompt,
+    'model'         => RUNNER_MODEL,
 ], JSON_UNESCAPED_UNICODE);
 
-$ch = curl_init('https://api.anthropic.com/v1/messages');
+$ch = curl_init(RUNNER_URL . '/query');
 curl_setopt_array($ch, [
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_POST           => true,
     CURLOPT_POSTFIELDS     => $requestBody,
-    CURLOPT_TIMEOUT        => 30,
+    CURLOPT_TIMEOUT        => RUNNER_TIMEOUT,
     CURLOPT_HTTPHEADER     => [
         'Content-Type: application/json',
-        'x-api-key: ' . CLAUDE_API_KEY,
-        'anthropic-version: 2023-06-01',
+        'Authorization: Bearer ' . RUNNER_TOKEN,
     ],
 ]);
 
-$response     = curl_exec($ch);
-$httpCode     = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-$curlError    = curl_error($ch);
+$response  = curl_exec($ch);
+$httpCode  = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+$curlError = curl_error($ch);
 curl_close($ch);
 
 if ($curlError) {
-    json_out(['message' => 'Verbindungsfehler zur KI: ' . $curlError, 'applyData' => null], 502);
+    json_out(['message' => 'Verbindungsfehler zum Claude Runner: ' . $curlError, 'applyData' => null], 502);
 }
 
 if ($httpCode !== 200) {
-    $errDetail = '';
     $errData = json_decode($response, true);
-    if (isset($errData['error']['message'])) {
-        $errDetail = ' — ' . $errData['error']['message'];
-    }
-    json_out(['message' => 'Claude API Fehler (HTTP ' . $httpCode . ')' . $errDetail, 'applyData' => null], 502);
+    $errMsg  = $errData['error'] ?? "HTTP {$httpCode}";
+    json_out(['message' => "Runner-Fehler: {$errMsg}", 'applyData' => null], 502);
 }
 
-$apiData = json_decode($response, true);
-$rawText = $apiData['content'][0]['text'] ?? '';
+$result  = json_decode($response, true);
+$rawText = $result['content'] ?? '';
 
 if (empty($rawText)) {
-    json_out(['message' => 'Leere Antwort von der KI.', 'applyData' => null], 502);
+    json_out(['message' => 'Leere Antwort vom Runner.', 'applyData' => null], 502);
 }
 
-// ---- Parse NOVA_APPLY directive ---------------------------------------------
+// ---- NOVA_APPLY Direktive parsen -------------------------------------------
 $applyData = null;
 
-if (preg_match('/NOVA_APPLY:(\{.*?\})/s', $rawText, $matches)) {
+if (preg_match('/NOVA_APPLY:(\{[^}]+\})/s', $rawText, $matches)) {
     $parsed = json_decode($matches[1], true);
+
     if (is_array($parsed) && isset($parsed['changeType'], $parsed['newContent'])) {
-        $applyData = [
-            'changeType' => $parsed['changeType'],
-            'newContent' => $parsed['newContent'],
-        ];
+        $ct = $parsed['changeType'];
+
+        // Change-Type Permission-Check
+        if (!in_array($ct, $permissions['allowed_change_types'] ?? [])) {
+            $rawText = trim(preg_replace('/NOVA_APPLY:\{[^}]+\}/s', '', $rawText));
+            $rawText .= "\n\n⚠️ Änderungstyp '{$ct}' ist nicht erlaubt.";
+        } else {
+            // Inhaltslänge prüfen
+            $content = $parsed['newContent'];
+            if (mb_strlen($content) > $maxLen) {
+                $content = mb_substr($content, 0, $maxLen);
+            }
+
+            $applyData = [
+                'changeType' => $ct,
+                'newContent' => $content,
+            ];
+            $rawText = trim(preg_replace('/NOVA_APPLY:\{[^}]+\}/s', '', $rawText));
+        }
     }
-    // Strip the NOVA_APPLY directive from the displayed message
-    $rawText = trim(preg_replace('/NOVA_APPLY:\{.*?\}/s', '', $rawText));
 }
 
 json_out([
     'message'   => $rawText,
     'applyData' => $applyData,
+    'usage'     => $result['usage'] ?? null,
 ]);

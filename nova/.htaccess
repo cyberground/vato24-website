@@ -1,17 +1,37 @@
+# Nova CMS - Security
 Options -Indexes
 Options +FollowSymLinks
 
+# Block direct access to PHP config
 <Files "config.php">
   Require all denied
 </Files>
 
-<Files "setup.php">
-  Require all denied
-</Files>
-
+# Block direct access to log and json data files
 <FilesMatch "\.(json|log)$">
   Require all denied
 </FilesMatch>
 
-Header always set X-Content-Type-Options "nosniff"
-Header always set X-Frame-Options "DENY"
+# Allow login.html and PHP endpoints
+<Files "login.html">
+  Require all granted
+</Files>
+
+# Security headers for Nova endpoints
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "DENY"
+  Header always set X-XSS-Protection "1; mode=block"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Only allow from specific IPs in production (uncomment and set):
+# <RequireAny>
+#   Require ip 1.2.3.4
+#   Require ip 127.0.0.1
+# </RequireAny>
+
+# Prevent execution of uploaded files (extra hardening)
+<Directory "uploads">
+  php_flag engine off
+</Directory>
