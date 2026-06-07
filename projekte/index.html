@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>Projekte &amp; Referenzen | VaTo24 – Webagentur Unna</title>
+  <meta name="description" content="Referenzprojekte von VaTo24: Websites, KI-Lösungen und digitale Systeme für Kunden aus verschiedenen Branchen. Sehen Sie unsere Arbeit." />
+  <meta name="keywords" content="Referenzen Webagentur Unna, Portfolio Webdesign NRW, VaTo24 Projekte, Kundenprojekte Webdesign" />
+  <meta name="author" content="Dennis Isermann – VaTo24" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://vato24.de/projekte/" />
+
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vato24.de/projekte/" />
+  <meta property="og:title" content="Projekte &amp; Referenzen | VaTo24 – Webagentur Unna" />
+  <meta property="og:description" content="Referenzprojekte von VaTo24: Websites, KI-Lösungen und digitale Systeme für Kunden aus verschiedenen Branchen." />
+  <meta property="og:image" content="https://vato24.de/assets/og-image.jpg" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:site_name" content="VaTo24" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Projekte &amp; Referenzen | VaTo24 – Webagentur Unna" />
+  <meta name="twitter:description" content="Referenzprojekte von VaTo24: Websites, KI-Lösungen und digitale Systeme." />
+  <meta name="twitter:image" content="https://vato24.de/assets/og-image.jpg" />
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Vite / Tailwind CSS -->
+
+  <style>
+    :root {
+      --bg:              #08090f;
+      --bg-card:         rgba(255, 255, 255, 0.04);
+      --bg-card-hover:   rgba(255, 255, 255, 0.07);
+      --border:          rgba(255, 255, 255, 0.08);
+      --border-glow-cyan:  rgba(6, 182, 212, 0.35);
+      --border-glow-violet: rgba(139, 92, 246, 0.35);
+      --cyan:   #06b6d4;
+      --violet: #8b5cf6;
+      --text:       #f1f5f9;
+      --text-muted: #94a3b8;
+    }
+
+    * { box-sizing: border-box; }
+    html { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); }
+    body { background-color: var(--bg); overflow-x: hidden; }
+
+    /* Gradient text */
+    .gradient-text {
+      background: linear-gradient(135deg, var(--cyan) 0%, var(--violet) 100%);
+      background-size: 200% 200%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: gradient-text-anim 4s ease infinite;
+    }
+    @keyframes gradient-text-anim {
+      0%, 100% { background-position: 0% 50%; }
+      50%       { background-position: 100% 50%; }
+    }
+
+    /* Glass card */
+    .glass-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .glass-card:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--border-glow-cyan);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(6, 182, 212, 0.1);
+    }
+    .glass-card-violet:hover {
+      border-color: var(--border-glow-violet);
+      box-shadow: 0 20px 60px rgba(139, 92, 246, 0.12);
+    }
+    .glass-card-static {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    /* Buttons */
+    .btn-primary {
+      background: linear-gradient(135deg, var(--violet) 0%, var(--cyan) 100%);
+      background-size: 200% 200%;
+      transition: background-position 0.4s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    }
+    .btn-primary:hover {
+      background-position: right center;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(6, 182, 212, 0.35);
+    }
+
+    /* Orb */
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(100px);
+      animation: orb-drift 10s ease-in-out infinite;
+      pointer-events: none;
+    }
+    @keyframes orb-drift {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33%       { transform: translate(30px, -20px) scale(1.05); }
+      66%       { transform: translate(-20px, 15px) scale(0.95); }
+    }
+
+    /* Scroll reveal */
+    [data-animate] {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    [data-animate].is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    [data-animate-delay="100"] { transition-delay: 0.1s; }
+    [data-animate-delay="200"] { transition-delay: 0.2s; }
+    [data-animate-delay="300"] { transition-delay: 0.3s; }
+    [data-animate-delay="400"] { transition-delay: 0.4s; }
+    [data-animate-delay="500"] { transition-delay: 0.5s; }
+    [data-animate-delay="150"] { transition-delay: 0.15s; }
+
+    /* Section glow */
+    .section-glow { position: relative; }
+    .section-glow::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 600px; max-width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+      opacity: 0.4;
+    }
+
+    /* Badge styles */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+    .badge-cyan   { background: rgba(6,182,212,0.12);  border: 1px solid rgba(6,182,212,0.3);  color: #22d3ee; }
+    .badge-violet { background: rgba(139,92,246,0.12); border: 1px solid rgba(139,92,246,0.3); color: #a78bfa; }
+    .badge-pink   { background: rgba(236,72,153,0.12); border: 1px solid rgba(236,72,153,0.3); color: #f472b6; }
+    .badge-green  { background: rgba(34,197,94,0.12);  border: 1px solid rgba(34,197,94,0.3);  color: #4ade80; }
+    .badge-gray   { background: rgba(148,163,184,0.1); border: 1px solid rgba(148,163,184,0.2); color: #94a3b8; }
+
+    /* Browser mockup frame */
+    .mockup-browser {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .mockup-chrome {
+      background: rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .mockup-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .mockup-urlbar {
+      flex: 1;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: 11px;
+      color: #64748b;
+      font-family: monospace;
+    }
+    .mockup-body {
+      padding: 0;
+      min-height: 160px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Project card meta row */
+    .project-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+
+    /* Numbered step */
+    .step-num {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--violet), var(--cyan));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; font-weight: 700; color: white;
+      flex-shrink: 0;
+    }
+
+    /* Header min height */
+    #site-header { min-height: 0; }
+  </style>
+  <script type="module" crossorigin src="/assets/footer-BQktf09y.js"></script>
+  <script type="module" crossorigin src="/assets/animations-CetyjiHi.js"></script>
+  <script type="module" crossorigin src="/assets/legal-BomEcgZE.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/footer-BLXXtZV3.css">
+</head>
+
+<body class="bg-[#08090f] text-slate-100 font-inter antialiased">
+
+  <!-- HEADER -->
+  <div id="site-header"></div>
+
+  <main>
+
+    <!-- ============================================================
+         HERO SECTION
+    ============================================================ -->
+    <section
+      id="hero"
+      class="relative overflow-hidden"
+      aria-label="Projekte und Referenzen"
+    >
+      <!-- Background image with overlay -->
+      <div class="absolute inset-0 z-0">
+        <img
+          src="https://images.pexels.com/photos/14553707/pexels-photo-14553707.jpeg?auto=compress&cs=tinysrgb&w=1200"
+          alt=""
+          aria-hidden="true"
+          class="w-full h-full object-cover opacity-20"
+        />
+        <div class="absolute inset-0 bg-gradient-to-b from-[#08090f]/70 via-[#08090f]/50 to-[#08090f]"></div>
+      </div>
+
+      <!-- Ambient orbs -->
+      <div class="orb w-[500px] h-[500px] bg-violet-600/15 top-0 left-[-150px]"></div>
+      <div class="orb w-[400px] h-[400px] bg-cyan-500/10 bottom-0 right-[-100px]"></div>
+
+      <div class="relative z-10 container max-w-5xl mx-auto px-6 py-28 lg:py-36">
+
+        <!-- Breadcrumb -->
+        <nav class="mb-8" aria-label="Breadcrumb">
+          <ol class="flex items-center gap-2 text-sm text-slate-500">
+            <li><a href="/" class="hover:text-cyan-400 transition-colors">Home</a></li>
+            <li aria-hidden="true"><span>/</span></li>
+            <li class="text-slate-300">Projekte</li>
+          </ol>
+        </nav>
+
+        <!-- Badge -->
+        <div
+          data-animate
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-violet-500/30 bg-violet-500/10 text-violet-400 text-sm font-medium mb-6"
+        >
+          <span>🗂️</span>
+          <span>Projekte &amp; Referenzen</span>
+        </div>
+
+        <!-- H1 -->
+        <h1
+          data-animate
+          data-animate-delay="100"
+          class="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight tracking-tight mb-6"
+        >
+          Unsere Projekte &amp;<br />
+          <span class="gradient-text">Referenzen</span>
+        </h1>
+
+        <!-- Subtext -->
+        <p
+          data-animate
+          data-animate-delay="200"
+          class="text-xl text-slate-400 max-w-2xl leading-relaxed"
+        >
+          Jedes Projekt hat eine Geschichte. Hier zeigen wir, was die Anforderung war,
+          was wir erreicht haben — und was wir daraus gelernt haben.
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         EIGENE MARKEN — Featured Projects
+    ============================================================ -->
+    <section
+      id="eigene-marken"
+      class="py-20 section-glow"
+      aria-label="Eigene Marken von VaTo24"
+    >
+      <div class="container max-w-6xl mx-auto px-6">
+
+        <div class="mb-12" data-animate>
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-violet-500/30 bg-violet-500/10 text-violet-400 text-xs font-medium mb-4 tracking-wider uppercase">
+            Eigene Marken
+          </div>
+          <h2 class="text-3xl lg:text-4xl font-black tracking-tight mb-3">
+            Projekte, die wir selbst betreiben
+          </h2>
+          <p class="text-slate-400 text-lg max-w-2xl">
+            Diese Plattformen haben wir nicht für Kunden gebaut — sondern für uns selbst. Sie sind unsere lebenden Labore, an denen wir täglich neue Erkenntnisse gewinnen.
+          </p>
+        </div>
+
+        <!-- VaTo24.de -->
+        <article
+          data-animate
+          data-animate-delay="100"
+          class="glass-card glass-card-violet rounded-2xl overflow-hidden mb-8"
+        >
+          <div class="grid lg:grid-cols-2 gap-0">
+
+            <!-- Left: Info -->
+            <div class="p-8 lg:p-10">
+              <div class="project-meta">
+                <span class="badge badge-violet">Webagentur-Website</span>
+                <span class="badge badge-cyan">Eigenes Produkt</span>
+                <span class="badge badge-green">Live</span>
+              </div>
+
+              <h3 class="text-2xl font-black text-white mb-2">VaTo24.de</h3>
+              <p class="text-violet-400 text-sm font-medium mb-4">vato24.de — Webagentur Unna</p>
+
+              <div class="space-y-5 mb-8">
+                <div>
+                  <p class="text-xs font-semibold tracking-wider text-slate-500 uppercase mb-1">Anforderung</p>
+                  <p class="text-slate-300 text-sm leading-relaxed">Eine moderne, schnelle Webagentur-Website die unsere eigene Kompetenz demonstriert — ohne WordPress, mit eigenem Tech-Stack und dem ersten Einsatz unseres Nova CMS-Systems.</p>
+                </div>
+                <div>
+                  <p class="text-xs font-semibold tracking-wider text-slate-500 uppercase mb-1">Ergebnis</p>
+                  <p class="text-slate-300 text-sm leading-relaxed">Vite + Tailwind CSS Website mit Dark Design, vollständigem SEO-Setup, Schema.org Markup, animierten Sektionen und Integration des Nova KI-CMS. Ladezeit unter 1 Sekunde.</p>
+                </div>
+                <div>
+                  <p class="text-xs font-semibold tracking-wider text-slate-500 uppercase mb-1">Learnings</p>
+                  <p class="text-slate-300 text-sm leading-relaxed">Static-Site-Generierung mit Vite ist ideal für Performance. Multi-Page-Apps benötigen klares Input-Management in vite.config. CSS Custom Properties als Design-Tokens ermöglichen schnelle Theme-Anpassungen.</p>
+                </div>
+              </div>
+
+              <a
+                href="https://vato24.de"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 text-violet-400 font-semibold hover:text-violet-300 transition-colors group"
+                aria-label="VaTo24.de in neuem Tab öffnen"
+              >
+                vato24.de besuchen
+                <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+
+            <!-- Right: Browser Mockup -->
+            <div class="p-8 lg:p-10 flex items-center justify-center bg-gradient-to-br from-violet-900/10 to-transparent">
+              <div class="mockup-browser w-full max-w-sm">
+                <div class="mockup-chrome">
+                  <div class="mockup-dot bg-red-500/70"></div>
+                  <div class="mockup-dot bg-yellow-500/70"></div>
+                  <div class="mockup-dot bg-green-500/70"></div>
+                  <div class="mockup-urlbar">vato24.de</div>
+                </div>
+                <div class="mockup-body">
+                  <div class="bg-[#08090f] h-40 flex flex-col items-center justify-center gap-3 p-6">
+                    <div class="text-3xl font-black gradient-text">VaTo24</div>
+                    <div class="text-xs text-slate-500 text-center">Webagentur Unna | Websites · SEO · KI</div>
+                    <div class="flex gap-2 mt-2">
+                      <div class="h-2 w-16 rounded-full bg-violet-500/30"></div>
+                      <div class="h-2 w-10 rounded-full bg-cyan-500/30"></div>
+                    </div>
+                  </div>
+                  <div class="px-4 pb-4 pt-2 grid grid-cols-3 gap-2">
+                    <div class="h-8 rounded bg-white/5 border border-white/5"></div>
+                    <div class="h-8 rounded bg-white/5 border border-white/5"></div>
+                    <div class="h-8 rounded bg-white/5 border border-white/5"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- dynomic.ai + jga-revolution.de -->
+        <div class="grid md:grid-cols-2 gap-6">
+
+          <!-- dynomic.ai -->
+          <article
+            data-animate
+            data-animate-delay="200"
+            class="glass-card glass-card-violet rounded-2xl overflow-hidden"
+          >
+            <div class="p-8">
+              <div class="project-meta">
+                <span class="badge badge-violet">KI-Automatisierung</span>
+                <span class="badge badge-green">Eigenes Produkt</span>
+              </div>
+              <h3 class="text-xl font-black text-white mb-2">dynomic.ai</h3>
+              <p class="text-violet-400 text-sm font-medium mb-4">dynomic.ai — KI-Plattform</p>
+              <div class="space-y-4 mb-6">
+                <div>
+                  <p class="text-xs font-semibold tracking-wider text-slate-500 uppercase mb-1">Anforderung</p>
+                  <p class="text-slate-300 text-sm leading-relaxed">KI-Automatisierung für KMUs zugänglich machen — Chatbots, Workflows, Integrationen ohne hohe Einstiegshürde.</p>
+                </div>
+                <div>
+                  <p class="text-xs font-semibold tracking-wider text-slate-500 uppercase mb-1">Ergebnis</p>
+                  <p class="text-slate-300 text-sm leading-relaxed">Vollständige KI-Automatisierungsplattform mit n8n-Integration, Claude-Anbindung und Self-Service-Portal.</p>
+                </div>
+                <div>
+                  <p class="text-xs font-semibold tracking-wider text-slate-500 uppercase mb-1">Learnings</p>
+                  <p class="text-slate-300 text-sm leading-relaxed">KI-Produkte brauchen gute Onboarding-Flows. Technische Stärke allein reicht nicht — UX entscheidet über Adoption.</p>
+                </div>
+              </div>
+              <a href="https://dynomic.ai" target="_blank" rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 text-violet-400 font-semibold hover:text-violet-300 transition-colors group">
+                dynomic.ai besuchen
+                <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- jga-revolution.de -->
+          <article
+            data-animate
+            data-animate-delay="300"
+            class="glass-card rounded-2xl overflow-hidden"
+            style="--border-glow-hover: rgba(236,72,153,0.35);"
+          >
+            <div class="p-8">
+              <div class="project-meta">
+                <span class="badge badge-pink">Event-Plattform</span>
+                <span class="badge badge-green">Eigenes Produkt</span>
+              </div>
+              <h3 class="text-xl font-black text-white mb-2">jga-revolution.de</h3>
+              <p class="text-pink-400 text-sm font-medium mb-4">jga-revolution.de — JGA Events NRW</p>
+              <div class="space-y-4 mb-6">
+                <div>
+                  <p class="text-xs font-semibold tracking-wider text-slate-500 uppercase mb-1">Anforderung</p>
+                  <p class="text-slate-300 text-sm leading-relaxed">Eine Plattform für JGA-Planung in NRW — Ideen, Anbieter, Buchung alles an einem Ort mit lokalem SEO-Fokus.</p>
+                </div>
+                <div>
+                  <p class="text-xs font-semibold tracking-wider text-slate-500 uppercase mb-1">Ergebnis</p>
+                  <p class="text-slate-300 text-sm leading-relaxed">Vollständige Event-Plattform mit Anbieter-Verzeichnis, Ideen-Hub und lokaler Suchmaschinenoptimierung für NRW.</p>
+                </div>
+                <div>
+                  <p class="text-xs font-semibold tracking-wider text-slate-500 uppercase mb-1">Learnings</p>
+                  <p class="text-slate-300 text-sm leading-relaxed">Nischen-SEO mit lokalem Bezug funktioniert hervorragend. Strukturierte Daten (Schema.org) sind beim Aufbau entscheidend.</p>
+                </div>
+              </div>
+              <a href="https://jga-revolution.de" target="_blank" rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 text-pink-400 font-semibold hover:text-pink-300 transition-colors group">
+                jga-revolution.de besuchen
+                <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         KUNDENPROJEKTE GRID
+    ============================================================ -->
+    <section
+      id="kundenprojekte"
+      class="py-20 bg-gradient-to-b from-[#08090f] to-[#0c0d17] section-glow"
+      aria-label="Kundenprojekte"
+    >
+      <div class="container max-w-6xl mx-auto px-6">
+
+        <div class="mb-12" data-animate>
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-xs font-medium mb-4 tracking-wider uppercase">
+            Kundenprojekte
+          </div>
+          <h2 class="text-3xl lg:text-4xl font-black tracking-tight mb-3">
+            Projekte für unsere Kunden
+          </h2>
+          <p class="text-slate-400 text-lg max-w-2xl">
+            Weitere Referenzprojekte folgen — unsere Kunden entscheiden selbst, ob ihr Projekt hier erscheint. Sprechen Sie uns an.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <!-- Real card with Pexels image -->
+          <article
+            data-animate
+            data-animate-delay="100"
+            class="glass-card rounded-2xl overflow-hidden"
+          >
+            <!-- Image -->
+            <div class="relative h-48 overflow-hidden">
+              <img
+                src="https://images.pexels.com/photos/6638402/pexels-photo-6638402.png?auto=compress&cs=tinysrgb&w=600"
+                alt="Website Projekt Handwerksbetrieb"
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#08090f]/90 via-[#08090f]/40 to-transparent"></div>
+              <div class="absolute top-4 left-4">
+                <span class="badge badge-cyan">Website</span>
+              </div>
+            </div>
+            <!-- Content -->
+            <div class="p-6">
+              <div class="project-meta">
+                <span class="badge badge-gray">Handwerksbetrieb, NRW</span>
+              </div>
+              <h3 class="text-lg font-bold text-white mb-4">Kompletter Webauftritt Handwerk</h3>
+              <div class="space-y-3 mb-6">
+                <div>
+                  <p class="text-xs font-semibold tracking-wider text-slate-500 uppercase mb-1">Anforderung</p>
+                  <p class="text-slate-400 text-sm">Moderner Webauftritt mit Leistungsseiten, Google Business Anbindung und mobiloptimiertem Design.</p>
+                </div>
+                <div>
+                  <p class="text-xs font-semibold tracking-wider text-slate-500 uppercase mb-1">Ergebnis</p>
+                  <p class="text-slate-400 text-sm">+180% organischer Traffic in 6 Monaten, 3× mehr Kontaktanfragen über die Website.</p>
+                </div>
+                <div>
+                  <p class="text-xs font-semibold tracking-wider text-slate-500 uppercase mb-1">Learnings</p>
+                  <p class="text-slate-400 text-sm">Lokales SEO und Google Business Optimierung sind für Handwerksbetriebe die größten Hebel.</p>
+                </div>
+              </div>
+              <p class="text-xs text-slate-600 italic">URL auf Wunsch des Kunden nicht öffentlich</p>
+            </div>
+          </article>
+
+          <!-- Coming Soon Card 1 -->
+          <article
+            data-animate
+            data-animate-delay="200"
+            class="glass-card rounded-2xl overflow-hidden border-dashed"
+          >
+            <!-- Mockup placeholder -->
+            <div class="relative h-48 bg-gradient-to-br from-violet-900/20 to-cyan-900/10 flex flex-col items-center justify-center gap-3">
+              <div class="mockup-browser w-4/5">
+                <div class="mockup-chrome">
+                  <div class="mockup-dot bg-red-500/50"></div>
+                  <div class="mockup-dot bg-yellow-500/50"></div>
+                  <div class="mockup-dot bg-green-500/50"></div>
+                  <div class="mockup-urlbar text-slate-600">ihr-projekt.de</div>
+                </div>
+                <div class="mockup-body bg-[#08090f] h-20 flex items-center justify-center">
+                  <span class="text-slate-700 text-sm font-medium">Ihr Projekt hier?</span>
+                </div>
+              </div>
+            </div>
+            <!-- Content -->
+            <div class="p-6">
+              <div class="project-meta">
+                <span class="badge badge-gray">Ihre Branche</span>
+              </div>
+              <h3 class="text-lg font-bold text-white mb-3">Ihr Projekt könnte hier stehen</h3>
+              <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                Nehmen Sie Kontakt auf und lassen Sie uns gemeinsam etwas Großartiges bauen — das dann hier als Referenz erscheint.
+              </p>
+              <a href="/kontakt/" class="btn-primary inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg text-white font-semibold text-sm">
+                Projekt starten →
+              </a>
+            </div>
+          </article>
+
+          <!-- Coming Soon Card 2 -->
+          <article
+            data-animate
+            data-animate-delay="300"
+            class="glass-card rounded-2xl overflow-hidden border-dashed"
+          >
+            <!-- Mockup placeholder -->
+            <div class="relative h-48 bg-gradient-to-br from-cyan-900/20 to-pink-900/10 flex flex-col items-center justify-center gap-3">
+              <div class="mockup-browser w-4/5">
+                <div class="mockup-chrome">
+                  <div class="mockup-dot bg-red-500/50"></div>
+                  <div class="mockup-dot bg-yellow-500/50"></div>
+                  <div class="mockup-dot bg-green-500/50"></div>
+                  <div class="mockup-urlbar text-slate-600">ihr-projekt.de</div>
+                </div>
+                <div class="mockup-body bg-[#08090f] h-20 flex items-center justify-center">
+                  <span class="text-slate-700 text-sm font-medium">Ihr Projekt hier?</span>
+                </div>
+              </div>
+            </div>
+            <!-- Content -->
+            <div class="p-6">
+              <div class="project-meta">
+                <span class="badge badge-gray">Ihre Branche</span>
+              </div>
+              <h3 class="text-lg font-bold text-white mb-3">Ihr Projekt könnte hier stehen</h3>
+              <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                Über 200 Projekte in 15+ Jahren — viele davon können wir aufgrund von NDA nicht zeigen. Fragen Sie uns direkt nach Referenzen in Ihrer Branche.
+              </p>
+              <a href="/kontakt/" class="btn-primary inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg text-white font-semibold text-sm">
+                Referenz anfragen →
+              </a>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Context image -->
+        <div class="mt-16 grid lg:grid-cols-2 gap-10 items-center" data-animate>
+          <div>
+            <img
+              src="https://images.pexels.com/photos/574069/pexels-photo-574069.jpeg?auto=compress&cs=tinysrgb&w=800"
+              alt="VaTo24 Arbeitsalltag – Entwicklung und Design"
+              class="w-full h-72 object-cover rounded-2xl"
+              loading="lazy"
+            />
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-white mb-4">Warum sehen wir nicht mehr Projekte?</h3>
+            <p class="text-slate-400 leading-relaxed mb-4">
+              Viele unserer Kunden — besonders aus dem Mittelstand und dem Handwerk — möchten ihre Online-Präsenz nicht als "Agentur-Referenz" bewerben. Das respektieren wir vollständig.
+            </p>
+            <p class="text-slate-400 leading-relaxed mb-6">
+              Was wir zeigen können: Messbare Ergebnisse. Wenn Sie möchten, teilen wir in einem persönlichen Gespräch Zahlen, Screenshots und Details aus Projekten Ihrer Branche — vertraulich und auf Anfrage.
+            </p>
+            <a href="/kontakt/" class="inline-flex items-center gap-2 text-cyan-400 font-semibold hover:text-cyan-300 transition-colors group">
+              Vertrauliches Gespräch buchen
+              <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         PROJECT STRUCTURE EXPLANATION
+    ============================================================ -->
+    <section
+      id="projekt-struktur"
+      class="py-20 section-glow"
+      aria-label="Wie VaTo24 Projekte dokumentiert"
+    >
+      <div class="container max-w-5xl mx-auto px-6">
+
+        <div class="text-center mb-14" data-animate>
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-xs font-medium mb-4 tracking-wider uppercase">
+            Unser Ansatz
+          </div>
+          <h2 class="text-3xl lg:text-4xl font-black tracking-tight mb-4">
+            So dokumentieren wir <span class="gradient-text">jedes Projekt</span>
+          </h2>
+          <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+            Transparenz ist uns wichtig — deshalb zeigen wir nicht nur, was entstanden ist, sondern auch warum und was wir daraus gelernt haben.
+          </p>
+        </div>
+
+        <!-- 3 Steps -->
+        <div class="grid sm:grid-cols-3 gap-8 mb-14">
+
+          <div class="text-center" data-animate data-animate-delay="100">
+            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-violet-600/30 to-violet-600/10 border border-violet-500/30 flex items-center justify-center mx-auto mb-5 text-2xl">
+              🎯
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Anforderung</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">Was hat der Kunde gebraucht? Was war die Ausgangssituation und das konkrete Ziel des Projekts?</p>
+          </div>
+
+          <div class="text-center" data-animate data-animate-delay="200">
+            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-600/30 to-cyan-600/10 border border-cyan-500/30 flex items-center justify-center mx-auto mb-5 text-2xl">
+              ✅
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Ergebnis</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">Was wurde erreicht? Messbare Resultate, konkrete Zahlen und der Vorher/Nachher-Vergleich.</p>
+          </div>
+
+          <div class="text-center" data-animate data-animate-delay="300">
+            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-pink-600/30 to-pink-600/10 border border-pink-500/30 flex items-center justify-center mx-auto mb-5 text-2xl">
+              💡
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Learnings</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">Was haben wir gelernt? Erkenntnisse die in die nächsten Projekte einfließen und unsere Expertise stärken.</p>
+          </div>
+
+        </div>
+
+        <!-- Example card -->
+        <div class="glass-card-static rounded-2xl p-8 border border-dashed border-slate-700" data-animate>
+          <p class="text-xs font-semibold tracking-wider text-slate-500 uppercase mb-6">So sieht eine vollständige Projektkarte aus</p>
+          <div class="grid sm:grid-cols-3 gap-6">
+            <div class="p-5 rounded-xl bg-violet-500/5 border border-violet-500/15">
+              <div class="flex items-center gap-2 mb-3">
+                <div class="step-num">1</div>
+                <p class="font-semibold text-white text-sm">Anforderung</p>
+              </div>
+              <p class="text-slate-400 text-sm">Neuer Webauftritt für lokalen Dienstleister — mobiloptimiert, mit Kontaktformular und Google Business Anbindung.</p>
+            </div>
+            <div class="p-5 rounded-xl bg-cyan-500/5 border border-cyan-500/15">
+              <div class="flex items-center gap-2 mb-3">
+                <div class="step-num">2</div>
+                <p class="font-semibold text-white text-sm">Ergebnis</p>
+              </div>
+              <p class="text-slate-400 text-sm">Website live in 3 Wochen. +240% Seitenaufrufe nach 3 Monaten. Google Maps Ranking von Platz 12 auf Platz 3.</p>
+            </div>
+            <div class="p-5 rounded-xl bg-pink-500/5 border border-pink-500/15">
+              <div class="flex items-center gap-2 mb-3">
+                <div class="step-num">3</div>
+                <p class="font-semibold text-white text-sm">Learnings</p>
+              </div>
+              <p class="text-slate-400 text-sm">Google Business Kategorien und Fotos haben den größten Einfluss auf lokales Ranking — mehr als backlinks.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         CTA SECTION
+    ============================================================ -->
+    <section
+      id="projekt-starten"
+      class="py-24 relative overflow-hidden section-glow"
+      aria-label="Ihr Projekt starten"
+    >
+      <!-- Gradient background -->
+      <div class="absolute inset-0 bg-gradient-to-br from-violet-900/25 via-[#08090f] to-cyan-900/15" aria-hidden="true"></div>
+      <div class="orb w-[500px] h-[400px] bg-violet-600/15 top-0 left-0 -translate-x-1/2 -translate-y-1/2" aria-hidden="true"></div>
+      <div class="orb w-[400px] h-[300px] bg-cyan-500/10 bottom-0 right-0 translate-x-1/3 translate-y-1/3" aria-hidden="true"></div>
+
+      <div class="relative container max-w-4xl mx-auto px-6 text-center">
+
+        <div data-animate class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-violet-500/30 bg-violet-500/10 text-violet-300 text-sm font-medium mb-8">
+          <span>🚀</span>
+          <span>Ihr nächstes Projekt</span>
+        </div>
+
+        <h2
+          data-animate
+          data-animate-delay="100"
+          class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight mb-6"
+        >
+          Bereit, Ihr Projekt<br />
+          <span class="gradient-text">umzusetzen?</span>
+        </h2>
+
+        <p
+          data-animate
+          data-animate-delay="200"
+          class="text-slate-400 text-xl max-w-2xl mx-auto mb-12 leading-relaxed"
+        >
+          Lassen Sie uns in einem kostenlosen Erstgespräch besprechen, was Sie brauchen — und wie wir es gemeinsam umsetzen.
+        </p>
+
+        <div
+          data-animate
+          data-animate-delay="300"
+          class="flex flex-col sm:flex-row gap-4 justify-center mb-14"
+        >
+          <a
+            href="/kontakt/"
+            class="btn-primary inline-flex items-center justify-center gap-2 px-10 py-5 rounded-xl text-white font-bold text-lg shadow-2xl"
+          >
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            Kostenloses Erstgespräch buchen
+          </a>
+          <a
+            href="tel:+492303979732"
+            class="inline-flex items-center justify-center gap-2 px-10 py-5 rounded-xl border border-slate-600 hover:border-cyan-500/60 text-slate-300 hover:text-white font-bold text-lg transition-all duration-300 hover:bg-white/5"
+          >
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            Jetzt anrufen
+          </a>
+        </div>
+
+        <div
+          data-animate
+          data-animate-delay="400"
+          class="flex flex-wrap justify-center gap-6 text-slate-500 text-sm"
+        >
+          <span class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-cyan-500" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            Kostenlos &amp; unverbindlich
+          </span>
+          <span class="w-px h-4 bg-slate-700" aria-hidden="true"></span>
+          <span class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-cyan-500" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            30 Minuten Gespräch
+          </span>
+          <span class="w-px h-4 bg-slate-700" aria-hidden="true"></span>
+          <span class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-cyan-500" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            15+ Jahre Erfahrung
+          </span>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <div id="site-footer"></div>
+
+  <!-- PAGE SCRIPT -->
+
+  <!-- Scroll reveal -->
+  <script>
+    (function () {
+      var elements = document.querySelectorAll('[data-animate]');
+      if (!elements.length) return;
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+      elements.forEach(function (el) { observer.observe(el); });
+    })();
+  </script>
+
+</body>
+</html>

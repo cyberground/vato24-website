@@ -1,0 +1,17 @@
+Options -Indexes
+Options +FollowSymLinks
+
+<Files "config.php">
+  Require all denied
+</Files>
+
+<Files "setup.php">
+  Require all denied
+</Files>
+
+<FilesMatch "\.(json|log)$">
+  Require all denied
+</FilesMatch>
+
+Header always set X-Content-Type-Options "nosniff"
+Header always set X-Frame-Options "DENY"

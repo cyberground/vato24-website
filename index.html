@@ -390,10 +390,10 @@
     ======================================== */
     #site-header { min-height: 0; }
   </style>
-  <script type="module" crossorigin src="/assets/index-DDI_jSxB.js"></script>
-  <link rel="modulepreload" crossorigin href="/assets/footer-UENtMA8A.js">
+  <script type="module" crossorigin src="/assets/index-B8qV_ceW.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/footer-BQktf09y.js">
   <link rel="modulepreload" crossorigin href="/assets/animations-CetyjiHi.js">
-  <link rel="stylesheet" crossorigin href="/assets/footer-B4l_Wcll.css">
+  <link rel="stylesheet" crossorigin href="/assets/footer-BLXXtZV3.css">
 </head>
 
 <body class="bg-[#08090f] text-slate-100 font-inter antialiased">
@@ -418,7 +418,7 @@
       <div class="orb orb-2 w-[500px] h-[500px] bg-cyan-500/15 bottom-[-80px] right-[-100px]"></div>
       <div class="orb orb-3 w-[350px] h-[350px] bg-violet-500/10 top-[40%] left-[40%]"></div>
 
-      <!-- Video background (Pexels integration target) -->
+      <!-- Video background -->
       <video
         id="hero-video"
         autoplay
@@ -426,9 +426,10 @@
         loop
         playsinline
         aria-hidden="true"
-      >
-        <!-- Source injected at runtime via home.js -->
-      </video>
+        class="absolute inset-0 w-full h-full object-cover opacity-20"
+        style="z-index: 0;"
+        src="https://videos.pexels.com/video-files/29717603/12777871_1920_1080_30fps.mp4"
+      ></video>
 
       <!-- Dark overlay -->
       <div class="absolute inset-0 bg-gradient-to-b from-[#08090f]/60 via-[#08090f]/40 to-[#08090f] z-[1]"></div>
@@ -449,6 +450,7 @@
         <h1
           data-animate
           data-animate-delay="100"
+          data-nova-id="hero-h1"
           class="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight tracking-tight mb-6"
         >
           Ihre digitale Zukunft<br />
@@ -459,6 +461,7 @@
         <p
           data-animate
           data-animate-delay="200"
+          data-nova-id="hero-subtitle"
           class="text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed"
         >
           Wir entwickeln moderne Websites, integrieren KI und sorgen dafür, dass Ihr Unternehmen
@@ -473,6 +476,7 @@
         >
           <a
             href="/kontakt/"
+            data-nova-id="hero-cta-primary"
             class="btn-primary inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-white font-semibold text-base shadow-lg"
           >
             <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -627,6 +631,7 @@
             <h2
               data-animate
               data-animate-delay="100"
+              data-nova-id="about-heading"
               class="text-4xl lg:text-5xl font-black leading-tight tracking-tight mb-6"
             >
               Nicht nur Dienstleister —<br />
@@ -636,6 +641,7 @@
             <p
               data-animate
               data-animate-delay="200"
+              data-nova-id="about-description"
               class="text-slate-400 text-lg leading-relaxed mb-4"
             >
               Seit über 15 Jahren begleiten wir Unternehmen auf ihrem Weg in die digitale Welt.
@@ -712,25 +718,19 @@
             data-animate-delay="200"
             class="relative"
           >
-            <!-- Main image placeholder -->
+            <!-- Main image -->
             <div
-              id="about-image"
-              class="relative rounded-2xl overflow-hidden aspect-[4/3] flex items-center justify-center"
+              class="relative rounded-2xl overflow-hidden aspect-[4/3]"
               role="img"
               aria-label="Dennis Isermann, Inhaber VaTo24"
             >
-              <!-- Decorative inner graphic -->
-              <div class="absolute inset-0 flex items-center justify-center" aria-hidden="true">
-                <div class="w-40 h-40 rounded-full border-2 border-violet-500/30 flex items-center justify-center">
-                  <div class="w-24 h-24 rounded-full border-2 border-cyan-500/40 flex items-center justify-center">
-                    <div class="text-5xl">🚀</div>
-                  </div>
-                </div>
-                <!-- Orbit ring -->
-                <div class="absolute w-56 h-56 rounded-full border border-dashed border-violet-500/20 animate-spin-slow" style="animation-duration:20s"></div>
-              </div>
+              <img id="about-image"
+                src="https://images.pexels.com/photos/6476257/pexels-photo-6476257.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="VaTo24 Team bei der Arbeit"
+                class="w-full h-full object-cover rounded-2xl"
+                loading="lazy" />
               <!-- Shimmer overlay -->
-              <div class="absolute inset-0 bg-gradient-to-br from-violet-600/10 via-transparent to-cyan-500/10" aria-hidden="true"></div>
+              <div class="absolute inset-0 bg-gradient-to-br from-violet-600/10 via-transparent to-cyan-500/10 pointer-events-none" aria-hidden="true"></div>
             </div>
 
             <!-- Floating stat: years -->
@@ -797,7 +797,13 @@
             data-animate-delay="100"
             class="glass-card rounded-2xl p-7 group"
           >
-            <div class="text-4xl mb-4" aria-hidden="true">🌐</div>
+            <div class="flex items-center gap-3 mb-4">
+              <div class="text-4xl" aria-hidden="true">🌐</div>
+              <img src="https://images.pexels.com/photos/18105/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=400"
+                alt="" aria-hidden="true"
+                class="w-12 h-12 object-cover rounded-lg opacity-70"
+                loading="lazy" />
+            </div>
             <h3 class="text-xl font-bold text-white mb-2">Websites</h3>
             <p class="text-slate-400 text-sm leading-relaxed">
               Moderne, schnelle Websites die verkaufen — technisch einwandfrei, optisch überzeugend und für Google optimiert.
@@ -813,7 +819,13 @@
             data-animate-delay="200"
             class="glass-card rounded-2xl p-7 group"
           >
-            <div class="text-4xl mb-4" aria-hidden="true">🔍</div>
+            <div class="flex items-center gap-3 mb-4">
+              <div class="text-4xl" aria-hidden="true">🔍</div>
+              <img src="https://images.pexels.com/photos/577195/pexels-photo-577195.jpeg?auto=compress&cs=tinysrgb&w=400"
+                alt="" aria-hidden="true"
+                class="w-12 h-12 object-cover rounded-lg opacity-70"
+                loading="lazy" />
+            </div>
             <h3 class="text-xl font-bold text-white mb-2">SEO</h3>
             <p class="text-slate-400 text-sm leading-relaxed">
               Google-Rankings verbessern, mehr Besucher gewinnen — nachhaltige Suchmaschinenoptimierung mit messbaren Ergebnissen.
@@ -829,7 +841,13 @@
             data-animate-delay="300"
             class="glass-card glass-card-violet rounded-2xl p-7 group"
           >
-            <div class="text-4xl mb-4" aria-hidden="true">🤖</div>
+            <div class="flex items-center gap-3 mb-4">
+              <div class="text-4xl" aria-hidden="true">🤖</div>
+              <img src="https://images.pexels.com/photos/2599244/pexels-photo-2599244.jpeg?auto=compress&cs=tinysrgb&w=400"
+                alt="" aria-hidden="true"
+                class="w-12 h-12 object-cover rounded-lg opacity-70"
+                loading="lazy" />
+            </div>
             <h3 class="text-xl font-bold text-white mb-2">KI-Integration</h3>
             <p class="text-slate-400 text-sm leading-relaxed">
               Chatbots, Automatisierung, smarte Workflows — KI sinnvoll in Ihr Unternehmen integrieren für echte Effizienzgewinne.
@@ -1224,6 +1242,15 @@
             <!-- Outer glow -->
             <div class="absolute -inset-4 rounded-3xl bg-cyan-500/5 blur-2xl" aria-hidden="true"></div>
 
+            <!-- CMS hero image above mockup -->
+            <div class="relative rounded-2xl overflow-hidden mb-6">
+              <img src="https://images.pexels.com/photos/16027824/pexels-photo-16027824.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Nova KI-Chatbot Interface"
+                class="w-full h-48 object-cover rounded-2xl"
+                loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#08090f]/80 via-transparent to-transparent rounded-2xl pointer-events-none"></div>
+            </div>
+
             <!-- Mockup card -->
             <div class="relative glass-card rounded-2xl overflow-hidden" role="presentation">
               <!-- Window chrome -->
@@ -1454,9 +1481,10 @@
               data-counter
               data-target="15"
               data-suffix="+"
+              data-nova-id="stat-1"
               aria-label="15+ Jahre Erfahrung"
             >15<span class="text-cyan-400">+</span></p>
-            <p class="text-slate-400 text-sm font-medium">Jahre Erfahrung</p>
+            <p class="text-slate-400 text-sm font-medium" data-nova-id="stat-1-label">Jahre Erfahrung</p>
           </div>
 
           <!-- 200+ Projekte -->
@@ -1470,9 +1498,10 @@
               data-counter
               data-target="200"
               data-suffix="+"
+              data-nova-id="stat-2"
               aria-label="200+ Projekte"
             >200<span class="text-violet-400">+</span></p>
-            <p class="text-slate-400 text-sm font-medium">Projekte umgesetzt</p>
+            <p class="text-slate-400 text-sm font-medium" data-nova-id="stat-2-label">Projekte umgesetzt</p>
           </div>
 
           <!-- 100% DSGVO -->
@@ -1486,9 +1515,10 @@
               data-counter
               data-target="100"
               data-suffix="%"
+              data-nova-id="stat-3"
               aria-label="100% DSGVO-konform"
             >100<span class="text-cyan-400">%</span></p>
-            <p class="text-slate-400 text-sm font-medium">DSGVO-konform</p>
+            <p class="text-slate-400 text-sm font-medium" data-nova-id="stat-3-label">DSGVO-konform</p>
           </div>
 
           <!-- 24/7 -->
@@ -1499,11 +1529,125 @@
           >
             <p
               class="stat-number text-5xl lg:text-6xl font-black text-white mb-2"
+              data-nova-id="stat-4"
               aria-label="24/7 Support"
             >24<span class="text-violet-400">/</span>7</p>
-            <p class="text-slate-400 text-sm font-medium">Support</p>
+            <p class="text-slate-400 text-sm font-medium" data-nova-id="stat-4-label">Support</p>
           </div>
 
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECTION 8.5 · KI & DIE ZUKUNFT DES WEBS
+    ============================================================ -->
+    <!-- KI & Zukunft Section -->
+    <section class="py-24 relative overflow-hidden" id="ki-trends">
+      <div class="absolute inset-0 bg-gradient-to-b from-violet-900/10 via-transparent to-transparent pointer-events-none"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16" data-animate>
+          <span class="inline-block text-xs font-semibold tracking-widest text-violet-400 uppercase mb-4">Zukunft des Webs</span>
+          <h2 class="text-4xl md:text-5xl font-bold mb-6">
+            Die <span class="gradient-text">KI-Revolution</span> verändert alles — auch Ihre Website
+          </h2>
+          <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+            Was heute Google, wird morgen eine KI-Antwort sein. Wie Sie jetzt positioniert sind, entscheidet darüber, ob Ihr Unternehmen überhaupt noch gefunden wird.
+          </p>
+        </div>
+
+        <!-- Big trend cards -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+
+          <!-- Trend 1: AI Search -->
+          <div class="glass-card rounded-2xl p-8" data-animate data-animate-delay="0">
+            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-violet-600 to-cyan-500 flex items-center justify-center mb-6 text-2xl">🤖</div>
+            <h3 class="text-xl font-bold mb-3 text-white">KI ersetzt die Google-Suche</h3>
+            <p class="text-gray-400 leading-relaxed mb-4">Bereits heute beantwortet Claude, ChatGPT oder Gemini Millionen von Anfragen — direkt, ohne dass der User eine Website öffnet. Die klassische "Position 1 bei Google" verliert an Bedeutung.</p>
+            <div class="p-4 bg-violet-500/10 rounded-xl border border-violet-500/20">
+              <p class="text-violet-300 text-sm font-medium">💡 Was das bedeutet: Ihre Website muss so strukturiert sein, dass KI-Systeme sie als vertrauenswürdige Quelle zitieren.</p>
+            </div>
+          </div>
+
+          <!-- Trend 2: Voice & AI Assistants -->
+          <div class="glass-card rounded-2xl p-8" data-animate data-animate-delay="150">
+            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center mb-6 text-2xl">🎙️</div>
+            <h3 class="text-xl font-bold mb-3 text-white">„Alexa, wen soll ich anrufen?"</h3>
+            <p class="text-gray-400 leading-relaxed mb-4">Die nächste Generation googelt nicht mehr. Sie fragt einfach. Voice-Assistenten, KI-Agenten und Chatbots werden die Schnittstelle zwischen Unternehmen und Kunden. Wer nicht in diese Systeme integriert ist, ist unsichtbar.</p>
+            <div class="p-4 bg-cyan-500/10 rounded-xl border border-cyan-500/20">
+              <p class="text-cyan-300 text-sm font-medium">💡 Was das bedeutet: Lokale Präsenz, strukturierte Daten und Branchenbuch-Einträge werden wichtiger als je zuvor.</p>
+            </div>
+          </div>
+
+          <!-- Trend 3: AI Visibility -->
+          <div class="glass-card rounded-2xl p-8" data-animate data-animate-delay="300">
+            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-pink-600 to-violet-600 flex items-center justify-center mb-6 text-2xl">📡</div>
+            <h3 class="text-xl font-bold mb-3 text-white">In die KI kommen — das neue SEO</h3>
+            <p class="text-gray-400 leading-relaxed mb-4">Websites werden heute nicht nur für Menschen, sondern für KI-Systeme gebaut. Wer es schafft, als Quelle in Claude, ChatGPT oder Perplexity zitiert zu werden, gewinnt die Sichtbarkeit von morgen.</p>
+            <div class="p-4 bg-pink-500/10 rounded-xl border border-pink-500/20">
+              <p class="text-pink-300 text-sm font-medium">💡 Was das bedeutet: Authority, klare Strukturierung und echtes Fachwissen sind die neuen Ranking-Faktoren.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- AI Timeline / What's happening now -->
+        <div class="glass-card rounded-2xl p-10 mb-12" data-animate>
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h3 class="text-2xl font-bold mb-6 text-white">Was gerade passiert — und was als nächstes kommt</h3>
+              <div class="space-y-6">
+                <div class="flex gap-4">
+                  <div class="w-2 h-2 rounded-full bg-green-400 mt-2 flex-shrink-0"></div>
+                  <div>
+                    <p class="font-semibold text-white">Heute: KI-Antworten verdrängen organische Suchergebnisse</p>
+                    <p class="text-gray-400 text-sm mt-1">Google AI Overviews, ChatGPT Search, Perplexity AI — die ersten Ergebnisse sind KI, keine Websites mehr.</p>
+                  </div>
+                </div>
+                <div class="flex gap-4">
+                  <div class="w-2 h-2 rounded-full bg-yellow-400 mt-2 flex-shrink-0"></div>
+                  <div>
+                    <p class="font-semibold text-white">Morgen: KI-Agenten handeln selbstständig</p>
+                    <p class="text-gray-400 text-sm mt-1">Claude, Gemini &amp; Co. werden Termine buchen, Angebote vergleichen und Unternehmen kontaktieren — ohne menschliches Zutun.</p>
+                  </div>
+                </div>
+                <div class="flex gap-4">
+                  <div class="w-2 h-2 rounded-full bg-gray-500 mt-2 flex-shrink-0"></div>
+                  <div>
+                    <p class="font-semibold text-white">Übermorgen: KI ist die primäre Schnittstelle</p>
+                    <p class="text-gray-400 text-sm mt-1">Websites werden zu Datenquellen für KI-Systeme. Der Benutzer "surft" nicht mehr — er fragt einfach.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="relative">
+              <img src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="KI Technologie Zukunft"
+                class="w-full rounded-2xl object-cover h-64"
+                loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#08090f] via-transparent to-transparent rounded-2xl"></div>
+              <div class="absolute bottom-6 left-6 right-6">
+                <div class="glass-card rounded-xl p-4">
+                  <p class="text-sm text-white font-medium">„Die Frage ist nicht ob KI die Suche verändert — sondern wie schnell und ob Ihr Unternehmen dabei ist."</p>
+                  <p class="text-xs text-gray-400 mt-1">— Dennis Isermann, VaTo24</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- What VaTo24 does about it -->
+        <div class="text-center" data-animate>
+          <h3 class="text-2xl font-bold mb-4 text-white">Was VaTo24 für Ihre KI-Sichtbarkeit tut</h3>
+          <p class="text-gray-400 mb-8 max-w-2xl mx-auto">Wir bauen Websites und digitale Präsenzen, die nicht nur für Menschen, sondern auch für KI-Systeme optimiert sind — und bereiten Ihr Unternehmen auf die KI-getriebene Zukunft vor.</p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/leistungen/#seo" class="btn-primary px-8 py-4 rounded-xl font-semibold text-white inline-flex items-center justify-center">
+              KI-Sichtbarkeit aufbauen →
+            </a>
+            <a href="/kontakt/" class="inline-flex items-center justify-center px-8 py-4 rounded-xl border border-slate-600 hover:border-cyan-500/60 text-slate-300 hover:text-white font-semibold transition-all duration-300 hover:bg-white/5">
+              Kostenloses Erstgespräch
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -1529,6 +1673,7 @@
           <h2
             data-animate
             data-animate-delay="100"
+            data-nova-id="faq-heading"
             class="text-4xl lg:text-5xl font-black tracking-tight mb-4"
           >
             Häufige
@@ -1712,6 +1857,7 @@
         <h2
           data-animate
           data-animate-delay="100"
+          data-nova-id="final-cta-heading"
           class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight mb-6"
         >
           Bereit für Ihren
@@ -1721,6 +1867,7 @@
         <p
           data-animate
           data-animate-delay="200"
+          data-nova-id="final-cta-text"
           class="text-slate-400 text-xl max-w-2xl mx-auto mb-12 leading-relaxed"
         >
           Vereinbaren Sie noch heute Ihr kostenloses Erstgespräch — wir zeigen Ihnen, wie wir

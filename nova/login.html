@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nova CMS — Login</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+
+    :root {
+      --bg:        #08090f;
+      --bg-card:   rgba(255, 255, 255, 0.04);
+      --border:    rgba(255, 255, 255, 0.08);
+      --cyan:      #06b6d4;
+      --violet:    #8b5cf6;
+      --text:      #f1f5f9;
+      --muted:     #94a3b8;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      background: var(--bg);
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Ambient orbs */
+    .orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(100px);
+      pointer-events: none;
+      animation: orb-drift 10s ease-in-out infinite;
+    }
+    .orb-1 { width: 600px; height: 600px; background: rgba(124,58,237,0.15); top: -150px; left: -200px; animation-delay: 0s; }
+    .orb-2 { width: 500px; height: 500px; background: rgba(6,182,212,0.12); bottom: -100px; right: -150px; animation-delay: -4s; }
+
+    @keyframes orb-drift {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(25px, -15px) scale(1.04); }
+    }
+
+    .login-card {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      max-width: 420px;
+      margin: 24px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 48px 40px;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 32px 80px rgba(0, 0, 0, 0.5);
+    }
+
+    .nova-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .nova-logo-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #7c3aed, #06b6d4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      box-shadow: 0 8px 32px rgba(124, 58, 237, 0.4);
+    }
+
+    .nova-logo-text {
+      font-size: 28px;
+      font-weight: 800;
+      background: linear-gradient(135deg, #06b6d4, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -0.5px;
+    }
+
+    .nova-tagline {
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 40px;
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 500;
+      color: #cbd5e1;
+      margin-bottom: 8px;
+    }
+
+    .input-wrap {
+      position: relative;
+    }
+
+    .input-wrap svg {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 18px;
+      height: 18px;
+      color: #475569;
+      pointer-events: none;
+    }
+
+    input[type="password"] {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      color: white;
+      padding: 14px 14px 14px 44px;
+      font-size: 15px;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    input[type="password"]:focus {
+      border-color: var(--cyan);
+      box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.15);
+    }
+
+    input[type="password"]::placeholder {
+      color: #475569;
+    }
+
+    .btn-login {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      margin-top: 24px;
+      padding: 15px;
+      background: linear-gradient(135deg, #7c3aed, #06b6d4);
+      border: none;
+      border-radius: 12px;
+      color: white;
+      font-size: 15px;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.15s;
+    }
+
+    .btn-login:hover {
+      opacity: 0.92;
+      transform: translateY(-1px);
+    }
+
+    .btn-login:active {
+      transform: translateY(0);
+    }
+
+    .btn-login:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .error-msg {
+      display: none;
+      margin-top: 16px;
+      padding: 12px 16px;
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid rgba(239, 68, 68, 0.25);
+      border-radius: 10px;
+      color: #fca5a5;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .error-msg.visible { display: block; }
+
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 24px;
+      color: #475569;
+      font-size: 13px;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover { color: var(--cyan); }
+
+    .spin {
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Ambient background -->
+  <div class="orb orb-1" aria-hidden="true"></div>
+  <div class="orb orb-2" aria-hidden="true"></div>
+
+  <div class="login-card" role="main">
+
+    <!-- Logo -->
+    <div class="nova-logo">
+      <div class="nova-logo-icon" aria-hidden="true">✨</div>
+      <span class="nova-logo-text">Nova</span>
+    </div>
+
+    <p class="nova-tagline">Website-Assistent von VaTo24<br />Geben Sie Ihr Passwort ein um fortzufahren</p>
+
+    <!-- Login form -->
+    <form id="nova-login-form" autocomplete="off" novalidate>
+
+      <label for="nova-password">Passwort</label>
+      <div class="input-wrap">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+        </svg>
+        <input
+          type="password"
+          id="nova-password"
+          name="password"
+          placeholder="Nova-Passwort"
+          autocomplete="current-password"
+          required
+        />
+      </div>
+
+      <button type="submit" class="btn-login" id="nova-submit">
+        <svg id="btn-icon" class="w-5 h-5" style="width:18px;height:18px;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
+        </svg>
+        <span id="btn-label">Anmelden</span>
+      </button>
+
+      <div class="error-msg" id="nova-error" role="alert" aria-live="polite"></div>
+
+    </form>
+
+    <a href="/" class="back-link">← Zurück zur Website</a>
+
+  </div>
+
+  <script>
+    (function () {
+      const form    = document.getElementById('nova-login-form');
+      const pwdInput = document.getElementById('nova-password');
+      const errDiv  = document.getElementById('nova-error');
+      const btn     = document.getElementById('nova-submit');
+      const btnLabel = document.getElementById('btn-label');
+      const btnIcon  = document.getElementById('btn-icon');
+
+      const spinnerSvg = `<svg style="width:18px;height:18px;" class="spin" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+      </svg>`;
+
+      function setLoading(loading) {
+        btn.disabled = loading;
+        if (loading) {
+          btnIcon.outerHTML = spinnerSvg;
+          btnLabel.textContent = 'Anmelden...';
+        } else {
+          document.getElementById('btn-icon').outerHTML = `<svg id="btn-icon" style="width:18px;height:18px;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
+          </svg>`;
+          btnLabel.textContent = 'Anmelden';
+        }
+      }
+
+      function showError(msg) {
+        errDiv.textContent = msg;
+        errDiv.classList.add('visible');
+      }
+
+      function hideError() {
+        errDiv.classList.remove('visible');
+      }
+
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        hideError();
+
+        const password = pwdInput.value.trim();
+        if (!password) {
+          showError('Bitte Passwort eingeben.');
+          pwdInput.focus();
+          return;
+        }
+
+        setLoading(true);
+
+        try {
+          const res = await fetch('/nova/auth.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: 'password=' + encodeURIComponent(password),
+          });
+
+          const data = await res.json();
+
+          if (data.success) {
+            // Redirect back to site with nova mode active
+            const redirectTo = new URLSearchParams(window.location.search).get('redirect') || '/';
+            window.location.href = redirectTo + (redirectTo.includes('?') ? '&' : '?') + 'nova=1';
+          } else {
+            showError(data.error || 'Anmeldung fehlgeschlagen. Bitte versuchen Sie es erneut.');
+            pwdInput.value = '';
+            pwdInput.focus();
+            setLoading(false);
+          }
+        } catch (err) {
+          showError('Verbindungsfehler. Bitte prüfen Sie Ihre Internetverbindung.');
+          setLoading(false);
+        }
+      });
+
+      // Auto-focus password field
+      pwdInput.focus();
+    })();
+  </script>
+</body>
+</html>
