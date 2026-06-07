@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>VaTo24 Ratgeber – Expertenwissen zu Websites, SEO &amp; KI aus Unna</title>
+  <meta name="description" content="Praxiswissen aus 15+ Jahren Digitalerfahrung: Lokales SEO, WordPress, KI im Mittelstand und mehr — vom VaTo24-Team aus Unna, NRW." />
+  <meta name="keywords" content="SEO Ratgeber, WordPress Tipps, KI Mittelstand, Webdesign Blog, Lokales SEO Unna, Google Business Optimierung" />
+  <meta name="author" content="Dennis Isermann – VaTo24" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://vato24.de/blog/" />
+
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vato24.de/blog/" />
+  <meta property="og:title" content="VaTo24 Ratgeber – Expertenwissen zu Websites, SEO &amp; KI aus Unna" />
+  <meta property="og:description" content="Praxiswissen aus 15+ Jahren Digitalerfahrung: SEO-Tipps, KI-Integration, Webdesign-Trends und mehr vom VaTo24-Team aus Unna." />
+  <meta property="og:image" content="https://vato24.de/assets/og-image.jpg" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:site_name" content="VaTo24" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="VaTo24 Ratgeber – Websites, SEO &amp; KI" />
+  <meta name="twitter:description" content="Praxiswissen aus 15+ Jahren: SEO, WordPress, KI-Integration – vom VaTo24-Team aus Unna." />
+  <meta name="twitter:image" content="https://vato24.de/assets/og-image.jpg" />
+
+  <!-- Schema.org: Blog -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "VaTo24 Ratgeber",
+    "url": "https://vato24.de/blog/",
+    "description": "Expertenwissen zu Websites, SEO und KI von VaTo24 aus Unna, NRW.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "VaTo24",
+      "url": "https://vato24.de",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://vato24.de/assets/logo.svg"
+      }
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Dennis Isermann",
+      "url": "https://vato24.de/ueber-uns/"
+    }
+  }
+  </script>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Vite / Tailwind CSS -->
+
+  <style>
+    :root {
+      --bg:        #08090f;
+      --bg-card:   rgba(255,255,255,0.04);
+      --bg-card-hover: rgba(255,255,255,0.07);
+      --border:    rgba(255,255,255,0.08);
+      --border-glow-cyan:  rgba(6,182,212,0.35);
+      --border-glow-violet: rgba(139,92,246,0.35);
+      --cyan:      #06b6d4;
+      --violet:    #8b5cf6;
+      --indigo:    #6366f1;
+      --text:      #f1f5f9;
+      --text-muted: #94a3b8;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, var(--cyan) 0%, var(--violet) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .glass-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .glass-card:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--border-glow-cyan);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(6,182,212,0.1);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--violet) 0%, var(--cyan) 100%);
+      transition: opacity 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(6,182,212,0.3);
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(100px);
+      animation: orb-drift 10s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    @keyframes orb-drift {
+      0%, 100% { transform: translate(0,0) scale(1); }
+      33%       { transform: translate(30px,-20px) scale(1.05); }
+      66%       { transform: translate(-20px,15px) scale(0.95); }
+    }
+
+    .orb-1 { animation-delay: 0s; }
+    .orb-2 { animation-delay: -4s; }
+
+    [data-animate] {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    [data-animate].is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    [data-animate-delay="100"] { transition-delay: 0.1s; }
+    [data-animate-delay="200"] { transition-delay: 0.2s; }
+    [data-animate-delay="300"] { transition-delay: 0.3s; }
+    [data-animate-delay="400"] { transition-delay: 0.4s; }
+    [data-animate-delay="500"] { transition-delay: 0.5s; }
+    [data-animate-delay="600"] { transition-delay: 0.6s; }
+
+    /* Search bar */
+    .search-input {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .search-input:focus {
+      outline: none;
+      border-color: rgba(6,182,212,0.5);
+      box-shadow: 0 0 0 3px rgba(6,182,212,0.1);
+    }
+
+    /* Category filter buttons */
+    .cat-btn {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      color: #94a3b8;
+      transition: all 0.25s ease;
+      cursor: pointer;
+    }
+
+    .cat-btn:hover,
+    .cat-btn.active {
+      background: rgba(6,182,212,0.12);
+      border-color: rgba(6,182,212,0.45);
+      color: #06b6d4;
+    }
+
+    .cat-btn.active {
+      box-shadow: 0 0 0 1px rgba(6,182,212,0.25);
+    }
+
+    /* Blog card image placeholder */
+    .blog-img-placeholder {
+      background: linear-gradient(135deg, rgba(99,102,241,0.2) 0%, rgba(6,182,212,0.1) 100%);
+    }
+
+    /* Category badge colours */
+    .badge-seo       { background: rgba(6,182,212,0.15);   color: #06b6d4;   border: 1px solid rgba(6,182,212,0.3);   }
+    .badge-ki        { background: rgba(139,92,246,0.15);  color: #8b5cf6;   border: 1px solid rgba(139,92,246,0.3);  }
+    .badge-websites  { background: rgba(99,102,241,0.15);  color: #6366f1;   border: 1px solid rgba(99,102,241,0.3);  }
+    .badge-google    { background: rgba(16,185,129,0.15);  color: #10b981;   border: 1px solid rgba(16,185,129,0.3);  }
+    .badge-ratgeber  { background: rgba(245,158,11,0.15);  color: #f59e0b;   border: 1px solid rgba(245,158,11,0.3);  }
+    .badge-alle      { background: rgba(255,255,255,0.06); color: #94a3b8;   border: 1px solid rgba(255,255,255,0.1); }
+
+    /* Card read-more link */
+    .read-more-link {
+      color: #06b6d4;
+      font-weight: 600;
+      font-size: 0.8125rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      transition: color 0.2s ease, gap 0.2s ease;
+    }
+
+    .read-more-link:hover {
+      color: #22d3ee;
+      gap: 0.625rem;
+    }
+
+    /* Post card hidden class */
+    .post-card.hidden-by-filter {
+      display: none;
+    }
+
+    /* Section glow top border */
+    .section-glow {
+      position: relative;
+    }
+
+    .section-glow::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 600px; max-width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+      opacity: 0.3;
+    }
+  </style>
+  <script type="module" crossorigin src="/assets/blog-BFhANxvv.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/footer-CMtxiFSK.js">
+  <link rel="modulepreload" crossorigin href="/assets/animations-CetyjiHi.js">
+  <link rel="modulepreload" crossorigin href="/assets/nova-CruyNWnI.js">
+  <link rel="stylesheet" crossorigin href="/assets/footer-D4vcg-Tg.css">
+</head>
+
+<body class="bg-[#08090f] text-slate-100 antialiased" style="font-family:'Inter',sans-serif;">
+
+  <!-- Header injected by JS -->
+  <div id="site-header"></div>
+
+  <main>
+
+    <!-- ================================================
+         HERO
+    ================================================ -->
+    <section class="relative pt-32 pb-20 overflow-hidden" aria-label="Blog Hero">
+
+      <!-- Ambient orbs -->
+      <div class="orb orb-1 w-[500px] h-[500px] bg-violet-600/15 -top-32 -left-40 pointer-events-none" aria-hidden="true"></div>
+      <div class="orb orb-2 w-[400px] h-[400px] bg-cyan-500/10 top-0 -right-32 pointer-events-none" aria-hidden="true"></div>
+
+      <!-- Dark overlay gradient -->
+      <div class="absolute inset-0 bg-gradient-to-b from-[#08090f]/0 to-[#08090f] pointer-events-none" aria-hidden="true"></div>
+
+      <div class="relative z-10 container max-w-4xl mx-auto px-6 text-center">
+
+        <!-- Badge -->
+        <div
+          data-animate
+          class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-xs font-semibold tracking-wider uppercase mb-6"
+        >
+          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+            <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"/>
+          </svg>
+          Ratgeber &amp; Expertenwissen
+        </div>
+
+        <h1
+          data-animate
+          data-animate-delay="100"
+          class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] mb-5"
+        >
+          Wissen, das Ihr<br />
+          <span class="gradient-text">Business voranbringt.</span>
+        </h1>
+
+        <p
+          data-animate
+          data-animate-delay="200"
+          class="text-slate-400 text-lg max-w-2xl mx-auto mb-10 leading-relaxed"
+        >
+          Praxisnahes Expertenwissen zu Websites, SEO und KI — aus 15+ Jahren Digitalerfahrung, direkt aus Unna, NRW.
+        </p>
+
+        <!-- Search bar -->
+        <div
+          data-animate
+          data-animate-delay="300"
+          class="relative max-w-xl mx-auto"
+          role="search"
+        >
+          <label for="blog-search" class="sr-only">Artikel suchen</label>
+          <div class="relative">
+            <span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 pointer-events-none" aria-hidden="true">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803" />
+              </svg>
+            </span>
+            <input
+              id="blog-search"
+              type="search"
+              placeholder="Artikel suchen…"
+              class="search-input w-full pl-12 pr-5 py-3.5 rounded-xl text-slate-200 placeholder-slate-500 text-sm"
+              aria-label="Artikel suchen"
+            />
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================================================
+         CATEGORY FILTER + ARTICLE GRID
+    ================================================ -->
+    <section class="pb-28 section-glow" aria-label="Blog-Artikel">
+      <div class="container max-w-6xl mx-auto px-6">
+
+        <!-- Category filter -->
+        <div
+          data-animate
+          class="flex flex-wrap gap-2 justify-center mb-12"
+          role="group"
+          aria-label="Kategorien filtern"
+        >
+          <button class="cat-btn active px-5 py-2 rounded-full text-sm font-medium" data-filter="alle" aria-pressed="true">Alle</button>
+          <button class="cat-btn px-5 py-2 rounded-full text-sm font-medium" data-filter="websites" aria-pressed="false">Websites</button>
+          <button class="cat-btn px-5 py-2 rounded-full text-sm font-medium" data-filter="seo" aria-pressed="false">SEO</button>
+          <button class="cat-btn px-5 py-2 rounded-full text-sm font-medium" data-filter="ki" aria-pressed="false">KI</button>
+          <button class="cat-btn px-5 py-2 rounded-full text-sm font-medium" data-filter="google" aria-pressed="false">Google Business</button>
+          <button class="cat-btn px-5 py-2 rounded-full text-sm font-medium" data-filter="ratgeber" aria-pressed="false">Ratgeber</button>
+        </div>
+
+        <!-- Post count indicator -->
+        <p class="text-center text-slate-500 text-sm mb-8" id="post-count" aria-live="polite">
+          <span id="visible-count">6</span> Artikel
+        </p>
+
+        <!-- Articles grid -->
+        <div
+          class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
+          id="blog-grid"
+          aria-label="Blog-Artikel"
+        >
+
+          <!-- POST 1: Lokales SEO -->
+          <article
+            data-animate
+            data-animate-delay="100"
+            class="post-card glass-card rounded-2xl overflow-hidden group flex flex-col"
+            data-categories="seo ratgeber"
+          >
+            <!-- Image -->
+            <a href="/blog/lokales-seo-region-gefunden/" aria-label="Artikel lesen: Lokales SEO – So werden Sie in Ihrer Region gefunden" tabindex="-1">
+              <div class="blog-img-placeholder h-48 relative overflow-hidden">
+                <img
+                  src="https://images.pexels.com/photos/270637/pexels-photo-270637.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  alt="Lokales SEO Visualisierung – Karte mit Standortmarkierungen"
+                  class="w-full h-full object-cover opacity-70 group-hover:opacity-90 group-hover:scale-105 transition-all duration-500"
+                  loading="lazy"
+                  width="800" height="533"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-[#08090f]/60 via-transparent to-transparent pointer-events-none"></div>
+              </div>
+            </a>
+            <!-- Content -->
+            <div class="p-6 flex flex-col flex-1">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="badge-seo text-xs font-semibold px-2.5 py-1 rounded-full">SEO</span>
+                <time datetime="2026-03-16" class="text-slate-500 text-xs">16. März 2026</time>
+              </div>
+              <h2 class="text-white font-bold text-lg leading-snug mb-3 group-hover:text-cyan-300 transition-colors">
+                <a href="/blog/lokales-seo-region-gefunden/">Lokales SEO: So werden Sie in Ihrer Region gefunden</a>
+              </h2>
+              <p class="text-slate-400 text-sm leading-relaxed mb-5 flex-1">
+                Viele Unternehmen verlieren täglich potenzielle Kunden, weil sie bei lokalen Google-Suchen nicht erscheinen. Wir zeigen, wie lokales SEO funktioniert und was Sie sofort umsetzen können.
+              </p>
+              <a href="/blog/lokales-seo-region-gefunden/" class="read-more-link">
+                Artikel lesen
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- POST 2: WordPress 2026 -->
+          <article
+            data-animate
+            data-animate-delay="200"
+            class="post-card glass-card rounded-2xl overflow-hidden group flex flex-col"
+            data-categories="websites ratgeber"
+          >
+            <!-- Image -->
+            <a href="/blog/wordpress-website-2026-anforderungen/" aria-label="Artikel lesen: WordPress-Website 2026" tabindex="-1">
+              <div class="blog-img-placeholder h-48 relative overflow-hidden">
+                <img
+                  src="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  alt="Modernes Web-Interface auf einem Desktop-Monitor"
+                  class="w-full h-full object-cover opacity-70 group-hover:opacity-90 group-hover:scale-105 transition-all duration-500"
+                  loading="lazy"
+                  width="800" height="533"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-[#08090f]/60 via-transparent to-transparent pointer-events-none"></div>
+              </div>
+            </a>
+            <!-- Content -->
+            <div class="p-6 flex flex-col flex-1">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="badge-websites text-xs font-semibold px-2.5 py-1 rounded-full">Websites</span>
+                <time datetime="2026-03-16" class="text-slate-500 text-xs">16. März 2026</time>
+              </div>
+              <h2 class="text-white font-bold text-lg leading-snug mb-3 group-hover:text-cyan-300 transition-colors">
+                <a href="/blog/wordpress-website-2026-anforderungen/">WordPress-Website 2026: Was muss sie können?</a>
+              </h2>
+              <p class="text-slate-400 text-sm leading-relaxed mb-5 flex-1">
+                Die Anforderungen an eine professionelle Website steigen jedes Jahr. Was eine WordPress-Website im Jahr 2026 leisten muss — und welche Fehler Sie unbedingt vermeiden sollten.
+              </p>
+              <a href="/blog/wordpress-website-2026-anforderungen/" class="read-more-link">
+                Artikel lesen
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- POST 3: KI im Mittelstand -->
+          <article
+            data-animate
+            data-animate-delay="300"
+            class="post-card glass-card rounded-2xl overflow-hidden group flex flex-col"
+            data-categories="ki ratgeber"
+          >
+            <!-- Image -->
+            <a href="/blog/ki-mittelstand-was-bringt-es-wirklich/" aria-label="Artikel lesen: KI im Mittelstand" tabindex="-1">
+              <div class="blog-img-placeholder h-48 relative overflow-hidden">
+                <img
+                  src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  alt="Künstliche Intelligenz im Unternehmensumfeld – abstrakte Darstellung"
+                  class="w-full h-full object-cover opacity-70 group-hover:opacity-90 group-hover:scale-105 transition-all duration-500"
+                  loading="lazy"
+                  width="800" height="533"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-[#08090f]/60 via-transparent to-transparent pointer-events-none"></div>
+              </div>
+            </a>
+            <!-- Content -->
+            <div class="p-6 flex flex-col flex-1">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="badge-ki text-xs font-semibold px-2.5 py-1 rounded-full">KI</span>
+                <time datetime="2026-03-16" class="text-slate-500 text-xs">16. März 2026</time>
+              </div>
+              <h2 class="text-white font-bold text-lg leading-snug mb-3 group-hover:text-cyan-300 transition-colors">
+                <a href="/blog/ki-mittelstand-was-bringt-es-wirklich/">KI im Mittelstand: Was bringt es wirklich?</a>
+              </h2>
+              <p class="text-slate-400 text-sm leading-relaxed mb-5 flex-1">
+                KI ist kein Zukunftsthema mehr — aber viele Mittelständler fragen sich, ob der Aufwand sich wirklich lohnt. Eine ehrliche Einschätzung ohne Buzzwords.
+              </p>
+              <a href="/blog/ki-mittelstand-was-bringt-es-wirklich/" class="read-more-link">
+                Artikel lesen
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- POST 4: Google Business Placeholder -->
+          <article
+            data-animate
+            data-animate-delay="100"
+            class="post-card glass-card rounded-2xl overflow-hidden group flex flex-col"
+            data-categories="google seo"
+          >
+            <a href="/blog/" aria-label="Demnächst: Google Business Profil optimieren" tabindex="-1">
+              <div class="blog-img-placeholder h-48 relative overflow-hidden">
+                <img
+                  src="https://images.pexels.com/photos/4348401/pexels-photo-4348401.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  alt="Google Maps Suche auf einem Smartphone"
+                  class="w-full h-full object-cover opacity-70 group-hover:opacity-90 group-hover:scale-105 transition-all duration-500"
+                  loading="lazy"
+                  width="800" height="533"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-[#08090f]/60 via-transparent to-transparent pointer-events-none"></div>
+              </div>
+            </a>
+            <div class="p-6 flex flex-col flex-1">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="badge-google text-xs font-semibold px-2.5 py-1 rounded-full">Google Business</span>
+                <time datetime="2026-04-03" class="text-slate-500 text-xs">3. April 2026</time>
+              </div>
+              <h2 class="text-white font-bold text-lg leading-snug mb-3 group-hover:text-cyan-300 transition-colors">
+                <a href="/blog/">Google Business Profil 2026: Der vollständige Optimierungsleitfaden</a>
+              </h2>
+              <p class="text-slate-400 text-sm leading-relaxed mb-5 flex-1">
+                Ein gepflegtes Google Business Profil ist das wichtigste kostenlose Marketing-Tool für lokale Unternehmen. So optimieren Sie es Schritt für Schritt.
+              </p>
+              <span class="inline-flex items-center gap-1.5 text-xs font-medium text-slate-500 border border-slate-700/50 px-3 py-1.5 rounded-full">
+                Demnächst verfügbar
+              </span>
+            </div>
+          </article>
+
+          <!-- POST 5: Website-Performance Placeholder -->
+          <article
+            data-animate
+            data-animate-delay="200"
+            class="post-card glass-card rounded-2xl overflow-hidden group flex flex-col"
+            data-categories="websites ratgeber"
+          >
+            <a href="/blog/" aria-label="Demnächst: Core Web Vitals" tabindex="-1">
+              <div class="blog-img-placeholder h-48 relative overflow-hidden">
+                <img
+                  src="https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  alt="Website Analytics Dashboard auf einem Laptop"
+                  class="w-full h-full object-cover opacity-70 group-hover:opacity-90 group-hover:scale-105 transition-all duration-500"
+                  loading="lazy"
+                  width="800" height="533"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-[#08090f]/60 via-transparent to-transparent pointer-events-none"></div>
+              </div>
+            </a>
+            <div class="p-6 flex flex-col flex-1">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="badge-websites text-xs font-semibold px-2.5 py-1 rounded-full">Websites</span>
+                <time datetime="2026-04-10" class="text-slate-500 text-xs">10. April 2026</time>
+              </div>
+              <h2 class="text-white font-bold text-lg leading-snug mb-3 group-hover:text-cyan-300 transition-colors">
+                <a href="/blog/">Core Web Vitals: Warum Ihre Website-Geschwindigkeit über Erfolg entscheidet</a>
+              </h2>
+              <p class="text-slate-400 text-sm leading-relaxed mb-5 flex-1">
+                Google bewertet seit 2021 die Ladegeschwindigkeit als Ranking-Faktor. Was Core Web Vitals bedeuten und wie Sie Ihre Scores verbessern.
+              </p>
+              <span class="inline-flex items-center gap-1.5 text-xs font-medium text-slate-500 border border-slate-700/50 px-3 py-1.5 rounded-full">
+                Demnächst verfügbar
+              </span>
+            </div>
+          </article>
+
+          <!-- POST 6: KI-Chatbot Placeholder -->
+          <article
+            data-animate
+            data-animate-delay="300"
+            class="post-card glass-card rounded-2xl overflow-hidden group flex flex-col"
+            data-categories="ki ratgeber"
+          >
+            <a href="/blog/" aria-label="Demnächst: KI-Chatbot für Ihre Website" tabindex="-1">
+              <div class="blog-img-placeholder h-48 relative overflow-hidden">
+                <img
+                  src="https://images.pexels.com/photos/8294618/pexels-photo-8294618.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  alt="Chat-Interface auf einem Smartphone – KI-Assistent"
+                  class="w-full h-full object-cover opacity-70 group-hover:opacity-90 group-hover:scale-105 transition-all duration-500"
+                  loading="lazy"
+                  width="800" height="533"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-[#08090f]/60 via-transparent to-transparent pointer-events-none"></div>
+              </div>
+            </a>
+            <div class="p-6 flex flex-col flex-1">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="badge-ki text-xs font-semibold px-2.5 py-1 rounded-full">KI</span>
+                <time datetime="2026-04-22" class="text-slate-500 text-xs">22. April 2026</time>
+              </div>
+              <h2 class="text-white font-bold text-lg leading-snug mb-3 group-hover:text-cyan-300 transition-colors">
+                <a href="/blog/">KI-Chatbot für Ihre Website: Kosten, Nutzen und Implementierung</a>
+              </h2>
+              <p class="text-slate-400 text-sm leading-relaxed mb-5 flex-1">
+                Ein KI-Chatbot kann rund um die Uhr Kundenanfragen beantworten und Leads qualifizieren. Wann lohnt sich die Investition — und was kostet es wirklich?
+              </p>
+              <span class="inline-flex items-center gap-1.5 text-xs font-medium text-slate-500 border border-slate-700/50 px-3 py-1.5 rounded-full">
+                Demnächst verfügbar
+              </span>
+            </div>
+          </article>
+
+        </div><!-- /blog-grid -->
+
+        <!-- No results message -->
+        <div id="no-results" class="hidden text-center py-20">
+          <p class="text-slate-400 text-lg mb-2">Keine Artikel in dieser Kategorie gefunden.</p>
+          <button
+            class="mt-4 text-cyan-400 hover:text-cyan-300 font-medium text-sm transition-colors"
+            onclick="document.querySelector('[data-filter=alle]').click()"
+          >Alle Artikel anzeigen</button>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================================================
+         CTA STRIP
+    ================================================ -->
+    <section class="py-20 bg-gradient-to-b from-[#08090f] via-[#0c0d17] to-[#08090f] section-glow" aria-label="Kontakt CTA">
+      <div class="container max-w-3xl mx-auto px-6 text-center">
+        <div data-animate>
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-violet-500/30 bg-violet-500/10 text-violet-400 text-xs font-semibold tracking-wider uppercase mb-6">
+            Beratungsgespräch
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-black tracking-tight mb-4">
+            Fragen zu Ihrer digitalen<br/>
+            <span class="gradient-text">Strategie?</span>
+          </h2>
+          <p class="text-slate-400 text-lg max-w-xl mx-auto mb-8">
+            Dennis Isermann berät Sie persönlich — kostenlos und unverbindlich. Buchen Sie jetzt Ihr Erstgespräch.
+          </p>
+          <a
+            href="/kontakt/"
+            class="btn-primary inline-flex items-center gap-2 px-8 py-4 rounded-xl text-white font-semibold text-base shadow-lg"
+          >
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            Kostenloses Erstgespräch buchen
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer injected by JS -->
+  <div id="site-footer"></div>
+
+  <!-- Page JS -->
+
+  <!-- Category filter + search logic -->
+  <script>
+  (function() {
+    function initBlogFilters() {
+      var filterBtns = document.querySelectorAll('.cat-btn');
+      var posts      = document.querySelectorAll('.post-card');
+      var countEl    = document.getElementById('visible-count');
+      var noResults  = document.getElementById('no-results');
+      var searchInput = document.getElementById('blog-search');
+      var currentFilter = 'alle';
+      var currentSearch = '';
+
+      function applyFilters() {
+        var visible = 0;
+        posts.forEach(function(post) {
+          var cats = (post.dataset.categories || '').split(' ');
+          var matchesCat = currentFilter === 'alle' || cats.indexOf(currentFilter) !== -1;
+          var title = post.querySelector('h2') ? post.querySelector('h2').textContent.toLowerCase() : '';
+          var excerpt = post.querySelector('p') ? post.querySelector('p').textContent.toLowerCase() : '';
+          var matchesSearch = currentSearch === '' || title.indexOf(currentSearch) !== -1 || excerpt.indexOf(currentSearch) !== -1;
+          if (matchesCat && matchesSearch) {
+            post.classList.remove('hidden-by-filter');
+            visible++;
+          } else {
+            post.classList.add('hidden-by-filter');
+          }
+        });
+        if (countEl) countEl.textContent = visible;
+        if (noResults) noResults.classList.toggle('hidden', visible > 0);
+      }
+
+      filterBtns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          filterBtns.forEach(function(b) {
+            b.classList.remove('active');
+            b.setAttribute('aria-pressed', 'false');
+          });
+          btn.classList.add('active');
+          btn.setAttribute('aria-pressed', 'true');
+          currentFilter = btn.dataset.filter || 'alle';
+          applyFilters();
+        });
+      });
+
+      if (searchInput) {
+        searchInput.addEventListener('input', function() {
+          currentSearch = searchInput.value.trim().toLowerCase();
+          applyFilters();
+        });
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initBlogFilters);
+    } else {
+      initBlogFilters();
+    }
+  })();
+  </script>
+
+</body>
+</html>

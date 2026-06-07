@@ -1,0 +1,131 @@
+{
+  "generated": "2026-06-07",
+  "images": [
+    {
+      "path": "/images/hero/agency.jpg",
+      "category": "hero",
+      "name": "agency",
+      "format": "jpg",
+      "size_bytes": 109936
+    },
+    {
+      "path": "/images/hero/agency.webp",
+      "category": "hero",
+      "name": "agency",
+      "format": "webp",
+      "size_bytes": 66882
+    },
+    {
+      "path": "/images/hero/ai-tech.jpg",
+      "category": "hero",
+      "name": "ai-tech",
+      "format": "jpg",
+      "size_bytes": 302785
+    },
+    {
+      "path": "/images/hero/ai-tech.webp",
+      "category": "hero",
+      "name": "ai-tech",
+      "format": "webp",
+      "size_bytes": 231228
+    },
+    {
+      "path": "/images/hero/automation.jpg",
+      "category": "hero",
+      "name": "automation",
+      "format": "jpg",
+      "size_bytes": 3402108
+    },
+    {
+      "path": "/images/hero/automation.webp",
+      "category": "hero",
+      "name": "automation",
+      "format": "webp",
+      "size_bytes": 250888
+    },
+    {
+      "path": "/images/hero/seo.jpg",
+      "category": "hero",
+      "name": "seo",
+      "format": "jpg",
+      "size_bytes": 124048
+    },
+    {
+      "path": "/images/hero/seo.webp",
+      "category": "hero",
+      "name": "seo",
+      "format": "webp",
+      "size_bytes": 79362
+    },
+    {
+      "path": "/images/hero/website.jpg",
+      "category": "hero",
+      "name": "website",
+      "format": "jpg",
+      "size_bytes": 99247
+    },
+    {
+      "path": "/images/hero/website.webp",
+      "category": "hero",
+      "name": "website",
+      "format": "webp",
+      "size_bytes": 53550
+    },
+    {
+      "path": "/images/projects/dashboard.jpg",
+      "category": "projects",
+      "name": "dashboard",
+      "format": "jpg",
+      "size_bytes": 219372
+    },
+    {
+      "path": "/images/projects/dashboard.webp",
+      "category": "projects",
+      "name": "dashboard",
+      "format": "webp",
+      "size_bytes": 182544
+    },
+    {
+      "path": "/images/services/workspace.jpg",
+      "category": "services",
+      "name": "workspace",
+      "format": "jpg",
+      "size_bytes": 219811
+    },
+    {
+      "path": "/images/services/workspace.webp",
+      "category": "services",
+      "name": "workspace",
+      "format": "webp",
+      "size_bytes": 132104
+    },
+    {
+      "path": "/images/team/dennis.jpg",
+      "category": "team",
+      "name": "dennis",
+      "format": "jpg",
+      "size_bytes": 152013
+    },
+    {
+      "path": "/images/team/dennis.webp",
+      "category": "team",
+      "name": "dennis",
+      "format": "webp",
+      "size_bytes": 111004
+    },
+    {
+      "path": "/images/team/team.jpg",
+      "category": "team",
+      "name": "team",
+      "format": "jpg",
+      "size_bytes": 243880
+    },
+    {
+      "path": "/images/team/team.webp",
+      "category": "team",
+      "name": "team",
+      "format": "webp",
+      "size_bytes": 168624
+    }
+  ]
+}
