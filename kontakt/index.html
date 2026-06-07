@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>Kontakt – Termin buchen &amp; Projekt anfragen | VaTo24 Unna</title>
+  <meta name="description" content="Nehmen Sie Kontakt auf mit VaTo24 in Unna. Kostenloses Erstgespräch buchen, Projekt anfragen oder direkt anrufen: 02303/97 97 329" />
+  <meta name="keywords" content="VaTo24 Kontakt, Webagentur Unna Kontakt, Website anfragen, Erstgespräch buchen, Dennis Isermann" />
+  <meta name="author" content="Dennis Isermann – VaTo24" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://vato24.de/kontakt/" />
+
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vato24.de/kontakt/" />
+  <meta property="og:title" content="Kontakt – Termin buchen &amp; Projekt anfragen | VaTo24 Unna" />
+  <meta property="og:description" content="Kostenloses Erstgespräch buchen oder Projekt direkt anfragen. VaTo24 – Webagentur in Unna, NRW." />
+  <meta property="og:image" content="https://vato24.de/assets/og-image.jpg" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:site_name" content="VaTo24" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kontakt – VaTo24 Webagentur Unna" />
+  <meta name="twitter:description" content="Kostenloses Erstgespräch buchen: 02303/97 97 329 oder per Kontaktformular." />
+  <meta name="twitter:image" content="https://vato24.de/assets/og-image.jpg" />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Kontakt – VaTo24",
+    "url": "https://vato24.de/kontakt/",
+    "mainEntity": {
+      "@type": "LocalBusiness",
+      "@id": "https://vato24.de/#business",
+      "name": "VaTo24 – Marketingagentur",
+      "telephone": "+492303979732",
+      "email": "info@vato24.de",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Zechenstr. 80",
+        "addressLocality": "Unna",
+        "postalCode": "59425",
+        "addressCountry": "DE"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ]
+    }
+  }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Vite / Tailwind CSS -->
+
+  <style>
+    :root {
+      --bg:        #08090f;
+      --bg-card:   rgba(255, 255, 255, 0.04);
+      --bg-card-hover: rgba(255, 255, 255, 0.07);
+      --border:    rgba(255, 255, 255, 0.08);
+      --border-glow-cyan:  rgba(6, 182, 212, 0.35);
+      --border-glow-violet: rgba(139, 92, 246, 0.35);
+      --cyan:      #06b6d4;
+      --violet:    #8b5cf6;
+      --text:      #f1f5f9;
+      --text-muted: #94a3b8;
+    }
+
+    * { box-sizing: border-box; }
+    html { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); }
+    body { background-color: var(--bg); overflow-x: hidden; }
+
+    .gradient-text {
+      background: linear-gradient(135deg, var(--cyan) 0%, var(--violet) 100%);
+      background-size: 200% 200%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: gradient-text-anim 4s ease infinite;
+    }
+    @keyframes gradient-text-anim {
+      0%, 100% { background-position: 0% 50%; }
+      50%       { background-position: 100% 50%; }
+    }
+
+    .glass-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .glass-card:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--border-glow-cyan);
+      transform: translateY(-3px);
+      box-shadow: 0 16px 48px rgba(6, 182, 212, 0.1);
+    }
+    .glass-card-violet:hover {
+      border-color: var(--border-glow-violet);
+      box-shadow: 0 16px 48px rgba(139, 92, 246, 0.1);
+    }
+    .glass-card-static {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--violet) 0%, var(--cyan) 100%);
+      background-size: 200% 200%;
+      transition: background-position 0.4s ease, transform 0.2s ease, box-shadow 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.75rem;
+      border-radius: 0.75rem;
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      font-size: 1rem;
+    }
+    .btn-primary:hover {
+      background-position: right center;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(6, 182, 212, 0.35);
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(100px);
+      animation: orb-drift 10s ease-in-out infinite;
+      pointer-events: none;
+    }
+    @keyframes orb-drift {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33%       { transform: translate(30px, -20px) scale(1.05); }
+      66%       { transform: translate(-20px, 15px) scale(0.95); }
+    }
+    .orb-1 { animation-delay: 0s; }
+    .orb-2 { animation-delay: -3s; }
+
+    [data-animate] {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    [data-animate].is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    [data-animate-delay="100"] { transition-delay: 0.1s; }
+    [data-animate-delay="200"] { transition-delay: 0.2s; }
+    [data-animate-delay="300"] { transition-delay: 0.3s; }
+    [data-animate-delay="400"] { transition-delay: 0.4s; }
+    [data-animate-delay="500"] { transition-delay: 0.5s; }
+
+    .section-glow { position: relative; }
+    .section-glow::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 600px; max-width: 100%; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+      opacity: 0.4;
+    }
+
+    /* Form styles */
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.375rem;
+    }
+    .form-label {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #cbd5e1;
+    }
+    .form-label .required {
+      color: #06b6d4;
+      margin-left: 2px;
+    }
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 0.625rem;
+      color: #f1f5f9;
+      font-size: 0.9375rem;
+      font-family: 'Inter', sans-serif;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      outline: none;
+      -moz-appearance: none;
+           appearance: none;
+      -webkit-appearance: none;
+    }
+    .form-input::-moz-placeholder, .form-textarea::-moz-placeholder {
+      color: #475569;
+    }
+    .form-input::placeholder, .form-textarea::placeholder {
+      color: #475569;
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color: rgba(6, 182, 212, 0.5);
+      background: rgba(6, 182, 212, 0.04);
+      box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.1);
+    }
+    .form-input.error, .form-select.error, .form-textarea.error {
+      border-color: rgba(239, 68, 68, 0.5);
+      box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.08);
+    }
+    .form-select {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%2394a3b8' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right 0.75rem center;
+      background-size: 1.25rem;
+      padding-right: 2.5rem;
+      cursor: pointer;
+    }
+    .form-select option {
+      background: #0c0d17;
+      color: #f1f5f9;
+    }
+    .form-textarea { resize: vertical; min-height: 130px; }
+    .field-error {
+      font-size: 0.8125rem;
+      color: #f87171;
+      display: none;
+    }
+    .field-error.show { display: block; }
+
+    /* Checkbox */
+    .form-checkbox-wrapper {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      cursor: pointer;
+    }
+    .form-checkbox {
+      width: 1.125rem;
+      height: 1.125rem;
+      border-radius: 0.25rem;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.04);
+      flex-shrink: 0;
+      margin-top: 0.125rem;
+      -moz-appearance: none;
+           appearance: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+      position: relative;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .form-checkbox:checked {
+      background: var(--cyan);
+      border-color: var(--cyan);
+    }
+    .form-checkbox:checked::after {
+      content: '';
+      position: absolute;
+      inset: 2px;
+      background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+    }
+    .form-checkbox:focus { box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.2); outline: none; }
+    .form-checkbox.error { border-color: rgba(239, 68, 68, 0.5); }
+
+    /* Contact info cards */
+    .contact-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1.25rem;
+      border-radius: 0.875rem;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      text-decoration: none;
+      transition: background 0.2s, border-color 0.2s, transform 0.2s;
+    }
+    .contact-card:hover {
+      background: rgba(6,182,212,0.06);
+      border-color: rgba(6,182,212,0.25);
+      transform: translateY(-2px);
+    }
+    .contact-card-icon {
+      width: 2.75rem;
+      height: 2.75rem;
+      border-radius: 0.625rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* Calendly placeholder button */
+    .calendly-btn {
+      width: 100%;
+      padding: 1.25rem;
+      border-radius: 1rem;
+      background: linear-gradient(135deg, rgba(139,92,246,0.15), rgba(6,182,212,0.1));
+      border: 1px dashed rgba(6,182,212,0.3);
+      color: #f1f5f9;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      transition: background 0.3s, border-color 0.3s, transform 0.2s;
+      text-decoration: none;
+    }
+    .calendly-btn:hover {
+      background: linear-gradient(135deg, rgba(139,92,246,0.25), rgba(6,182,212,0.15));
+      border-color: rgba(6,182,212,0.5);
+      transform: translateY(-2px);
+    }
+
+    /* Success state */
+    #form-success {
+      display: none;
+    }
+    #form-success.show {
+      display: block;
+    }
+
+    /* Map placeholder */
+    .map-placeholder {
+      background: linear-gradient(135deg, rgba(139,92,246,0.08), rgba(6,182,212,0.05));
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 1rem;
+      overflow: hidden;
+      aspect-ratio: 16/6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    #site-header { min-height: 0; }
+  </style>
+  <script type="module" crossorigin src="/assets/kontakt-CtE5oBPv.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/footer-UENtMA8A.js">
+  <link rel="stylesheet" crossorigin href="/assets/footer-B4l_Wcll.css">
+</head>
+
+<body class="bg-[#08090f] text-slate-100 font-inter antialiased">
+
+  <div id="site-header"></div>
+
+  <main>
+
+    <!-- ============================================================
+         HERO
+    ============================================================ -->
+    <section
+      class="relative py-16 lg:py-20 overflow-hidden"
+      aria-label="Kontakt Hero"
+    >
+      <div class="orb orb-1 w-[500px] h-[500px] bg-violet-600/12 top-[-100px] left-[-100px]"></div>
+      <div class="orb orb-2 w-[400px] h-[400px] bg-cyan-500/10 bottom-[-60px] right-[-80px]"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-[#08090f]/80 via-transparent to-[#08090f]"></div>
+
+      <div class="relative container max-w-5xl mx-auto px-6 text-center">
+        <!-- Breadcrumb -->
+        <nav aria-label="Breadcrumb" class="mb-5">
+          <ol class="flex items-center justify-center gap-2 text-sm text-slate-500">
+            <li><a href="/" class="hover:text-cyan-400 transition-colors">Startseite</a></li>
+            <li aria-hidden="true"><span class="text-slate-700">/</span></li>
+            <li class="text-slate-300" aria-current="page">Kontakt</li>
+          </ol>
+        </nav>
+
+        <div data-animate class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-sm font-medium mb-5">
+          <span>💬</span>
+          <span>Kostenlos &amp; unverbindlich</span>
+        </div>
+
+        <h1
+          data-animate
+          data-animate-delay="100"
+          class="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight tracking-tight mb-4"
+        >
+          Lassen Sie uns
+          <span class="gradient-text"> sprechen</span>
+        </h1>
+
+        <p data-animate data-animate-delay="200" class="text-lg text-slate-400 max-w-2xl mx-auto">
+          Erzählen Sie uns von Ihrem Projekt — wir melden uns innerhalb von 24 Stunden.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         MAIN CONTACT SECTION
+    ============================================================ -->
+    <section
+      id="termin"
+      class="py-16 lg:py-20"
+      aria-label="Kontaktoptionen und Formular"
+    >
+      <div class="container max-w-6xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-12">
+
+
+          <!-- ====================================================
+               LEFT COLUMN: Calendly + Direct contact
+          ==================================================== -->
+          <div class="space-y-6">
+
+            <!-- Termin buchen -->
+            <div data-animate class="glass-card-static rounded-2xl p-7">
+              <h2 class="text-2xl font-bold text-white mb-2">Termin buchen</h2>
+              <p class="text-slate-400 text-sm mb-6 leading-relaxed">
+                Wählen Sie direkt einen Termin für Ihr kostenloses 30-minütiges Erstgespräch.
+                Per Telefon oder Videocall — ganz wie Sie möchten.
+              </p>
+
+              <!-- Calendly embed placeholder -->
+              <a
+                href="https://calendly.com/vato24"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="calendly-btn"
+                aria-label="Termin in Kalender buchen (öffnet in neuem Tab)"
+              >
+                <svg class="w-6 h-6 text-cyan-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                </svg>
+                <span>Termin im Kalender wählen</span>
+                <svg class="w-4 h-4 text-slate-500 ml-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                </svg>
+              </a>
+
+              <p class="text-center text-slate-600 text-xs mt-4">
+                Powered by Calendly — kostenlos, ohne Registrierung
+              </p>
+            </div>
+
+
+            <!-- Oder direkt kontaktieren -->
+            <div data-animate data-animate-delay="100">
+              <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-3">Oder direkt kontaktieren</p>
+              <div class="space-y-3">
+
+                <a href="tel:+492303979732" class="contact-card" aria-label="Anrufen: 02303 / 97 97 329">
+                  <div class="contact-card-icon bg-cyan-500/15 border border-cyan-500/25" aria-hidden="true">
+                    <svg class="w-5 h-5 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="text-white font-semibold text-sm">Telefon</p>
+                    <p class="text-slate-400 text-sm">02303 / 97 97 329</p>
+                    <p class="text-slate-600 text-xs mt-0.5">Mo–Fr 09:00–18:00 Uhr</p>
+                  </div>
+                  <svg class="w-4 h-4 text-slate-600 ml-auto self-center flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                </a>
+
+                <a href="https://wa.me/4917661620866" target="_blank" rel="noopener noreferrer" class="contact-card" aria-label="WhatsApp schreiben: +49 176 616 20866">
+                  <div class="contact-card-icon bg-green-500/15 border border-green-500/25" aria-hidden="true">
+                    <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="text-white font-semibold text-sm">WhatsApp</p>
+                    <p class="text-slate-400 text-sm">+49 176 616 20866</p>
+                    <p class="text-slate-600 text-xs mt-0.5">Antwort in der Regel innerhalb von 2 Stunden</p>
+                  </div>
+                  <svg class="w-4 h-4 text-slate-600 ml-auto self-center flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                </a>
+
+                <a href="mailto:info@vato24.de" class="contact-card" aria-label="E-Mail schreiben: info@vato24.de">
+                  <div class="contact-card-icon bg-violet-500/15 border border-violet-500/25" aria-hidden="true">
+                    <svg class="w-5 h-5 text-violet-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="text-white font-semibold text-sm">E-Mail</p>
+                    <p class="text-slate-400 text-sm">info@vato24.de</p>
+                    <p class="text-slate-600 text-xs mt-0.5">Antwort innerhalb von 24 Stunden</p>
+                  </div>
+                  <svg class="w-4 h-4 text-slate-600 ml-auto self-center flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                </a>
+
+              </div>
+            </div>
+
+
+            <!-- Office address -->
+            <div data-animate data-animate-delay="200" class="glass-card-static rounded-2xl p-6">
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-lg bg-cyan-500/15 border border-cyan-500/25 flex items-center justify-center flex-shrink-0" aria-hidden="true">
+                  <svg class="w-5 h-5 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-white font-semibold mb-1">Büro Unna</p>
+                  <address style="font-style:normal;" class="text-slate-400 text-sm leading-relaxed">
+                    VaTo24 – Marketingagentur<br />
+                    Zechenstr. 80<br />
+                    59425 Unna<br />
+                    Nordrhein-Westfalen
+                  </address>
+                </div>
+                <div class="ml-auto">
+                  <div>
+                    <p class="text-xs font-semibold text-slate-500 mb-2">Öffnungszeiten</p>
+                    <p class="text-slate-400 text-xs">Mo–Fr 09:00–18:00 Uhr</p>
+                    <p class="text-slate-600 text-xs">Sa &amp; So nach Vereinbarung</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+
+          <!-- ====================================================
+               RIGHT COLUMN: Contact form
+          ==================================================== -->
+          <div data-animate data-animate-delay="150">
+            <div class="glass-card-static rounded-2xl p-7">
+              <h2 class="text-2xl font-bold text-white mb-2">Projekt anfragen</h2>
+              <p class="text-slate-400 text-sm mb-7 leading-relaxed">
+                Beschreiben Sie Ihr Projekt — wir melden uns innerhalb von 24 Stunden mit
+                einer ersten Einschätzung und einem konkreten nächsten Schritt.
+              </p>
+
+              <!-- Contact Form -->
+              <form
+                id="contact-form"
+                novalidate
+                aria-label="Kontaktformular"
+              >
+                <div class="grid sm:grid-cols-2 gap-5 mb-5">
+
+                  <!-- Name -->
+                  <div class="form-field">
+                    <label for="name" class="form-label">
+                      Name <span class="required" aria-hidden="true">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      class="form-input"
+                      placeholder="Max Mustermann"
+                      autocomplete="name"
+                      required
+                      aria-required="true"
+                    />
+                    <span class="field-error" id="name-error" role="alert">Bitte geben Sie Ihren Namen ein.</span>
+                  </div>
+
+                  <!-- Company -->
+                  <div class="form-field">
+                    <label for="company" class="form-label">Unternehmen</label>
+                    <input
+                      type="text"
+                      id="company"
+                      name="company"
+                      class="form-input"
+                      placeholder="Musterfirma GmbH"
+                      autocomplete="organization"
+                    />
+                  </div>
+
+                </div>
+
+                <div class="grid sm:grid-cols-2 gap-5 mb-5">
+
+                  <!-- Email -->
+                  <div class="form-field">
+                    <label for="email" class="form-label">
+                      E-Mail <span class="required" aria-hidden="true">*</span>
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      class="form-input"
+                      placeholder="max@musterfirma.de"
+                      autocomplete="email"
+                      required
+                      aria-required="true"
+                    />
+                    <span class="field-error" id="email-error" role="alert">Bitte geben Sie eine gültige E-Mail-Adresse ein.</span>
+                  </div>
+
+                  <!-- Phone -->
+                  <div class="form-field">
+                    <label for="phone" class="form-label">Telefon</label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      class="form-input"
+                      placeholder="+49 123 456789"
+                      autocomplete="tel"
+                    />
+                  </div>
+
+                </div>
+
+                <!-- Service -->
+                <div class="form-field mb-5">
+                  <label for="service" class="form-label">
+                    Gewünschte Leistung <span class="required" aria-hidden="true">*</span>
+                  </label>
+                  <select
+                    id="service"
+                    name="service"
+                    class="form-select"
+                    required
+                    aria-required="true"
+                  >
+                    <option value="" disabled selected>Bitte wählen Sie eine Leistung...</option>
+                    <option value="website">Neue Website</option>
+                    <option value="seo">SEO-Optimierung</option>
+                    <option value="ki">KI-Integration / Chatbot</option>
+                    <option value="google-business">Google Business Profil</option>
+                    <option value="landingpage">Landingpage</option>
+                    <option value="automatisierung">Prozessautomatisierung</option>
+                    <option value="cms">CMS-System</option>
+                    <option value="relaunch">Website-Relaunch</option>
+                    <option value="beratung">Allgemeine Beratung</option>
+                    <option value="sonstiges">Sonstiges</option>
+                  </select>
+                  <span class="field-error" id="service-error" role="alert">Bitte wählen Sie eine Leistung aus.</span>
+                </div>
+
+                <!-- Message -->
+                <div class="form-field mb-6">
+                  <label for="message" class="form-label">
+                    Ihre Nachricht <span class="required" aria-hidden="true">*</span>
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    class="form-textarea"
+                    placeholder="Beschreiben Sie Ihr Projekt, Ihre Ziele oder Ihre Fragen. Je mehr Sie uns erzählen, desto gezielter können wir helfen..."
+                    required
+                    aria-required="true"
+                  ></textarea>
+                  <span class="field-error" id="message-error" role="alert">Bitte schreiben Sie uns eine kurze Nachricht.</span>
+                </div>
+
+                <!-- DSGVO Checkbox -->
+                <div class="mb-6">
+                  <label class="form-checkbox-wrapper" for="dsgvo">
+                    <input
+                      type="checkbox"
+                      id="dsgvo"
+                      name="dsgvo"
+                      class="form-checkbox"
+                      required
+                      aria-required="true"
+                    />
+                    <span class="text-slate-400 text-sm leading-relaxed">
+                      Ich stimme der Verarbeitung meiner Daten zur Beantwortung meiner Anfrage gemäß der
+                      <a href="/datenschutz/" class="text-cyan-400 hover:text-cyan-300 underline underline-offset-2">Datenschutzerklärung</a> zu.
+                      <span class="text-cyan-400">*</span>
+                    </span>
+                  </label>
+                  <span class="field-error mt-1" id="dsgvo-error" role="alert">Bitte stimmen Sie der Datenschutzerklärung zu.</span>
+                </div>
+
+                <!-- Submit -->
+                <button type="submit" class="btn-primary w-full py-4 text-base" id="submit-btn">
+                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+                  </svg>
+                  <span id="submit-label">Nachricht senden</span>
+                </button>
+
+              </form>
+
+              <!-- Success message -->
+              <div id="form-success" class="text-center py-8" aria-live="polite" aria-atomic="true">
+                <div class="w-16 h-16 rounded-full bg-green-500/15 border border-green-500/30 flex items-center justify-center mx-auto mb-4" aria-hidden="true">
+                  <svg class="w-8 h-8 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                  </svg>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2">Nachricht gesendet!</h3>
+                <p class="text-slate-400 leading-relaxed">
+                  Vielen Dank für Ihre Anfrage. Wir melden uns in der Regel
+                  innerhalb von 24 Stunden bei Ihnen.
+                </p>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         TRUST SECTION
+    ============================================================ -->
+    <section
+      class="py-16 lg:py-20 bg-gradient-to-b from-[#08090f] via-[#0c0d17] to-[#08090f] section-glow"
+      aria-label="Warum VaTo24"
+    >
+      <div class="container max-w-5xl mx-auto px-6">
+        <div class="text-center mb-12">
+          <h2 data-animate class="text-3xl lg:text-4xl font-black tracking-tight mb-3">
+            Warum <span class="gradient-text">VaTo24?</span>
+          </h2>
+        </div>
+
+        <div class="grid sm:grid-cols-3 gap-6">
+
+          <div data-animate class="glass-card rounded-2xl p-7 text-center">
+            <div class="w-12 h-12 rounded-xl bg-cyan-500/15 border border-cyan-500/25 flex items-center justify-center mx-auto mb-4" aria-hidden="true">
+              <svg class="w-6 h-6 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">15+ Jahre Erfahrung</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Seit 2009 begleiten wir Unternehmen digital. Keine Spielerei — echte, messbare Ergebnisse über 200+ Projekte.
+            </p>
+          </div>
+
+          <div data-animate data-animate-delay="100" class="glass-card glass-card-violet rounded-2xl p-7 text-center">
+            <div class="w-12 h-12 rounded-xl bg-violet-500/15 border border-violet-500/25 flex items-center justify-center mx-auto mb-4" aria-hidden="true">
+              <svg class="w-6 h-6 text-violet-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Alles aus einer Hand</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Website, SEO, KI, Automatisierung — ein Ansprechpartner für alles. Keine Schnittstellenprobleme, kein Koordinationsaufwand.
+            </p>
+          </div>
+
+          <div data-animate data-animate-delay="200" class="glass-card rounded-2xl p-7 text-center">
+            <div class="w-12 h-12 rounded-xl bg-cyan-500/15 border border-cyan-500/25 flex items-center justify-center mx-auto mb-4" aria-hidden="true">
+              <svg class="w-6 h-6 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Echter Partner</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Wir denken mit. Kein Auftragsnehmer, der einfach umsetzt — sondern ein Partner, der Ihren Erfolg als seinen eigenen versteht.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         MAP PLACEHOLDER
+    ============================================================ -->
+    <section
+      class="py-12 section-glow"
+      aria-label="Standort"
+    >
+      <div class="container max-w-5xl mx-auto px-6">
+        <div class="text-center mb-6">
+          <h2 data-animate class="text-2xl font-bold text-white">
+            Wir sind in <span class="gradient-text">Unna, NRW</span>
+          </h2>
+          <p data-animate data-animate-delay="100" class="text-slate-500 text-sm mt-1">Zechenstr. 80 · 59425 Unna · Nordrhein-Westfalen</p>
+        </div>
+
+        <div data-animate data-animate-delay="200" class="map-placeholder" role="img" aria-label="Karte: Zechenstr. 80, 59425 Unna">
+          <!-- Google Maps embed placeholder -->
+          <div class="text-center px-6">
+            <div class="w-16 h-16 rounded-2xl bg-cyan-500/15 border border-cyan-500/25 flex items-center justify-center mx-auto mb-4" aria-hidden="true">
+              <svg class="w-8 h-8 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+            </div>
+            <p class="text-white font-semibold mb-2">VaTo24 – Marketingagentur</p>
+            <p class="text-slate-400 text-sm mb-4">Zechenstr. 80 · 59425 Unna</p>
+            <a
+              href="https://maps.google.com/?q=Zechenstr.+80,+59425+Unna"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-sm font-medium hover:bg-cyan-500/20 transition-colors"
+              aria-label="In Google Maps öffnen"
+            >
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              In Google Maps öffnen
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="site-footer"></div>
+
+
+  <script>
+    // Scroll Reveal
+    (function () {
+      var els = document.querySelectorAll('[data-animate]');
+      if (!els.length) return;
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('is-visible'); obs.unobserve(e.target); }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+      els.forEach(function (el) { obs.observe(el); });
+    })();
+
+
+    // ============================================================
+    // CONTACT FORM VALIDATION & SUBMISSION
+    // ============================================================
+    (function () {
+      var form        = document.getElementById('contact-form');
+      var successDiv  = document.getElementById('form-success');
+      var submitBtn   = document.getElementById('submit-btn');
+      var submitLabel = document.getElementById('submit-label');
+
+      if (!form) return;
+
+      function getVal(id) {
+        var el = document.getElementById(id);
+        return el ? el.value.trim() : '';
+      }
+
+      function isValidEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      }
+
+      function showError(fieldId, errorId, show) {
+        var field = document.getElementById(fieldId);
+        var error = document.getElementById(errorId);
+        if (field) field.classList.toggle('error', show);
+        if (error) error.classList.toggle('show', show);
+      }
+
+      function validateForm() {
+        var valid = true;
+
+        // Name
+        var nameVal = getVal('name');
+        var nameErr = !nameVal || nameVal.length < 2;
+        showError('name', 'name-error', nameErr);
+        if (nameErr) valid = false;
+
+        // Email
+        var emailVal = getVal('email');
+        var emailErr = !isValidEmail(emailVal);
+        showError('email', 'email-error', emailErr);
+        if (emailErr) valid = false;
+
+        // Service
+        var serviceVal = getVal('service');
+        var serviceErr = !serviceVal;
+        showError('service', 'service-error', serviceErr);
+        if (serviceErr) valid = false;
+
+        // Message
+        var messageVal = getVal('message');
+        var messageErr = !messageVal || messageVal.length < 10;
+        showError('message', 'message-error', messageErr);
+        if (messageErr) valid = false;
+
+        // DSGVO
+        var dsgvoEl  = document.getElementById('dsgvo');
+        var dsgvoErr = !dsgvoEl || !dsgvoEl.checked;
+        if (dsgvoEl) dsgvoEl.classList.toggle('error', dsgvoErr);
+        var dsgvoErrorEl = document.getElementById('dsgvo-error');
+        if (dsgvoErrorEl) dsgvoErrorEl.classList.toggle('show', dsgvoErr);
+        if (dsgvoErr) valid = false;
+
+        return valid;
+      }
+
+      // Live validation on blur
+      ['name', 'email', 'service', 'message'].forEach(function (id) {
+        var el = document.getElementById(id);
+        if (!el) return;
+        el.addEventListener('blur', function () {
+          if (id === 'name') showError('name', 'name-error', !this.value.trim() || this.value.trim().length < 2);
+          if (id === 'email') showError('email', 'email-error', !isValidEmail(this.value.trim()));
+          if (id === 'service') showError('service', 'service-error', !this.value.trim());
+          if (id === 'message') showError('message', 'message-error', !this.value.trim() || this.value.trim().length < 10);
+        });
+        el.addEventListener('input', function () {
+          if (this.classList.contains('error')) {
+            if (id === 'name') showError('name', 'name-error', !this.value.trim() || this.value.trim().length < 2);
+            if (id === 'email') showError('email', 'email-error', !isValidEmail(this.value.trim()));
+            if (id === 'service') showError('service', 'service-error', !this.value.trim());
+            if (id === 'message') showError('message', 'message-error', !this.value.trim() || this.value.trim().length < 10);
+          }
+        });
+      });
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        if (!validateForm()) {
+          // Scroll to first error
+          var firstError = form.querySelector('.form-input.error, .form-select.error, .form-textarea.error, .form-checkbox.error');
+          if (firstError) firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          return;
+        }
+
+        // Simulate submission
+        submitLabel.textContent = 'Wird gesendet...';
+        submitBtn.disabled = true;
+        submitBtn.style.opacity = '0.7';
+
+        // Simulate async (in production: fetch/XMLHttpRequest to backend)
+        setTimeout(function () {
+          form.style.display = 'none';
+          successDiv.classList.add('show');
+        }, 1200);
+      });
+
+    })();
+  </script>
+
+</body>
+</html>

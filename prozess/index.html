@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>Unser Website-Prozess – Von der Idee zur Live-Website | VaTo24</title>
+  <meta name="description" content="Unser strukturierter 8-Schritte-Prozess für Ihre neue Website: Vom Erstgespräch über Design und Umsetzung bis zur SEO-Optimierung." />
+  <meta name="keywords" content="Website erstellen Prozess, Webdesign Ablauf, Website Erstellung Schritte, VaTo24 Prozess, Website Unna" />
+  <meta name="author" content="Dennis Isermann – VaTo24" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://vato24.de/prozess/" />
+
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vato24.de/prozess/" />
+  <meta property="og:title" content="Unser Website-Prozess – Von der Idee zur Live-Website | VaTo24" />
+  <meta property="og:description" content="8 klare Schritte von der ersten Idee bis zur fertigen, SEO-optimierten Website. Transparent, strukturiert, ohne Überraschungen." />
+  <meta property="og:image" content="https://vato24.de/assets/og-image.jpg" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:site_name" content="VaTo24" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Unser 8-Schritte-Prozess | VaTo24 Webagentur" />
+  <meta name="twitter:description" content="So entsteht Ihre Website: Von der Idee zum Launch in 8 klaren Schritten." />
+  <meta name="twitter:image" content="https://vato24.de/assets/og-image.jpg" />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Website erstellen lassen — Unser Prozess",
+    "description": "8-Schritte-Prozess für die Erstellung einer professionellen Website",
+    "provider": { "@id": "https://vato24.de/#business" },
+    "step": [
+      { "@type": "HowToStep", "position": 1, "name": "Erstgespräch", "text": "Kennenlernen, Ziele definieren, Machbarkeit prüfen." },
+      { "@type": "HowToStep", "position": 2, "name": "Designauswahl", "text": "Moodboard, Farbwelt, Typografie, Beispiel-Layouts." },
+      { "@type": "HowToStep", "position": 3, "name": "Inhalte & Markenauftritt", "text": "Texte, Bilder, Logo und CI zusammenstellen." },
+      { "@type": "HowToStep", "position": 4, "name": "Umsetzung", "text": "Entwicklung, Funktionen einbauen, CMS einrichten." },
+      { "@type": "HowToStep", "position": 5, "name": "Live-Review", "text": "Gemeinsame Abnahme, Feedback-Runde, Feintuning." },
+      { "@type": "HowToStep", "position": 6, "name": "Sicherheit & Performance", "text": "SSL, Backups, Optimierung, DSGVO-Check." },
+      { "@type": "HowToStep", "position": 7, "name": "Veröffentlichung", "text": "Go-live, Domain, Hosting, Monitoring." },
+      { "@type": "HowToStep", "position": 8, "name": "SEO-Analyse & Optimierung", "text": "Keywords, Google Search Console, Rankings aufbauen." }
+    ]
+  }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Vite / Tailwind CSS -->
+
+  <style>
+    :root {
+      --bg:        #08090f;
+      --bg-card:   rgba(255, 255, 255, 0.04);
+      --bg-card-hover: rgba(255, 255, 255, 0.07);
+      --border:    rgba(255, 255, 255, 0.08);
+      --border-glow-cyan:  rgba(6, 182, 212, 0.35);
+      --border-glow-violet: rgba(139, 92, 246, 0.35);
+      --cyan:      #06b6d4;
+      --violet:    #8b5cf6;
+      --text:      #f1f5f9;
+      --text-muted: #94a3b8;
+    }
+
+    * { box-sizing: border-box; }
+    html { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); }
+    body { background-color: var(--bg); overflow-x: hidden; }
+
+    .gradient-text {
+      background: linear-gradient(135deg, var(--cyan) 0%, var(--violet) 100%);
+      background-size: 200% 200%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: gradient-text-anim 4s ease infinite;
+    }
+    @keyframes gradient-text-anim {
+      0%, 100% { background-position: 0% 50%; }
+      50%       { background-position: 100% 50%; }
+    }
+
+    .glass-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .glass-card:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--border-glow-cyan);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(6, 182, 212, 0.1);
+    }
+    .glass-card-violet:hover {
+      border-color: var(--border-glow-violet);
+      box-shadow: 0 20px 60px rgba(139, 92, 246, 0.12);
+    }
+    .glass-card-static {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--violet) 0%, var(--cyan) 100%);
+      background-size: 200% 200%;
+      transition: background-position 0.4s ease, transform 0.2s ease, box-shadow 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.75rem;
+      border-radius: 0.75rem;
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .btn-primary:hover {
+      background-position: right center;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(6, 182, 212, 0.35);
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(100px);
+      animation: orb-drift 10s ease-in-out infinite;
+      pointer-events: none;
+    }
+    @keyframes orb-drift {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33%       { transform: translate(30px, -20px) scale(1.05); }
+      66%       { transform: translate(-20px, 15px) scale(0.95); }
+    }
+    .orb-1 { animation-delay: 0s; }
+    .orb-2 { animation-delay: -3s; }
+
+    [data-animate] {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    [data-animate].is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    [data-animate-delay="100"] { transition-delay: 0.1s; }
+    [data-animate-delay="200"] { transition-delay: 0.2s; }
+    [data-animate-delay="300"] { transition-delay: 0.3s; }
+    [data-animate-delay="400"] { transition-delay: 0.4s; }
+    [data-animate-delay="500"] { transition-delay: 0.5s; }
+    [data-animate-delay="600"] { transition-delay: 0.6s; }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+    .faq-answer.open { max-height: 500px; }
+    .faq-icon { transition: transform 0.3s ease; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+    .section-glow { position: relative; }
+    .section-glow::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 600px; max-width: 100%; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+      opacity: 0.4;
+    }
+
+    /* Process timeline styles */
+    .process-step {
+      position: relative;
+    }
+
+    /* Vertical connector line between steps (desktop) */
+    .process-connector {
+      position: absolute;
+      left: 2rem; /* center of the number badge (w-16 = 4rem / 2 = 2rem) */
+      top: 5rem;  /* below badge */
+      bottom: -1.5rem;
+      width: 2px;
+      background: linear-gradient(180deg, rgba(6,182,212,0.4), rgba(139,92,246,0.2));
+    }
+
+    .process-step:last-child .process-connector {
+      display: none;
+    }
+
+    /* Step number badge */
+    .step-badge {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      font-weight: 900;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step-badge-cyan {
+      background: rgba(6,182,212,0.15);
+      border: 1px solid rgba(6,182,212,0.35);
+      color: #06b6d4;
+    }
+    .step-badge-violet {
+      background: rgba(139,92,246,0.15);
+      border: 1px solid rgba(139,92,246,0.35);
+      color: #8b5cf6;
+    }
+
+    /* Duration pill */
+    .duration-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      background: rgba(6,182,212,0.08);
+      border: 1px solid rgba(6,182,212,0.2);
+      color: #06b6d4;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+
+    #site-header { min-height: 0; }
+  </style>
+  <script type="module" crossorigin src="/assets/prozess-CtE5oBPv.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/footer-UENtMA8A.js">
+  <link rel="stylesheet" crossorigin href="/assets/footer-B4l_Wcll.css">
+</head>
+
+<body class="bg-[#08090f] text-slate-100 font-inter antialiased">
+
+  <div id="site-header"></div>
+
+  <main>
+
+    <!-- ============================================================
+         HERO
+    ============================================================ -->
+    <section
+      class="relative py-20 lg:py-28 overflow-hidden"
+      aria-label="Prozess Hero"
+    >
+      <div class="orb orb-1 w-[500px] h-[500px] bg-cyan-500/12 top-[-100px] right-[-100px]"></div>
+      <div class="orb orb-2 w-[400px] h-[400px] bg-violet-600/12 bottom-[-60px] left-[-80px]"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-[#08090f]/80 via-transparent to-[#08090f]"></div>
+
+      <div class="relative container max-w-5xl mx-auto px-6 text-center">
+        <!-- Breadcrumb -->
+        <nav aria-label="Breadcrumb" class="mb-6">
+          <ol class="flex items-center justify-center gap-2 text-sm text-slate-500">
+            <li><a href="/" class="hover:text-cyan-400 transition-colors">Startseite</a></li>
+            <li aria-hidden="true"><span class="text-slate-700">/</span></li>
+            <li class="text-slate-300" aria-current="page">Unser Prozess</li>
+          </ol>
+        </nav>
+
+        <div data-animate class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-sm font-medium mb-6">
+          <span>🗺️</span>
+          <span>Strukturiert. Transparent. Ohne Überraschungen.</span>
+        </div>
+
+        <h1
+          data-animate
+          data-animate-delay="100"
+          class="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight tracking-tight mb-6"
+        >
+          Ihr Weg zur
+          <br /><span class="gradient-text">perfekten Website</span>
+        </h1>
+
+        <p
+          data-animate
+          data-animate-delay="200"
+          class="text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed"
+        >
+          In 8 klaren Schritten von der Idee zum fertigen Online-Auftritt.
+          Sie wissen immer, was als Nächstes kommt — und was wir von Ihnen brauchen.
+        </p>
+
+        <!-- Quick stats -->
+        <div data-animate data-animate-delay="300" class="flex flex-wrap justify-center gap-8 text-center">
+          <div>
+            <p class="text-2xl font-black text-white">8</p>
+            <p class="text-sm text-slate-500">Klare Schritte</p>
+          </div>
+          <div class="w-px bg-white/10"></div>
+          <div>
+            <p class="text-2xl font-black gradient-text">2–10</p>
+            <p class="text-sm text-slate-500">Wochen typisch</p>
+          </div>
+          <div class="w-px bg-white/10"></div>
+          <div>
+            <p class="text-2xl font-black text-white">100%</p>
+            <p class="text-sm text-slate-500">Transparenz</p>
+          </div>
+          <div class="w-px bg-white/10"></div>
+          <div>
+            <p class="text-2xl font-black text-white">0 €</p>
+            <p class="text-sm text-slate-500">Erstgespräch</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         PROCESS TIMELINE
+    ============================================================ -->
+    <section
+      class="py-24 lg:py-32 section-glow"
+      aria-label="Prozess Schritte"
+    >
+      <div class="container max-w-4xl mx-auto px-6">
+
+        <div class="text-center mb-16">
+          <h2 data-animate class="text-4xl lg:text-5xl font-black tracking-tight mb-4">
+            Die 8 <span class="gradient-text">Prozessschritte</span>
+          </h2>
+          <p data-animate data-animate-delay="100" class="text-slate-400 text-lg max-w-2xl mx-auto">
+            Ein bewährter Ablauf, der Ihnen Sicherheit gibt und Ihrem Projekt die beste Grundlage.
+          </p>
+        </div>
+
+        <!-- Timeline -->
+        <ol class="space-y-6" aria-label="Prozessschritte">
+
+          <!-- Step 1: Erstgespräch -->
+          <li data-animate class="process-step flex gap-6 relative">
+            <div class="process-connector" aria-hidden="true"></div>
+            <div class="step-badge step-badge-cyan" aria-hidden="true">01</div>
+            <div class="glass-card rounded-2xl p-6 flex-1">
+              <div class="flex flex-wrap items-start justify-between gap-3 mb-3">
+                <h3 class="text-xl font-bold text-white">Erstgespräch</h3>
+                <span class="duration-pill">kostenlos &amp; unverbindlich</span>
+              </div>
+              <p class="text-slate-400 leading-relaxed mb-4">
+                Wir lernen uns kennen. Sie erzählen von Ihrem Unternehmen, Ihren Zielen und was Sie sich von der neuen Website versprechen.
+                Wir prüfen die Machbarkeit und zeigen konkrete Möglichkeiten auf.
+              </p>
+              <div class="flex flex-wrap gap-4">
+                <div class="flex-1 min-w-[200px]">
+                  <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Was wir tun</p>
+                  <ul class="space-y-1">
+                    <li class="text-sm text-slate-400 flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-cyan-400" aria-hidden="true"></span>Ziele und Wünsche erfassen</li>
+                    <li class="text-sm text-slate-400 flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-cyan-400" aria-hidden="true"></span>Wettbewerb und Markt analysieren</li>
+                    <li class="text-sm text-slate-400 flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-cyan-400" aria-hidden="true"></span>Angebot und Zeitplan besprechen</li>
+                  </ul>
+                </div>
+                <div class="flex-1 min-w-[200px]">
+                  <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Was Sie brauchen</p>
+                  <ul class="space-y-1">
+                    <li class="text-sm text-slate-400 flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-violet-400" aria-hidden="true"></span>30 Minuten Zeit</li>
+                    <li class="text-sm text-slate-400 flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-violet-400" aria-hidden="true"></span>Grobe Vorstellung Ihres Ziels</li>
+                    <li class="text-sm text-slate-400 flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-violet-400" aria-hidden="true"></span>Beispiele die Ihnen gefallen</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- Step 2: Designauswahl -->
+          <li data-animate data-animate-delay="100" class="process-step flex gap-6 relative">
+            <div class="process-connector" aria-hidden="true"></div>
+            <div class="step-badge step-badge-violet" aria-hidden="true">02</div>
+            <div class="glass-card glass-card-violet rounded-2xl p-6 flex-1">
+              <div class="flex flex-wrap items-start justify-between gap-3 mb-3">
+                <h3 class="text-xl font-bold text-white">Designauswahl</h3>
+                <span class="duration-pill">2–5 Tage</span>
+              </div>
+              <p class="text-slate-400 leading-relaxed mb-4">
+                Wir entwickeln ein Moodboard mit Farbwelt, Typografie und Design-Richtung.
+                Sie wählen aus Varianten — bis Sie sagen: "Das bin ich."
+              </p>
+              <div class="flex flex-wrap gap-4">
+                <div class="flex-1 min-w-[200px]">
+                  <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Was wir tun</p>
+                  <ul class="space-y-1">
+                    <li class="text-sm text-slate-400 flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-cyan-400" aria-hidden="true"></span>2–3 Designkonzepte erstellen</li>
+                    <li class="text-sm text-slate-400 flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-cyan-400" aria-hidden="true"></span>Farbwelt &amp; Typografie definieren</li>
+                    <li class="text-sm text-slate-400 flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-cyan-400" aria-hidden="true"></span>Beispiel-Layouts zeigen</li>
+                  </ul>
+                </div>
+                <div class="flex-1 min-w-[200px]">
+                  <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Was Sie brauchen</p>
+                  <ul class="space-y-1">
+                    <li class="text-sm text-slate-400 flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-violet-400" aria-hidden="true"></span>Logo (falls vorhanden)</li>
+                    <li class="text-sm text-slate-400 flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-violet-400" aria-hidden="true"></span>Feedback zum Moodboard</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- Step 3: Inhalte & Markenauftritt -->
+          <li data-animate data-animate-delay="200" class="process-step flex gap-6 relative">
+            <div class="process-connector" aria-hidden="true"></div>
+            <div class="step-badge step-badge-cyan" aria-hidden="true">03</div>
+            <div class="glass-card rounded-2xl p-6 flex-1">
+              <div class="flex flex-wrap items-start justify-between gap-3 mb-3">
+                <h3 class="text-xl font-bold text-white">Inhalte &amp; Markenauftritt</h3>
+                <span class="duration-pill">3–7 Tage</span>
+              </div>
+              <p class="text-slate-400 leading-relaxed mb-4">
+                Texte, Bilder, Videos, Logo und Corporate Identity kommen zusammen.
+                Wir unterstützen bei der Texterstellung, Bildauswahl und CI-Entwicklung,
+                falls noch nicht vorhanden.
+              </p>
+              <div class="flex flex-wrap gap-4">
+                <div class="flex-1 min-w-[200px]">
+                  <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Was wir tun</p>
+                  <ul class="space-y-1">
+                    <li class="text-sm text-slate-400 flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-cyan-400" aria-hidden="true"></span>Texte SEO-optimiert aufbereiten</li>
+                    <li class="text-sm text-slate-400 flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-cyan-400" aria-hidden="true"></span>Bilder optimieren &amp; einpflegen</li>
+                    <li class="text-sm text-slate-400 flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-cyan-400" aria-hidden="true"></span>CI-Vorgaben dokumentieren</li>
+                  </ul>
+                </div>
+                <div class="flex-1 min-w-[200px]">
+                  <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Was Sie brauchen</p>
+                  <ul class="space-y-1">
+                    <li class="text-sm text-slate-400 flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-violet-400" aria-hidden="true"></span>Texte oder Stichpunkte</li>
+                    <li class="text-sm text-slate-400 flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-violet-400" aria-hidden="true"></span>Fotos Ihres Unternehmens</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- Step 4: Umsetzung -->
+          <li data-animate data-animate-delay="300" class="process-step flex gap-6 relative">
+            <div class="process-connector" aria-hidden="true"></div>
+            <div class="step-badge step-badge-violet" aria-hidden="true">04</div>
+            <div class="glass-card glass-card-violet rounded-2xl p-6 flex-1">
+              <div class="flex flex-wrap items-start justify-between gap-3 mb-3">
+                <h3 class="text-xl font-bold text-white">Umsetzung</h3>
+                <span class="duration-pill">1–4 Wochen</span>
+              </div>
+              <p class="text-slate-400 leading-relaxed mb-4">
+                Die eigentliche Entwicklung. Wir bauen Ihre Website sauber, schnell und
+                mobiloptimiert. CMS, Formulare, Funktionen — alles wird eingebaut und getestet.
+              </p>
+              <div class="flex flex-wrap gap-4">
+                <div class="flex-1 min-w-[200px]">
+                  <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Was wir tun</p>
+                  <ul class="space-y-1">
+                    <li class="text-sm text-slate-400 flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-cyan-400" aria-hidden="true"></span>Frontend &amp; Backend entwickeln</li>
+                    <li class="text-sm text-slate-400 flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-cyan-400" aria-hidden="true"></span>CMS konfigurieren &amp; befüllen</li>
+                    <li class="text-sm text-slate-400 flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-cyan-400" aria-hidden="true"></span>Auf Staging-System testen</li>
+                  </ul>
+                </div>
+                <div class="flex-1 min-w-[200px]">
+                  <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Was Sie brauchen</p>
+                  <ul class="space-y-1">
+                    <li class="text-sm text-slate-400 flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-violet-400" aria-hidden="true"></span>Freigabe des Designs</li>
+                    <li class="text-sm text-slate-400 flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-violet-400" aria-hidden="true"></span>Alle Inhalte geliefert</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- Step 5: Live-Review -->
+          <li data-animate class="process-step flex gap-6 relative">
+            <div class="process-connector" aria-hidden="true"></div>
+            <div class="step-badge step-badge-cyan" aria-hidden="true">05</div>
+            <div class="glass-card rounded-2xl p-6 flex-1">
+              <div class="flex flex-wrap items-start justify-between gap-3 mb-3">
+                <h3 class="text-xl font-bold text-white">Live-Review</h3>
+                <span class="duration-pill">1–3 Tage</span>
+              </div>
+              <p class="text-slate-400 leading-relaxed mb-4">
+                Wir zeigen Ihnen die fertige Website auf dem Staging-System.
+                Gemeinsam gehen wir jede Seite durch, sammeln Feedback
+                und nehmen Anpassungen vor — bis alles stimmt.
+              </p>
+              <div class="flex flex-wrap gap-4">
+                <div class="flex-1 min-w-[200px]">
+                  <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Was wir tun</p>
+                  <ul class="space-y-1">
+                    <li class="text-sm text-slate-400 flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-cyan-400" aria-hidden="true"></span>Review-Session durchführen</li>
+                    <li class="text-sm text-slate-400 flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-cyan-400" aria-hidden="true"></span>Feedback einarbeiten</li>
+                    <li class="text-sm text-slate-400 flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-cyan-400" aria-hidden="true"></span>Feintuning aller Details</li>
+                  </ul>
+                </div>
+                <div class="flex-1 min-w-[200px]">
+                  <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Was Sie brauchen</p>
+                  <ul class="space-y-1">
+                    <li class="text-sm text-slate-400 flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-violet-400" aria-hidden="true"></span>1 Stunde für die Review</li>
+                    <li class="text-sm text-slate-400 flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-violet-400" aria-hidden="true"></span>Konkretes Feedback</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- Step 6: Sicherheit & Performance -->
+          <li data-animate data-animate-delay="100" class="process-step flex gap-6 relative">
+            <div class="process-connector" aria-hidden="true"></div>
+            <div class="step-badge step-badge-violet" aria-hidden="true">06</div>
+            <div class="glass-card glass-card-violet rounded-2xl p-6 flex-1">
+              <div class="flex flex-wrap items-start justify-between gap-3 mb-3">
+                <h3 class="text-xl font-bold text-white">Sicherheit &amp; Performance</h3>
+                <span class="duration-pill">1–2 Tage</span>
+              </div>
+              <p class="text-slate-400 leading-relaxed mb-4">
+                Bevor die Website live geht, durchläuft sie eine gründliche technische Prüfung.
+                SSL, Backup-System, DSGVO-Prüfung und Performance-Optimierung.
+              </p>
+              <div class="flex flex-wrap gap-4">
+                <div class="flex-1 min-w-[200px]">
+                  <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Was wir tun</p>
+                  <ul class="space-y-1">
+                    <li class="text-sm text-slate-400 flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-cyan-400" aria-hidden="true"></span>SSL-Zertifikat einrichten</li>
+                    <li class="text-sm text-slate-400 flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-cyan-400" aria-hidden="true"></span>Automatische Backups konfigurieren</li>
+                    <li class="text-sm text-slate-400 flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-cyan-400" aria-hidden="true"></span>DSGVO-Check &amp; Datenschutzseite</li>
+                    <li class="text-sm text-slate-400 flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-cyan-400" aria-hidden="true"></span>Core Web Vitals optimieren</li>
+                  </ul>
+                </div>
+                <div class="flex-1 min-w-[200px]">
+                  <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Was Sie brauchen</p>
+                  <ul class="space-y-1">
+                    <li class="text-sm text-slate-400 flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-violet-400" aria-hidden="true"></span>Freigabe für Go-Live</li>
+                    <li class="text-sm text-slate-400 flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-violet-400" aria-hidden="true"></span>Datenschutz-Angaben</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- Step 7: Veröffentlichung -->
+          <li data-animate data-animate-delay="200" class="process-step flex gap-6 relative">
+            <div class="process-connector" aria-hidden="true"></div>
+            <div class="step-badge step-badge-cyan" aria-hidden="true">07</div>
+            <div class="glass-card rounded-2xl p-6 flex-1">
+              <div class="flex flex-wrap items-start justify-between gap-3 mb-3">
+                <h3 class="text-xl font-bold text-white">Veröffentlichung</h3>
+                <span class="duration-pill">1 Tag</span>
+              </div>
+              <p class="text-slate-400 leading-relaxed mb-4">
+                Go-Live! Wir veröffentlichen Ihre Website, richten Domain und Hosting ein
+                und stellen sicher, dass alles reibungslos läuft. Monitoring ist ab sofort aktiv.
+              </p>
+              <div class="flex flex-wrap gap-4">
+                <div class="flex-1 min-w-[200px]">
+                  <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Was wir tun</p>
+                  <ul class="space-y-1">
+                    <li class="text-sm text-slate-400 flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-cyan-400" aria-hidden="true"></span>Domain &amp; DNS einrichten</li>
+                    <li class="text-sm text-slate-400 flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-cyan-400" aria-hidden="true"></span>Hosting konfigurieren</li>
+                    <li class="text-sm text-slate-400 flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-cyan-400" aria-hidden="true"></span>Uptime-Monitoring aktivieren</li>
+                    <li class="text-sm text-slate-400 flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-cyan-400" aria-hidden="true"></span>CMS-Einweisung geben</li>
+                  </ul>
+                </div>
+                <div class="flex-1 min-w-[200px]">
+                  <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Was Sie brauchen</p>
+                  <ul class="space-y-1">
+                    <li class="text-sm text-slate-400 flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-violet-400" aria-hidden="true"></span>Domain-Zugangsdaten</li>
+                    <li class="text-sm text-slate-400 flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-violet-400" aria-hidden="true"></span>Hosting-Auswahl bestätigen</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- Step 8: SEO -->
+          <li data-animate data-animate-delay="300" class="process-step flex gap-6">
+            <!-- No connector on last step -->
+            <div class="step-badge step-badge-violet" aria-hidden="true">08</div>
+            <div class="glass-card glass-card-violet rounded-2xl p-6 flex-1">
+              <div class="flex flex-wrap items-start justify-between gap-3 mb-3">
+                <h3 class="text-xl font-bold text-white">SEO-Analyse &amp; Optimierung</h3>
+                <span class="duration-pill">laufend</span>
+              </div>
+              <p class="text-slate-400 leading-relaxed mb-4">
+                Nach dem Launch beginnt die eigentliche SEO-Arbeit. Wir richten die
+                Google Search Console ein, analysieren Keywords und starten den
+                systematischen Aufbau Ihrer Rankings.
+              </p>
+              <div class="flex flex-wrap gap-4">
+                <div class="flex-1 min-w-[200px]">
+                  <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Was wir tun</p>
+                  <ul class="space-y-1">
+                    <li class="text-sm text-slate-400 flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-cyan-400" aria-hidden="true"></span>Google Search Console &amp; Analytics</li>
+                    <li class="text-sm text-slate-400 flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-cyan-400" aria-hidden="true"></span>Keyword-Monitoring &amp; Anpassung</li>
+                    <li class="text-sm text-slate-400 flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-cyan-400" aria-hidden="true"></span>Monatliches SEO-Reporting</li>
+                    <li class="text-sm text-slate-400 flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-cyan-400" aria-hidden="true"></span>Kontinuierliche Optimierung</li>
+                  </ul>
+                </div>
+                <div class="flex-1 min-w-[200px]">
+                  <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Ergebnis</p>
+                  <ul class="space-y-1">
+                    <li class="text-sm text-slate-400 flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-violet-400" aria-hidden="true"></span>Mehr organischer Traffic</li>
+                    <li class="text-sm text-slate-400 flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-violet-400" aria-hidden="true"></span>Bessere Google-Rankings</li>
+                    <li class="text-sm text-slate-400 flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-violet-400" aria-hidden="true"></span>Mehr Anfragen &amp; Kunden</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+        </ol>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         DURATION SECTION
+    ============================================================ -->
+    <section
+      class="py-20 lg:py-24 bg-gradient-to-b from-[#08090f] via-[#0c0d17] to-[#08090f] section-glow"
+      aria-label="Projektdauer"
+    >
+      <div class="container max-w-5xl mx-auto px-6">
+        <div class="text-center mb-12">
+          <h2 data-animate class="text-3xl lg:text-4xl font-black tracking-tight mb-3">
+            Wie lange dauert <span class="gradient-text">Ihr Projekt?</span>
+          </h2>
+          <p data-animate data-animate-delay="100" class="text-slate-400 max-w-xl mx-auto">
+            Die Dauer hängt hauptsächlich davon ab, wie schnell Sie uns Inhalte und Feedback liefern können.
+          </p>
+        </div>
+
+        <div data-animate data-animate-delay="200" class="grid sm:grid-cols-3 gap-5">
+          <div class="glass-card rounded-2xl p-7 text-center">
+            <div class="text-3xl mb-3" aria-hidden="true">⚡</div>
+            <p class="text-2xl font-black text-white mb-1">2–3 Wochen</p>
+            <p class="text-slate-400 font-medium mb-3">Einfache Website</p>
+            <p class="text-slate-500 text-sm">Landing Page, Visitenkarte, 3–5 Seiten. Inhalte bereits vorhanden.</p>
+          </div>
+          <div class="glass-card glass-card-violet rounded-2xl p-7 text-center border-violet-500/20">
+            <div class="mb-2">
+              <span class="text-xs font-semibold text-violet-300 bg-violet-500/15 border border-violet-500/25 rounded-full px-2 py-0.5">Standard</span>
+            </div>
+            <p class="text-2xl font-black text-white mb-1">4–6 Wochen</p>
+            <p class="text-slate-400 font-medium mb-3">Business Website</p>
+            <p class="text-slate-500 text-sm">Multi-Page mit CMS, Kontaktformular, SEO. Inhalte werden aufgebaut.</p>
+          </div>
+          <div class="glass-card rounded-2xl p-7 text-center">
+            <div class="text-3xl mb-3" aria-hidden="true">🔧</div>
+            <p class="text-2xl font-black text-white mb-1">8–12 Wochen</p>
+            <p class="text-slate-400 font-medium mb-3">Enterprise / Custom</p>
+            <p class="text-slate-500 text-sm">Individuelle Funktionen, KI-Integration, Mehrsprachigkeit.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         FAQ
+    ============================================================ -->
+    <section
+      class="py-24 lg:py-32 section-glow"
+      aria-label="Häufige Fragen zum Prozess"
+    >
+      <div class="container max-w-3xl mx-auto px-6">
+
+        <div class="text-center mb-12">
+          <h2 data-animate class="text-3xl lg:text-4xl font-black tracking-tight mb-3">
+            Fragen zum <span class="gradient-text">Prozess</span>
+          </h2>
+          <p data-animate data-animate-delay="100" class="text-slate-400">
+            Die häufigsten Fragen unserer Kunden — ehrlich beantwortet.
+          </p>
+        </div>
+
+        <div data-animate data-animate-delay="200" class="space-y-3" role="list" aria-label="FAQ Prozess">
+
+          <div class="faq-item glass-card rounded-xl overflow-hidden" role="listitem">
+            <button class="faq-trigger w-full flex items-center justify-between gap-4 px-6 py-5 text-left" aria-expanded="false">
+              <span class="font-semibold text-white">Muss ich in Unna oder NRW ansässig sein?</span>
+              <span class="faq-icon flex-shrink-0 w-6 h-6 rounded-full border border-slate-600 flex items-center justify-center text-slate-400 text-lg leading-none" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <p class="px-6 pb-5 text-slate-400 text-sm leading-relaxed">
+                Nein! Wir arbeiten deutschlandweit und vollständig remote. Alle Schritte — vom
+                Erstgespräch bis zur Abnahme — laufen bequem per Telefon oder Videocall ab.
+                Der Standort spielt keine Rolle.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item glass-card rounded-xl overflow-hidden" role="listitem">
+            <button class="faq-trigger w-full flex items-center justify-between gap-4 px-6 py-5 text-left" aria-expanded="false">
+              <span class="font-semibold text-white">Was passiert, wenn ich keine Texte habe?</span>
+              <span class="faq-icon flex-shrink-0 w-6 h-6 rounded-full border border-slate-600 flex items-center justify-center text-slate-400 text-lg leading-none" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <p class="px-6 pb-5 text-slate-400 text-sm leading-relaxed">
+                Kein Problem — wir erstellen SEO-optimierte Texte für Ihre Website. Dafür brauchen wir
+                nur Ihre groben Informationen (Stichpunkte, bisherige Materialien). Wir schreiben
+                professionelle Texte, die Sie dann abstimmen können. Texterstellung kann separat
+                beauftragt werden.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item glass-card rounded-xl overflow-hidden" role="listitem">
+            <button class="faq-trigger w-full flex items-center justify-between gap-4 px-6 py-5 text-left" aria-expanded="false">
+              <span class="font-semibold text-white">Wie oft werde ich über den Fortschritt informiert?</span>
+              <span class="faq-icon flex-shrink-0 w-6 h-6 rounded-full border border-slate-600 flex items-center justify-center text-slate-400 text-lg leading-none" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <p class="px-6 pb-5 text-slate-400 text-sm leading-relaxed">
+                Bei jedem abgeschlossenen Schritt erhalten Sie eine Benachrichtigung. Zwischendurch
+                stehen wir jederzeit per WhatsApp, E-Mail oder Telefon zur Verfügung. Bei längeren
+                Projekten gibt es wöchentliche Status-Updates. Keine Black-Box — Sie wissen immer,
+                was gerade passiert.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item glass-card rounded-xl overflow-hidden" role="listitem">
+            <button class="faq-trigger w-full flex items-center justify-between gap-4 px-6 py-5 text-left" aria-expanded="false">
+              <span class="font-semibold text-white">Kann ich Änderungen nach dem Launch anfordern?</span>
+              <span class="faq-icon flex-shrink-0 w-6 h-6 rounded-full border border-slate-600 flex items-center justify-center text-slate-400 text-lg leading-none" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <p class="px-6 pb-5 text-slate-400 text-sm leading-relaxed">
+                Ja, selbstverständlich. Im Review-Schritt sind alle Anpassungen inklusive.
+                Nach dem Launch bieten wir Wartungsverträge an, die reguläre Änderungen,
+                Updates und technischen Support abdecken. Größere Erweiterungen werden
+                separat angeboten.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item glass-card rounded-xl overflow-hidden" role="listitem">
+            <button class="faq-trigger w-full flex items-center justify-between gap-4 px-6 py-5 text-left" aria-expanded="false">
+              <span class="font-semibold text-white">Was wenn ich bereits eine Domain und ein Hosting habe?</span>
+              <span class="faq-icon flex-shrink-0 w-6 h-6 rounded-full border border-slate-600 flex items-center justify-center text-slate-400 text-lg leading-none" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <p class="px-6 pb-5 text-slate-400 text-sm leading-relaxed">
+                Kein Problem — wir arbeiten mit Ihrer bestehenden Infrastruktur, sofern sie geeignet ist.
+                Wir prüfen die technischen Anforderungen und beraten Sie, falls ein Wechsel sinnvoll wäre.
+                Domain und Hosting können Sie gerne behalten.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item glass-card rounded-xl overflow-hidden" role="listitem">
+            <button class="faq-trigger w-full flex items-center justify-between gap-4 px-6 py-5 text-left" aria-expanded="false">
+              <span class="font-semibold text-white">Wann muss ich bezahlen?</span>
+              <span class="faq-icon flex-shrink-0 w-6 h-6 rounded-full border border-slate-600 flex items-center justify-center text-slate-400 text-lg leading-none" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <p class="px-6 pb-5 text-slate-400 text-sm leading-relaxed">
+                Typisch: 40% bei Auftragserteilung, 30% bei Abnahme des Designs, 30% bei Go-Live.
+                Bei größeren Projekten können individuelle Zahlungspläne vereinbart werden.
+                Alles transparent und schriftlich im Vertrag festgehalten — keine Überraschungen.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         FINAL CTA
+    ============================================================ -->
+    <section
+      class="py-20 lg:py-24 relative overflow-hidden section-glow"
+      aria-label="Schritt 1 starten"
+    >
+      <div class="absolute inset-0 bg-gradient-to-br from-violet-900/20 via-[#08090f] to-cyan-900/15" aria-hidden="true"></div>
+      <div class="orb w-[500px] h-[500px] bg-violet-600/15 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" aria-hidden="true"></div>
+
+      <div class="relative container max-w-3xl mx-auto px-6 text-center">
+        <div data-animate class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-sm font-medium mb-8">
+          <span>🚀</span>
+          <span>Schritt 1 ist kostenlos</span>
+        </div>
+
+        <h2
+          data-animate
+          data-animate-delay="100"
+          class="text-4xl sm:text-5xl font-black tracking-tight leading-tight mb-6"
+        >
+          Jetzt Schritt 1 starten —
+          <br /><span class="gradient-text">Erstgespräch buchen</span>
+        </h2>
+
+        <p data-animate data-animate-delay="200" class="text-slate-400 text-xl max-w-2xl mx-auto mb-10">
+          30 Minuten, kostenlos, unverbindlich. Wir lernen uns kennen,
+          klären Ihre Fragen und zeigen Ihnen den möglichen Weg.
+        </p>
+
+        <div data-animate data-animate-delay="300" class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/kontakt/" class="btn-primary text-lg px-10 py-5 shadow-2xl">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            Termin buchen
+          </a>
+          <a href="tel:+492303979732" class="inline-flex items-center justify-center gap-2 px-10 py-5 rounded-xl border border-slate-600 hover:border-cyan-500/60 text-slate-300 hover:text-white font-bold text-lg transition-all duration-300 hover:bg-white/5">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            02303 / 97 97 329
+          </a>
+        </div>
+
+        <p data-animate data-animate-delay="400" class="mt-6 text-slate-600 text-sm">
+          Kein Verkaufsdruck. Kein Kleingedrucktes. Nur ehrliche Beratung.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="site-footer"></div>
+
+
+  <script>
+    // Scroll Reveal
+    (function () {
+      var els = document.querySelectorAll('[data-animate]');
+      if (!els.length) return;
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('is-visible'); obs.unobserve(e.target); }
+        });
+      }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+      els.forEach(function (el) { obs.observe(el); });
+    })();
+
+    // FAQ Accordion
+    (function () {
+      var triggers = document.querySelectorAll('.faq-trigger');
+      triggers.forEach(function (trigger) {
+        trigger.addEventListener('click', function () {
+          var item   = trigger.closest('.faq-item');
+          var answer = item.querySelector('.faq-answer');
+          var isOpen = item.classList.contains('open');
+
+          document.querySelectorAll('.faq-item').forEach(function (fi) {
+            fi.classList.remove('open');
+            fi.querySelector('.faq-answer').classList.remove('open');
+            fi.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+          });
+
+          if (!isOpen) {
+            item.classList.add('open');
+            answer.classList.add('open');
+            trigger.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>

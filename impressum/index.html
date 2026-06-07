@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>Impressum | VaTo24 – Marketingagentur Unna</title>
+  <meta name="description" content="Impressum der VaTo24 – Marketingagentur, Inhaber Dennis Isermann, Zechenstr. 80, 59425 Unna." />
+  <meta name="robots" content="noindex, follow" />
+  <link rel="canonical" href="https://vato24.de/impressum/" />
+
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vato24.de/impressum/" />
+  <meta property="og:title" content="Impressum | VaTo24 – Marketingagentur Unna" />
+  <meta property="og:site_name" content="VaTo24" />
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Vite / Tailwind CSS -->
+
+  <style>
+    :root {
+      --bg:              #08090f;
+      --bg-card:         rgba(255, 255, 255, 0.04);
+      --bg-card-hover:   rgba(255, 255, 255, 0.07);
+      --border:          rgba(255, 255, 255, 0.08);
+      --border-glow-cyan:  rgba(6, 182, 212, 0.35);
+      --border-glow-violet: rgba(139, 92, 246, 0.35);
+      --cyan:   #06b6d4;
+      --violet: #8b5cf6;
+      --text:       #f1f5f9;
+      --text-muted: #94a3b8;
+    }
+
+    * { box-sizing: border-box; }
+    html { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); }
+    body { background-color: var(--bg); overflow-x: hidden; }
+
+    /* Gradient text */
+    .gradient-text {
+      background: linear-gradient(135deg, var(--cyan) 0%, var(--violet) 100%);
+      background-size: 200% 200%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: gradient-text-anim 4s ease infinite;
+    }
+    @keyframes gradient-text-anim {
+      0%, 100% { background-position: 0% 50%; }
+      50%       { background-position: 100% 50%; }
+    }
+
+    /* Glass card */
+    .glass-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    /* Primary button */
+    .btn-primary {
+      background: linear-gradient(135deg, var(--violet) 0%, var(--cyan) 100%);
+      background-size: 200% 200%;
+      transition: background-position 0.4s ease, transform 0.2s ease, box-shadow 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.625rem 1.25rem;
+      border-radius: 0.5rem;
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.875rem;
+      text-decoration: none;
+    }
+    .btn-primary:hover {
+      background-position: right center;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(6, 182, 212, 0.35);
+    }
+
+    /* Orbs */
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(100px);
+      animation: orb-drift 10s ease-in-out infinite;
+      pointer-events: none;
+    }
+    @keyframes orb-drift {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33%       { transform: translate(30px, -20px) scale(1.05); }
+      66%       { transform: translate(-20px, 15px) scale(0.95); }
+    }
+
+    /* Scroll reveal */
+    [data-animate] {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    [data-animate].animate-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Section glow divider */
+    .section-glow::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      max-width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+      opacity: 0.35;
+    }
+    .section-glow { position: relative; }
+
+    /* Legal content prose */
+    .legal-content h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #f1f5f9;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .legal-content h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #cbd5e1;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+    .legal-content p {
+      color: #94a3b8;
+      line-height: 1.75;
+      margin-bottom: 1rem;
+    }
+    .legal-content a {
+      color: #06b6d4;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .legal-content a:hover { color: #67e8f9; }
+    .legal-content address {
+      font-style: normal;
+      color: #94a3b8;
+      line-height: 1.75;
+    }
+    .legal-content dl dt {
+      font-weight: 600;
+      color: #cbd5e1;
+      margin-top: 0.75rem;
+    }
+    .legal-content dl dd {
+      color: #94a3b8;
+      margin-left: 0;
+      margin-bottom: 0.25rem;
+    }
+
+    #site-header { min-height: 0; }
+  </style>
+  <script type="module" crossorigin src="/assets/footer-UENtMA8A.js"></script>
+  <script type="module" crossorigin src="/assets/animations-CetyjiHi.js"></script>
+  <script type="module" crossorigin src="/assets/legal-wMhkpCHx.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/footer-B4l_Wcll.css">
+</head>
+
+<body class="bg-[#08090f] text-slate-100 font-inter antialiased">
+
+  <!-- Header injected by legal.js -->
+  <div id="site-header"></div>
+
+  <main>
+
+    <!-- ── Hero / Page Title ──────────────────────────────────────────── -->
+    <section
+      class="relative py-20 lg:py-28 overflow-hidden"
+      aria-label="Impressum"
+    >
+      <!-- Ambient orbs -->
+      <div class="orb w-[500px] h-[500px] bg-cyan-500/10 top-[-150px] right-[-100px]" aria-hidden="true"></div>
+      <div class="orb w-[400px] h-[400px] bg-violet-600/10 bottom-[-100px] left-[-80px]" aria-hidden="true"></div>
+
+      <div class="relative container max-w-4xl mx-auto px-6">
+
+        <!-- Breadcrumb -->
+        <nav aria-label="Breadcrumb" class="mb-8">
+          <ol class="flex items-center gap-2 text-sm text-slate-500">
+            <li><a href="/" class="hover:text-cyan-400 transition-colors">Startseite</a></li>
+            <li aria-hidden="true">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </li>
+            <li class="text-slate-300" aria-current="page">Impressum</li>
+          </ol>
+        </nav>
+
+        <!-- Badge -->
+        <div
+          data-animate
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-sm font-medium mb-6"
+        >
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>
+          Rechtliches
+        </div>
+
+        <h1
+          data-animate
+          class="text-4xl lg:text-5xl font-black tracking-tight mb-4"
+        >
+          Impressum
+        </h1>
+
+        <p
+          data-animate
+          class="text-slate-400 text-lg"
+        >
+          Angaben gemäß § 5 TMG
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- ── Impressum Content ─────────────────────────────────────────── -->
+    <section
+      class="pb-24 lg:pb-32 section-glow"
+      aria-label="Impressum Inhalt"
+    >
+      <div class="container max-w-4xl mx-auto px-6">
+
+        <div class="glass-card rounded-2xl p-8 lg:p-12 legal-content" data-animate>
+
+          <!-- Anbieter -->
+          <h2>Anbieter</h2>
+          <address>
+            VaTo24 – Marketingagentur<br />
+            Inhaber: Dennis Isermann<br />
+            Zechenstr. 80<br />
+            59425 Unna
+          </address>
+
+          <!-- Kontakt -->
+          <h2>Kontakt</h2>
+          <dl>
+            <dt>Telefon</dt>
+            <dd><a href="tel:+4923039797329">02303 / 97 97 329</a></dd>
+            <dt>Fax</dt>
+            <dd>02303 / 97 93 723</dd>
+          </dl>
+
+          <!-- USt-ID -->
+          <h2>Umsatzsteuer-Identifikationsnummer</h2>
+          <p>
+            Umsatzsteuer-Identifikationsnummer gemäß §27 a Umsatzsteuergesetz:
+            <strong class="text-slate-200">DE319880069</strong>
+          </p>
+
+          <!-- Gewerbeanmeldung -->
+          <h2>Gewerbeanmeldung</h2>
+          <p>
+            Die Gewerbeanmeldung wurde am 03. September 2018 durch die Kreisstadt Unna vorgenommen.
+          </p>
+
+          <!-- Verantwortlich -->
+          <h2>Verantwortlich für den Inhalt</h2>
+          <p>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:</p>
+          <address>
+            Dennis Isermann (Inhaber)<br />
+            Zechenstr. 80<br />
+            59425 Unna
+          </address>
+
+          <!-- EU-Streitschlichtung -->
+          <h2>EU-Streitschlichtung</h2>
+          <p>
+            Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:
+            <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer">
+              https://ec.europa.eu/consumers/odr/
+            </a><br />
+            Unsere E-Mail-Adresse finden Sie oben im Impressum.
+          </p>
+
+          <!-- Verbraucherstreitbeilegung -->
+          <h2>Verbraucherstreitbeilegung / Universalschlichtungsstelle</h2>
+          <p>
+            Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer
+            Verbraucherschlichtungsstelle teilzunehmen.
+          </p>
+
+          <!-- Bildnachweise -->
+          <h2>Bildnachweise</h2>
+          <p>
+            Bilder von Freepik (Premium-Account)<br />
+            Luftbilder von Hans Blossey (<a href="https://www.luftbild-blossey.de" target="_blank" rel="noopener noreferrer">www.luftbild-blossey.de</a>)<br />
+            Fotografien von Bülent Kirschbaum, Dortmund
+          </p>
+
+        </div>
+
+        <!-- Back link -->
+        <div class="mt-10 flex items-center gap-4">
+          <a
+            href="/"
+            class="inline-flex items-center gap-2 text-slate-400 hover:text-cyan-400 font-medium transition-colors text-sm"
+          >
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            Zurück zur Startseite
+          </a>
+          <span class="text-slate-700" aria-hidden="true">|</span>
+          <a href="/datenschutz/" class="text-slate-400 hover:text-cyan-400 text-sm transition-colors">Datenschutzerklärung</a>
+          <span class="text-slate-700" aria-hidden="true">|</span>
+          <a href="/agb/" class="text-slate-400 hover:text-cyan-400 text-sm transition-colors">AGB</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer injected by legal.js -->
+  <div id="site-footer"></div>
+
+  <!-- Page-specific JS -->
+
+</body>
+</html>

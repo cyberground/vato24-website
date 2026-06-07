@@ -1,0 +1,1899 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>VaTo24 – Webagentur Unna | Websites, SEO &amp; KI-Integration</title>
+  <meta name="description" content="Moderne Websites, SEO-Optimierung und KI-Integration aus Unna, NRW. VaTo24 entwickelt professionelle Webauftritte für Unternehmen, die online besser gefunden werden wollen." />
+  <meta name="keywords" content="Webagentur Unna, Marketingagentur Unna, Website erstellen lassen, SEO Agentur Unna, KI Agentur NRW, Webdesign Unna, Online Marketing Unna, KI Integration NRW" />
+  <meta name="author" content="Dennis Isermann – VaTo24" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://vato24.de/" />
+
+  <!-- OpenGraph / Facebook / LinkedIn -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vato24.de/" />
+  <meta property="og:title" content="VaTo24 – Webagentur Unna | Websites, SEO &amp; KI-Integration" />
+  <meta property="og:description" content="Moderne Websites, SEO-Optimierung und KI-Integration aus Unna, NRW. 15+ Jahre Erfahrung. Kostenlos beraten lassen." />
+  <meta property="og:image" content="https://vato24.de/assets/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:site_name" content="VaTo24" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://vato24.de/" />
+  <meta name="twitter:title" content="VaTo24 – Webagentur Unna | Websites, SEO &amp; KI-Integration" />
+  <meta name="twitter:description" content="Moderne Websites, SEO-Optimierung und KI-Integration aus Unna, NRW. 15+ Jahre Erfahrung." />
+  <meta name="twitter:image" content="https://vato24.de/assets/og-image.jpg" />
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://vato24.de/#business",
+        "name": "VaTo24 – Marketingagentur",
+        "url": "https://vato24.de",
+        "logo": "https://vato24.de/assets/logo.svg",
+        "image": "https://vato24.de/assets/og-image.jpg",
+        "description": "Moderne Websites, SEO-Optimierung und KI-Integration aus Unna, NRW.",
+        "priceRange": "€€",
+        "telephone": "+492303979732",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Zechenstr. 80",
+          "addressLocality": "Unna",
+          "postalCode": "59425",
+          "addressRegion": "NRW",
+          "addressCountry": "DE"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "51.5369",
+          "longitude": "7.6897"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+            "opens": "09:00",
+            "closes": "18:00"
+          }
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+492303979732",
+          "contactType": "customer service",
+          "availableLanguage": "German"
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "Dennis Isermann"
+        },
+        "foundingDate": "2009",
+        "areaServed": {
+          "@type": "State",
+          "name": "Nordrhein-Westfalen"
+        },
+        "serviceType": [
+          "Webdesign",
+          "SEO",
+          "KI-Integration",
+          "Online Marketing",
+          "Landingpages"
+        ],
+        "sameAs": [
+          "https://dynomic.ai",
+          "https://jga-revolution.de"
+        ]
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://vato24.de/#organization",
+        "name": "VaTo24",
+        "url": "https://vato24.de",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://vato24.de/assets/logo.svg"
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "Dennis Isermann"
+        },
+        "subOrganization": [
+          {
+            "@type": "Organization",
+            "name": "dynomic.ai",
+            "url": "https://dynomic.ai"
+          },
+          {
+            "@type": "Organization",
+            "name": "jga-revolution.de",
+            "url": "https://jga-revolution.de"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Vite / Tailwind CSS -->
+
+  <style>
+    /* ========================================
+       DESIGN TOKENS & BASE
+    ======================================== */
+    :root {
+      --bg:        #08090f;
+      --bg-card:   rgba(255, 255, 255, 0.04);
+      --bg-card-hover: rgba(255, 255, 255, 0.07);
+      --border:    rgba(255, 255, 255, 0.08);
+      --border-glow-cyan:  rgba(6, 182, 212, 0.35);
+      --border-glow-violet: rgba(139, 92, 246, 0.35);
+      --cyan:      #06b6d4;
+      --violet:    #8b5cf6;
+      --text:      #f1f5f9;
+      --text-muted: #94a3b8;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); }
+
+    body {
+      background-color: var(--bg);
+      overflow-x: hidden;
+    }
+
+    /* ========================================
+       GRADIENT TEXT UTILITY
+    ======================================== */
+    .gradient-text {
+      background: linear-gradient(135deg, var(--cyan) 0%, var(--violet) 100%);
+      background-size: 200% 200%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: gradient-text-anim 4s ease infinite;
+    }
+
+    @keyframes gradient-text-anim {
+      0%, 100% { background-position: 0% 50%; }
+      50%       { background-position: 100% 50%; }
+    }
+
+    /* ========================================
+       GLASS CARD
+    ======================================== */
+    .glass-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .glass-card:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--border-glow-cyan);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(6, 182, 212, 0.1);
+    }
+
+    .glass-card-violet:hover {
+      border-color: var(--border-glow-violet);
+      box-shadow: 0 20px 60px rgba(139, 92, 246, 0.12);
+    }
+
+    /* ========================================
+       GRADIENT BUTTON
+    ======================================== */
+    .btn-primary {
+      background: linear-gradient(135deg, var(--violet) 0%, var(--cyan) 100%);
+      background-size: 200% 200%;
+      transition: background-position 0.4s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background-position: right center;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(6, 182, 212, 0.35);
+    }
+
+    /* ========================================
+       AMBIENT ORB ANIMATIONS
+    ======================================== */
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(100px);
+      animation: orb-drift 10s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    @keyframes orb-drift {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33%       { transform: translate(30px, -20px) scale(1.05); }
+      66%       { transform: translate(-20px, 15px) scale(0.95); }
+    }
+
+    .orb-1 { animation-delay: 0s; }
+    .orb-2 { animation-delay: -3s; }
+    .orb-3 { animation-delay: -6s; }
+
+    /* ========================================
+       MARQUEE
+    ======================================== */
+    .marquee-track {
+      display: flex;
+      gap: 1.5rem;
+      animation: marquee-scroll 30s linear infinite;
+      width: -moz-max-content;
+      width: max-content;
+    }
+
+    .marquee-track:hover { animation-play-state: paused; }
+
+    @keyframes marquee-scroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ========================================
+       PROCESS CONNECTOR LINE
+    ======================================== */
+    .process-line::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 100%;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--cyan), var(--violet));
+      opacity: 0.3;
+      transform: translateY(-50%);
+    }
+
+    /* ========================================
+       SCROLL REVEAL
+    ======================================== */
+    [data-animate] {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    [data-animate].is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    [data-animate-delay="100"] { transition-delay: 0.1s; }
+    [data-animate-delay="200"] { transition-delay: 0.2s; }
+    [data-animate-delay="300"] { transition-delay: 0.3s; }
+    [data-animate-delay="400"] { transition-delay: 0.4s; }
+    [data-animate-delay="500"] { transition-delay: 0.5s; }
+    [data-animate-delay="600"] { transition-delay: 0.6s; }
+    [data-animate-delay="700"] { transition-delay: 0.7s; }
+    [data-animate-delay="800"] { transition-delay: 0.8s; }
+
+    /* ========================================
+       FAQ ACCORDION
+    ======================================== */
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+    }
+
+    .faq-answer.open {
+      max-height: 500px;
+    }
+
+    .faq-icon {
+      transition: transform 0.3s ease;
+    }
+
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    /* ========================================
+       SCROLL INDICATOR
+    ======================================== */
+    @keyframes scroll-bounce {
+      0%, 100% { transform: translateY(0); opacity: 1; }
+      50%       { transform: translateY(8px); opacity: 0.4; }
+    }
+
+    .scroll-dot {
+      animation: scroll-bounce 2s ease-in-out infinite;
+    }
+
+    /* ========================================
+       STAT COUNTER
+    ======================================== */
+    .stat-number {
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* ========================================
+       SECTION DIVIDER GLOW
+    ======================================== */
+    .section-glow {
+      position: relative;
+    }
+
+    .section-glow::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      max-width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+      opacity: 0.4;
+    }
+
+    /* ========================================
+       VIDEO OVERLAY
+    ======================================== */
+    #hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      -o-object-fit: cover;
+         object-fit: cover;
+      opacity: 0.18;
+      z-index: 0;
+    }
+
+    /* ========================================
+       CHAT MOCKUP
+    ======================================== */
+    .chat-bubble-user {
+      background: linear-gradient(135deg, rgba(139,92,246,0.3), rgba(6,182,212,0.2));
+      border: 1px solid rgba(139,92,246,0.3);
+      border-radius: 18px 18px 4px 18px;
+    }
+
+    .chat-bubble-ai {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border);
+      border-radius: 18px 18px 18px 4px;
+    }
+
+    /* ========================================
+       ABOUT IMAGE PLACEHOLDER
+    ======================================== */
+    #about-image {
+      background: linear-gradient(135deg, rgba(139,92,246,0.15) 0%, rgba(6,182,212,0.1) 100%);
+      border: 1px solid var(--border-glow-violet);
+    }
+
+    /* ========================================
+       RESPONSIVE NAV PLACEHOLDER
+    ======================================== */
+    #site-header { min-height: 0; }
+  </style>
+  <script type="module" crossorigin src="/assets/index-DDI_jSxB.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/footer-UENtMA8A.js">
+  <link rel="modulepreload" crossorigin href="/assets/animations-CetyjiHi.js">
+  <link rel="stylesheet" crossorigin href="/assets/footer-B4l_Wcll.css">
+</head>
+
+<body class="bg-[#08090f] text-slate-100 font-inter antialiased">
+
+  <!-- ================================================
+       HEADER — injected by header.js
+  ================================================ -->
+  <div id="site-header"></div>
+
+  <main>
+
+    <!-- ============================================================
+         SECTION 1 · HERO
+    ============================================================ -->
+    <section
+      id="hero"
+      class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
+      aria-label="Hero Section"
+    >
+      <!-- Ambient gradient orbs -->
+      <div class="orb orb-1 w-[600px] h-[600px] bg-violet-600/20 top-[-100px] left-[-150px]"></div>
+      <div class="orb orb-2 w-[500px] h-[500px] bg-cyan-500/15 bottom-[-80px] right-[-100px]"></div>
+      <div class="orb orb-3 w-[350px] h-[350px] bg-violet-500/10 top-[40%] left-[40%]"></div>
+
+      <!-- Video background (Pexels integration target) -->
+      <video
+        id="hero-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        aria-hidden="true"
+      >
+        <!-- Source injected at runtime via home.js -->
+      </video>
+
+      <!-- Dark overlay -->
+      <div class="absolute inset-0 bg-gradient-to-b from-[#08090f]/60 via-[#08090f]/40 to-[#08090f] z-[1]"></div>
+
+      <!-- Content -->
+      <div class="relative z-10 container max-w-5xl mx-auto px-6 text-center">
+
+        <!-- Badge -->
+        <div
+          data-animate
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-sm font-medium mb-8"
+        >
+          <span>⚡</span>
+          <span>Digitalagentur aus Unna, NRW</span>
+        </div>
+
+        <!-- H1 -->
+        <h1
+          data-animate
+          data-animate-delay="100"
+          class="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight tracking-tight mb-6"
+        >
+          Ihre digitale Zukunft<br />
+          <span class="gradient-text">beginnt hier</span>
+        </h1>
+
+        <!-- Subheading -->
+        <p
+          data-animate
+          data-animate-delay="200"
+          class="text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed"
+        >
+          Wir entwickeln moderne Websites, integrieren KI und sorgen dafür, dass Ihr Unternehmen
+          online gefunden wird — alles aus einer Hand.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div
+          data-animate
+          data-animate-delay="300"
+          class="flex flex-col sm:flex-row gap-4 justify-center mb-14"
+        >
+          <a
+            href="/kontakt/"
+            class="btn-primary inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-white font-semibold text-base shadow-lg"
+          >
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            Kostenloses Erstgespräch buchen
+          </a>
+          <a
+            href="#leistungen"
+            class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl border border-slate-600 hover:border-cyan-500/60 text-slate-300 hover:text-white font-semibold text-base transition-all duration-300 hover:bg-white/5"
+          >
+            Mehr erfahren
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- Trust Indicators -->
+        <div
+          data-animate
+          data-animate-delay="400"
+          class="flex flex-wrap justify-center items-center gap-6 text-sm text-slate-500"
+        >
+          <span class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-cyan-500" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            15+ Jahre Erfahrung
+          </span>
+          <span class="w-px h-4 bg-slate-700" aria-hidden="true"></span>
+          <span class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-cyan-500" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            100% DSGVO-konform
+          </span>
+          <span class="w-px h-4 bg-slate-700" aria-hidden="true"></span>
+          <span class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-cyan-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+            Made in Unna
+          </span>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-slate-600 text-xs" aria-hidden="true">
+        <span class="tracking-widest uppercase text-[10px]">Scrollen</span>
+        <div class="w-5 h-8 rounded-full border border-slate-700 flex items-start justify-center pt-1">
+          <div class="scroll-dot w-1.5 h-1.5 rounded-full bg-cyan-500"></div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECTION 2 · MARQUEE BRANDS STRIP
+    ============================================================ -->
+    <section
+      id="marken-strip"
+      class="py-12 border-y border-white/[0.06] bg-[#08090f] overflow-hidden section-glow"
+      aria-label="Unsere Marken und Partner"
+    >
+      <div class="text-center mb-8">
+        <p class="text-slate-500 text-sm tracking-widest uppercase">Unsere digitalen Marken &amp; Plattformen</p>
+      </div>
+
+      <div class="relative overflow-hidden">
+        <!-- Fade edges -->
+        <div class="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#08090f] to-transparent z-10" aria-hidden="true"></div>
+        <div class="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#08090f] to-transparent z-10" aria-hidden="true"></div>
+
+        <div class="marquee-track" aria-hidden="true">
+          <!-- First set -->
+          <span class="flex-shrink-0 flex items-center gap-2 px-5 py-2.5 rounded-full border border-violet-500/30 bg-violet-500/10 text-violet-300 text-sm font-medium whitespace-nowrap">
+            🤖 dynomic.ai
+          </span>
+          <span class="flex-shrink-0 flex items-center gap-2 px-5 py-2.5 rounded-full border border-pink-500/30 bg-pink-500/10 text-pink-300 text-sm font-medium whitespace-nowrap">
+            🎉 jga-revolution.de
+          </span>
+          <span class="flex-shrink-0 flex items-center gap-2 px-5 py-2.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-300 text-sm font-medium whitespace-nowrap">
+            💬 VaTo24 CMS
+          </span>
+          <span class="flex-shrink-0 flex items-center gap-2 px-5 py-2.5 rounded-full border border-green-500/30 bg-green-500/10 text-green-300 text-sm font-medium whitespace-nowrap">
+            🌐 Webdesign NRW
+          </span>
+          <span class="flex-shrink-0 flex items-center gap-2 px-5 py-2.5 rounded-full border border-yellow-500/30 bg-yellow-500/10 text-yellow-300 text-sm font-medium whitespace-nowrap">
+            ⚡ Performance Marketing
+          </span>
+          <span class="flex-shrink-0 flex items-center gap-2 px-5 py-2.5 rounded-full border border-slate-600/50 bg-white/5 text-slate-300 text-sm font-medium whitespace-nowrap">
+            🔍 SEO Unna
+          </span>
+          <span class="flex-shrink-0 flex items-center gap-2 px-5 py-2.5 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-300 text-sm font-medium whitespace-nowrap">
+            🎯 Conversion Optimierung
+          </span>
+          <span class="flex-shrink-0 flex items-center gap-2 px-5 py-2.5 rounded-full border border-teal-500/30 bg-teal-500/10 text-teal-300 text-sm font-medium whitespace-nowrap">
+            📍 Google Business
+          </span>
+          <!-- Duplicate set for seamless loop -->
+          <span class="flex-shrink-0 flex items-center gap-2 px-5 py-2.5 rounded-full border border-violet-500/30 bg-violet-500/10 text-violet-300 text-sm font-medium whitespace-nowrap">
+            🤖 dynomic.ai
+          </span>
+          <span class="flex-shrink-0 flex items-center gap-2 px-5 py-2.5 rounded-full border border-pink-500/30 bg-pink-500/10 text-pink-300 text-sm font-medium whitespace-nowrap">
+            🎉 jga-revolution.de
+          </span>
+          <span class="flex-shrink-0 flex items-center gap-2 px-5 py-2.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-300 text-sm font-medium whitespace-nowrap">
+            💬 VaTo24 CMS
+          </span>
+          <span class="flex-shrink-0 flex items-center gap-2 px-5 py-2.5 rounded-full border border-green-500/30 bg-green-500/10 text-green-300 text-sm font-medium whitespace-nowrap">
+            🌐 Webdesign NRW
+          </span>
+          <span class="flex-shrink-0 flex items-center gap-2 px-5 py-2.5 rounded-full border border-yellow-500/30 bg-yellow-500/10 text-yellow-300 text-sm font-medium whitespace-nowrap">
+            ⚡ Performance Marketing
+          </span>
+          <span class="flex-shrink-0 flex items-center gap-2 px-5 py-2.5 rounded-full border border-slate-600/50 bg-white/5 text-slate-300 text-sm font-medium whitespace-nowrap">
+            🔍 SEO Unna
+          </span>
+          <span class="flex-shrink-0 flex items-center gap-2 px-5 py-2.5 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-300 text-sm font-medium whitespace-nowrap">
+            🎯 Conversion Optimierung
+          </span>
+          <span class="flex-shrink-0 flex items-center gap-2 px-5 py-2.5 rounded-full border border-teal-500/30 bg-teal-500/10 text-teal-300 text-sm font-medium whitespace-nowrap">
+            📍 Google Business
+          </span>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECTION 3 · POSITIONING / ABOUT
+    ============================================================ -->
+    <section
+      id="ueber-uns"
+      class="py-24 lg:py-32 section-glow"
+      aria-label="Über VaTo24"
+    >
+      <div class="container max-w-6xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+          <!-- Left: Text -->
+          <div>
+            <div
+              data-animate
+              class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-violet-500/30 bg-violet-500/10 text-violet-400 text-xs font-medium mb-6 tracking-wider uppercase"
+            >
+              Über uns
+            </div>
+
+            <h2
+              data-animate
+              data-animate-delay="100"
+              class="text-4xl lg:text-5xl font-black leading-tight tracking-tight mb-6"
+            >
+              Nicht nur Dienstleister —<br />
+              <span class="gradient-text">digitale Unternehmer</span>
+            </h2>
+
+            <p
+              data-animate
+              data-animate-delay="200"
+              class="text-slate-400 text-lg leading-relaxed mb-4"
+            >
+              Seit über 15 Jahren begleiten wir Unternehmen auf ihrem Weg in die digitale Welt.
+              VaTo24 entwickelt, betreibt und optimiert eigene digitale Plattformen und bringt
+              dieses Praxiswissen direkt in Ihre Projekte ein.
+            </p>
+
+            <p
+              data-animate
+              data-animate-delay="250"
+              class="text-slate-500 leading-relaxed mb-10"
+            >
+              Wir wissen, was funktioniert — weil wir es selbst täglich einsetzen.
+              Keine graue Theorie, sondern echte Erfahrung aus dem digitalen Markt.
+            </p>
+
+            <!-- Bullet points -->
+            <ul
+              data-animate
+              data-animate-delay="300"
+              class="space-y-4 mb-10"
+            >
+              <li class="flex items-start gap-3">
+                <span class="flex-shrink-0 w-6 h-6 rounded-full bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center mt-0.5" aria-hidden="true">
+                  <svg class="w-3.5 h-3.5 text-cyan-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                  </svg>
+                </span>
+                <div>
+                  <span class="text-white font-semibold">Eigene Plattformen</span>
+                  <span class="text-slate-400"> — dynomic.ai und jga-revolution.de als lebende Labore</span>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="flex-shrink-0 w-6 h-6 rounded-full bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center mt-0.5" aria-hidden="true">
+                  <svg class="w-3.5 h-3.5 text-cyan-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                  </svg>
+                </span>
+                <div>
+                  <span class="text-white font-semibold">Eigene Systeme</span>
+                  <span class="text-slate-400"> — KI-gestütztes CMS, entwickelt &amp; erprobt im Einsatz</span>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="flex-shrink-0 w-6 h-6 rounded-full bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center mt-0.5" aria-hidden="true">
+                  <svg class="w-3.5 h-3.5 text-cyan-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                  </svg>
+                </span>
+                <div>
+                  <span class="text-white font-semibold">Echte Praxiserfahrung</span>
+                  <span class="text-slate-400"> — 200+ umgesetzte Projekte über 15+ Jahre</span>
+                </div>
+              </li>
+            </ul>
+
+            <a
+              data-animate
+              data-animate-delay="400"
+              href="/ueber-uns/"
+              class="inline-flex items-center gap-2 text-cyan-400 font-semibold hover:text-cyan-300 transition-colors group"
+            >
+              Über uns erfahren
+              <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Right: Visual with floating stats -->
+          <div
+            data-animate
+            data-animate-delay="200"
+            class="relative"
+          >
+            <!-- Main image placeholder -->
+            <div
+              id="about-image"
+              class="relative rounded-2xl overflow-hidden aspect-[4/3] flex items-center justify-center"
+              role="img"
+              aria-label="Dennis Isermann, Inhaber VaTo24"
+            >
+              <!-- Decorative inner graphic -->
+              <div class="absolute inset-0 flex items-center justify-center" aria-hidden="true">
+                <div class="w-40 h-40 rounded-full border-2 border-violet-500/30 flex items-center justify-center">
+                  <div class="w-24 h-24 rounded-full border-2 border-cyan-500/40 flex items-center justify-center">
+                    <div class="text-5xl">🚀</div>
+                  </div>
+                </div>
+                <!-- Orbit ring -->
+                <div class="absolute w-56 h-56 rounded-full border border-dashed border-violet-500/20 animate-spin-slow" style="animation-duration:20s"></div>
+              </div>
+              <!-- Shimmer overlay -->
+              <div class="absolute inset-0 bg-gradient-to-br from-violet-600/10 via-transparent to-cyan-500/10" aria-hidden="true"></div>
+            </div>
+
+            <!-- Floating stat: years -->
+            <div class="absolute -top-5 -left-6 glass-card rounded-xl px-5 py-3 shadow-xl" aria-hidden="true">
+              <p class="text-3xl font-black text-white leading-none">15<span class="text-cyan-400">+</span></p>
+              <p class="text-xs text-slate-400 mt-0.5">Jahre Erfahrung</p>
+            </div>
+
+            <!-- Floating stat: projects -->
+            <div class="absolute -bottom-5 -right-6 glass-card rounded-xl px-5 py-3 shadow-xl" aria-hidden="true">
+              <p class="text-3xl font-black text-white leading-none">200<span class="text-violet-400">+</span></p>
+              <p class="text-xs text-slate-400 mt-0.5">Projekte umgesetzt</p>
+            </div>
+
+            <!-- Glow effect behind image -->
+            <div class="absolute -inset-4 rounded-3xl bg-violet-600/5 -z-10 blur-xl" aria-hidden="true"></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECTION 4 · LEISTUNGEN GRID
+    ============================================================ -->
+    <section
+      id="leistungen"
+      class="py-24 lg:py-32 bg-gradient-to-b from-[#08090f] via-[#0c0d17] to-[#08090f] section-glow"
+      aria-label="Unsere Leistungen"
+    >
+      <div class="container max-w-6xl mx-auto px-6">
+
+        <!-- Header -->
+        <div class="text-center mb-16">
+          <div
+            data-animate
+            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-xs font-medium mb-6 tracking-wider uppercase"
+          >
+            Leistungen
+          </div>
+          <h2
+            data-animate
+            data-animate-delay="100"
+            class="text-4xl lg:text-5xl font-black tracking-tight mb-4"
+          >
+            Was wir für Sie tun
+          </h2>
+          <p
+            data-animate
+            data-animate-delay="200"
+            class="text-slate-400 text-lg max-w-2xl mx-auto"
+          >
+            Von der ersten Idee bis zur dauerhaften Online-Sichtbarkeit — alles aus einer Hand.
+          </p>
+        </div>
+
+        <!-- 3×3 Grid -->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+          <!-- 1: Websites -->
+          <article
+            data-animate
+            data-animate-delay="100"
+            class="glass-card rounded-2xl p-7 group"
+          >
+            <div class="text-4xl mb-4" aria-hidden="true">🌐</div>
+            <h3 class="text-xl font-bold text-white mb-2">Websites</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Moderne, schnelle Websites die verkaufen — technisch einwandfrei, optisch überzeugend und für Google optimiert.
+            </p>
+            <a href="/leistungen/#websites" class="mt-5 inline-flex items-center text-xs font-semibold text-cyan-400 hover:text-cyan-300 gap-1 group-hover:gap-2 transition-all" aria-label="Mehr zu Websites">
+              Mehr erfahren <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <!-- 2: SEO -->
+          <article
+            data-animate
+            data-animate-delay="200"
+            class="glass-card rounded-2xl p-7 group"
+          >
+            <div class="text-4xl mb-4" aria-hidden="true">🔍</div>
+            <h3 class="text-xl font-bold text-white mb-2">SEO</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Google-Rankings verbessern, mehr Besucher gewinnen — nachhaltige Suchmaschinenoptimierung mit messbaren Ergebnissen.
+            </p>
+            <a href="/leistungen/#seo" class="mt-5 inline-flex items-center text-xs font-semibold text-cyan-400 hover:text-cyan-300 gap-1 group-hover:gap-2 transition-all" aria-label="Mehr zu SEO">
+              Mehr erfahren <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <!-- 3: KI-Integration -->
+          <article
+            data-animate
+            data-animate-delay="300"
+            class="glass-card glass-card-violet rounded-2xl p-7 group"
+          >
+            <div class="text-4xl mb-4" aria-hidden="true">🤖</div>
+            <h3 class="text-xl font-bold text-white mb-2">KI-Integration</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Chatbots, Automatisierung, smarte Workflows — KI sinnvoll in Ihr Unternehmen integrieren für echte Effizienzgewinne.
+            </p>
+            <a href="/leistungen/#ki" class="mt-5 inline-flex items-center text-xs font-semibold text-violet-400 hover:text-violet-300 gap-1 group-hover:gap-2 transition-all" aria-label="Mehr zu KI-Integration">
+              Mehr erfahren <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <!-- 4: Google Business -->
+          <article
+            data-animate
+            data-animate-delay="100"
+            class="glass-card rounded-2xl p-7 group"
+          >
+            <div class="text-4xl mb-4" aria-hidden="true">📍</div>
+            <h3 class="text-xl font-bold text-white mb-2">Google Business</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Lokale Sichtbarkeit maximieren — Google My Business Optimierung für mehr Laufkundschaft und lokale Suchanfragen.
+            </p>
+            <a href="/leistungen/#google-business" class="mt-5 inline-flex items-center text-xs font-semibold text-cyan-400 hover:text-cyan-300 gap-1 group-hover:gap-2 transition-all" aria-label="Mehr zu Google Business">
+              Mehr erfahren <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <!-- 5: Branchenbuch -->
+          <article
+            data-animate
+            data-animate-delay="200"
+            class="glass-card rounded-2xl p-7 group"
+          >
+            <div class="text-4xl mb-4" aria-hidden="true">📋</div>
+            <h3 class="text-xl font-bold text-white mb-2">Branchenbuch</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Präsenz in allen wichtigen Verzeichnissen — konsistente NAP-Daten für lokales SEO und maximale Online-Sichtbarkeit.
+            </p>
+            <a href="/leistungen/#branchenbuch" class="mt-5 inline-flex items-center text-xs font-semibold text-cyan-400 hover:text-cyan-300 gap-1 group-hover:gap-2 transition-all" aria-label="Mehr zu Branchenbuch">
+              Mehr erfahren <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <!-- 6: Performance -->
+          <article
+            data-animate
+            data-animate-delay="300"
+            class="glass-card rounded-2xl p-7 group"
+          >
+            <div class="text-4xl mb-4" aria-hidden="true">⚡</div>
+            <h3 class="text-xl font-bold text-white mb-2">Performance</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Ladezeiten optimieren, Absprünge reduzieren — schnelle Websites ranken besser und konvertieren mehr Besucher.
+            </p>
+            <a href="/leistungen/#performance" class="mt-5 inline-flex items-center text-xs font-semibold text-cyan-400 hover:text-cyan-300 gap-1 group-hover:gap-2 transition-all" aria-label="Mehr zu Performance">
+              Mehr erfahren <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <!-- 7: Landingpages -->
+          <article
+            data-animate
+            data-animate-delay="100"
+            class="glass-card rounded-2xl p-7 group"
+          >
+            <div class="text-4xl mb-4" aria-hidden="true">🎯</div>
+            <h3 class="text-xl font-bold text-white mb-2">Landingpages</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Conversion-optimierte Seiten für mehr Anfragen — gezielt auf ein Ziel ausgerichtet für maximale Wirkung.
+            </p>
+            <a href="/leistungen/#landingpages" class="mt-5 inline-flex items-center text-xs font-semibold text-cyan-400 hover:text-cyan-300 gap-1 group-hover:gap-2 transition-all" aria-label="Mehr zu Landingpages">
+              Mehr erfahren <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <!-- 8: Automatisierung -->
+          <article
+            data-animate
+            data-animate-delay="200"
+            class="glass-card glass-card-violet rounded-2xl p-7 group"
+          >
+            <div class="text-4xl mb-4" aria-hidden="true">⚙️</div>
+            <h3 class="text-xl font-bold text-white mb-2">Automatisierung</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Prozesse vereinfachen, Zeit sparen — repetitive Aufgaben automatisieren damit Ihr Team sich auf das Wesentliche konzentriert.
+            </p>
+            <a href="/leistungen/#automatisierung" class="mt-5 inline-flex items-center text-xs font-semibold text-violet-400 hover:text-violet-300 gap-1 group-hover:gap-2 transition-all" aria-label="Mehr zu Automatisierung">
+              Mehr erfahren <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <!-- 9: CMS-System -->
+          <article
+            data-animate
+            data-animate-delay="300"
+            class="glass-card rounded-2xl p-7 group"
+          >
+            <div class="text-4xl mb-4" aria-hidden="true">💬</div>
+            <h3 class="text-xl font-bold text-white mb-2">CMS-System</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Eigenes KI-gestütztes CMS für einfache Bedienung — Website pflegen per natürlicher Sprache, keine IT-Kenntnisse nötig.
+            </p>
+            <a href="/leistungen/#cms" class="mt-5 inline-flex items-center text-xs font-semibold text-cyan-400 hover:text-cyan-300 gap-1 group-hover:gap-2 transition-all" aria-label="Mehr zum CMS-System">
+              Mehr erfahren <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+        </div>
+
+        <!-- CTA below grid -->
+        <div class="text-center mt-12" data-animate>
+          <a
+            href="/leistungen/"
+            class="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl border border-slate-700 hover:border-cyan-500/50 text-slate-300 hover:text-white font-medium transition-all duration-300 hover:bg-white/5"
+          >
+            Alle Leistungen ansehen
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECTION 5 · OWN BRANDS — MARKEN-ÖKOSYSTEM
+    ============================================================ -->
+    <section
+      id="oekosystem"
+      class="py-24 lg:py-32 relative overflow-hidden section-glow"
+      aria-label="Unser digitales Ökosystem"
+    >
+      <!-- Gradient background -->
+      <div class="absolute inset-0 bg-gradient-to-br from-violet-900/10 via-[#08090f] to-cyan-900/10" aria-hidden="true"></div>
+      <div class="orb w-[500px] h-[500px] bg-violet-600/10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" aria-hidden="true"></div>
+
+      <div class="relative container max-w-6xl mx-auto px-6">
+
+        <div class="text-center mb-16">
+          <div
+            data-animate
+            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-violet-500/30 bg-violet-500/10 text-violet-400 text-xs font-medium mb-6 tracking-wider uppercase"
+          >
+            Eigene Marken
+          </div>
+          <h2
+            data-animate
+            data-animate-delay="100"
+            class="text-4xl lg:text-5xl font-black tracking-tight mb-4"
+          >
+            Unser digitales
+            <span class="gradient-text"> Ökosystem</span>
+          </h2>
+          <p
+            data-animate
+            data-animate-delay="200"
+            class="text-slate-400 text-lg max-w-2xl mx-auto"
+          >
+            VaTo24 ist mehr als eine Agentur — wir betreiben eigene digitale Marken und nutzen
+            dieses Wissen für Ihre Projekte.
+          </p>
+        </div>
+
+        <!-- Brand Cards -->
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+
+          <!-- dynomic.ai -->
+          <article
+            data-animate
+            data-animate-delay="100"
+            class="glass-card glass-card-violet rounded-2xl p-8 relative overflow-hidden group"
+          >
+            <!-- Decorative glow -->
+            <div class="absolute top-0 right-0 w-32 h-32 bg-violet-500/10 blur-2xl rounded-full -translate-y-1/2 translate-x-1/2" aria-hidden="true"></div>
+
+            <div class="relative">
+              <div class="flex items-center gap-4 mb-5">
+                <div class="w-12 h-12 rounded-xl bg-violet-500/20 border border-violet-500/30 flex items-center justify-center text-2xl flex-shrink-0" aria-hidden="true">
+                  🤖
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-white">dynomic.ai</h3>
+                  <span class="text-xs text-violet-400 font-medium">KI-Automatisierung</span>
+                </div>
+              </div>
+
+              <p class="text-slate-400 leading-relaxed mb-6">
+                KI-Automatisierung &amp; smarte Workflows für Unternehmen, die mehr erreichen wollen.
+                Intelligente Lösungen, die echte Arbeit abnehmen — entwickelt und betrieben von VaTo24.
+              </p>
+
+              <ul class="space-y-2 mb-8">
+                <li class="text-sm text-slate-400 flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-violet-400 flex-shrink-0" aria-hidden="true"></span>
+                  KI-Chatbots &amp; Assistenten
+                </li>
+                <li class="text-sm text-slate-400 flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-violet-400 flex-shrink-0" aria-hidden="true"></span>
+                  Workflow-Automatisierung
+                </li>
+                <li class="text-sm text-slate-400 flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-violet-400 flex-shrink-0" aria-hidden="true"></span>
+                  API-Integrationen &amp; n8n
+                </li>
+              </ul>
+
+              <a
+                href="https://dynomic.ai"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 text-violet-400 font-semibold hover:text-violet-300 transition-colors group"
+                aria-label="dynomic.ai in neuem Tab öffnen"
+              >
+                dynomic.ai besuchen
+                <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- jga-revolution.de -->
+          <article
+            data-animate
+            data-animate-delay="200"
+            class="glass-card rounded-2xl p-8 relative overflow-hidden group"
+            style="--border-glow-hover: rgba(236, 72, 153, 0.35);"
+          >
+            <!-- Decorative glow -->
+            <div class="absolute top-0 right-0 w-32 h-32 bg-pink-500/10 blur-2xl rounded-full -translate-y-1/2 translate-x-1/2" aria-hidden="true"></div>
+
+            <div class="relative">
+              <div class="flex items-center gap-4 mb-5">
+                <div class="w-12 h-12 rounded-xl bg-pink-500/20 border border-pink-500/30 flex items-center justify-center text-2xl flex-shrink-0" aria-hidden="true">
+                  🎉
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-white">jga-revolution.de</h3>
+                  <span class="text-xs text-pink-400 font-medium">Event-Plattform</span>
+                </div>
+              </div>
+
+              <p class="text-slate-400 leading-relaxed mb-6">
+                Die Plattform für unvergessliche JGA-Erlebnisse — Ideen, Anbieter und Buchungen
+                für den perfekten Junggesellinnenabschied, alles an einem Ort.
+              </p>
+
+              <ul class="space-y-2 mb-8">
+                <li class="text-sm text-slate-400 flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-pink-400 flex-shrink-0" aria-hidden="true"></span>
+                  JGA-Ideen &amp; Inspiration
+                </li>
+                <li class="text-sm text-slate-400 flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-pink-400 flex-shrink-0" aria-hidden="true"></span>
+                  Anbieter-Verzeichnis NRW
+                </li>
+                <li class="text-sm text-slate-400 flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-pink-400 flex-shrink-0" aria-hidden="true"></span>
+                  Buchung &amp; Planung
+                </li>
+              </ul>
+
+              <a
+                href="https://jga-revolution.de"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 text-pink-400 font-semibold hover:text-pink-300 transition-colors group"
+                aria-label="jga-revolution.de in neuem Tab öffnen"
+              >
+                jga-revolution.de besuchen
+                <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Bottom tagline -->
+        <p
+          data-animate
+          class="text-center text-slate-500 text-sm"
+        >
+          Dieses Praxiswissen aus eigenen Projekten fließt direkt in Ihre Lösung ein.
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECTION 6 · CMS SYSTEM
+    ============================================================ -->
+    <section
+      id="cms"
+      class="py-24 lg:py-32 bg-gradient-to-b from-[#08090f] to-[#0c0d17] section-glow"
+      aria-label="VaTo24 CMS System"
+    >
+      <div class="container max-w-6xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+          <!-- Left: Text content -->
+          <div>
+            <div
+              data-animate
+              class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-xs font-medium mb-6 tracking-wider uppercase"
+            >
+              CMS-Innovation
+            </div>
+
+            <h2
+              data-animate
+              data-animate-delay="100"
+              class="text-4xl lg:text-5xl font-black leading-tight tracking-tight mb-6"
+            >
+              Website-Management
+              <br /><span class="gradient-text">per Sprache</span>
+            </h2>
+
+            <p
+              data-animate
+              data-animate-delay="200"
+              class="text-slate-400 text-lg leading-relaxed mb-10"
+            >
+              Unser eigenes CMS-System macht Website-Pflege so einfach wie das Schreiben einer Nachricht.
+              Kein technisches Wissen erforderlich — einfach sagen was Sie brauchen.
+            </p>
+
+            <!-- Feature list -->
+            <ul
+              data-animate
+              data-animate-delay="300"
+              class="space-y-5 mb-10"
+            >
+              <li class="flex items-start gap-4">
+                <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-cyan-500/15 border border-cyan-500/25 flex items-center justify-center" aria-hidden="true">
+                  <svg class="w-5 h-5 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-white font-semibold mb-0.5">Natürliche Sprache</p>
+                  <p class="text-slate-400 text-sm">Sie sagen, was geändert werden soll — das System kümmert sich um den Rest</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-4">
+                <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-cyan-500/15 border border-cyan-500/25 flex items-center justify-center" aria-hidden="true">
+                  <svg class="w-5 h-5 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-white font-semibold mb-0.5">Keine IT-Kenntnisse erforderlich</p>
+                  <p class="text-slate-400 text-sm">Jeder Mitarbeiter kann Inhalte pflegen — ohne Schulung, ohne Handbuch</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-4">
+                <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-cyan-500/15 border border-cyan-500/25 flex items-center justify-center" aria-hidden="true">
+                  <svg class="w-5 h-5 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-white font-semibold mb-0.5">DSGVO-konform &amp; sicher</p>
+                  <p class="text-slate-400 text-sm">Entwickelt in Deutschland, gehostet in Deutschland — Ihre Daten bleiben sicher</p>
+                </div>
+              </li>
+            </ul>
+
+            <a
+              data-animate
+              data-animate-delay="400"
+              href="/kontakt/#cms-demo"
+              class="btn-primary inline-flex items-center gap-2 px-7 py-3.5 rounded-xl text-white font-semibold"
+            >
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              CMS-Demo ansehen
+            </a>
+          </div>
+
+          <!-- Right: Chat UI Mockup -->
+          <div
+            data-animate
+            data-animate-delay="200"
+            class="relative"
+            aria-label="CMS Chat-Interface Vorschau"
+          >
+            <!-- Outer glow -->
+            <div class="absolute -inset-4 rounded-3xl bg-cyan-500/5 blur-2xl" aria-hidden="true"></div>
+
+            <!-- Mockup card -->
+            <div class="relative glass-card rounded-2xl overflow-hidden" role="presentation">
+              <!-- Window chrome -->
+              <div class="flex items-center gap-2 px-5 py-3.5 border-b border-white/[0.06] bg-white/[0.02]" aria-hidden="true">
+                <div class="w-3 h-3 rounded-full bg-red-500/60"></div>
+                <div class="w-3 h-3 rounded-full bg-yellow-500/60"></div>
+                <div class="w-3 h-3 rounded-full bg-green-500/60"></div>
+                <span class="ml-3 text-slate-500 text-xs font-mono">VaTo24 CMS — Website-Assistent</span>
+              </div>
+
+              <!-- Chat area -->
+              <div class="p-6 space-y-4 min-h-[320px] flex flex-col justify-end" aria-hidden="true">
+
+                <!-- User message 1 -->
+                <div class="flex justify-end">
+                  <div class="chat-bubble-user px-4 py-3 max-w-[80%]">
+                    <p class="text-sm text-white/90">Bitte ändere den Titel auf der Startseite zu: "Willkommen bei uns"</p>
+                  </div>
+                </div>
+
+                <!-- AI response 1 -->
+                <div class="flex justify-start">
+                  <div class="chat-bubble-ai px-4 py-3 max-w-[85%]">
+                    <div class="flex items-center gap-2 mb-1.5">
+                      <div class="w-5 h-5 rounded-full bg-gradient-to-br from-cyan-500 to-violet-600 flex items-center justify-center text-[10px] font-bold text-white">V</div>
+                      <span class="text-xs text-slate-500">CMS Assistent</span>
+                    </div>
+                    <p class="text-sm text-slate-300">Verstanden! Ich ändere den Haupttitel auf der Startseite.</p>
+                    <div class="mt-2 px-3 py-1.5 rounded-lg bg-green-500/10 border border-green-500/20">
+                      <p class="text-xs text-green-400">✓ Titel aktualisiert — "Willkommen bei uns"</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- User message 2 -->
+                <div class="flex justify-end">
+                  <div class="chat-bubble-user px-4 py-3 max-w-[80%]">
+                    <p class="text-sm text-white/90">Füge ein neues Bild in der Galerie hinzu</p>
+                  </div>
+                </div>
+
+                <!-- AI typing indicator -->
+                <div class="flex justify-start">
+                  <div class="chat-bubble-ai px-4 py-3">
+                    <div class="flex items-center gap-1.5">
+                      <div class="w-2 h-2 rounded-full bg-slate-500 animate-bounce" style="animation-delay:0ms"></div>
+                      <div class="w-2 h-2 rounded-full bg-slate-500 animate-bounce" style="animation-delay:150ms"></div>
+                      <div class="w-2 h-2 rounded-full bg-slate-500 animate-bounce" style="animation-delay:300ms"></div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Input bar -->
+              <div class="px-5 py-4 border-t border-white/[0.06] bg-white/[0.02] flex items-center gap-3" aria-hidden="true">
+                <div class="flex-1 h-9 rounded-lg bg-white/5 border border-white/10 px-4 flex items-center">
+                  <span class="text-slate-600 text-sm">Schreiben Sie einen Befehl...</span>
+                </div>
+                <button class="w-9 h-9 rounded-lg bg-gradient-to-br from-violet-600 to-cyan-500 flex items-center justify-center flex-shrink-0" tabindex="-1" aria-hidden="true">
+                  <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECTION 7 · PROCESS TEASER
+    ============================================================ -->
+    <section
+      id="prozess"
+      class="py-24 lg:py-32 section-glow"
+      aria-label="Unser Prozess"
+    >
+      <div class="container max-w-6xl mx-auto px-6">
+
+        <div class="text-center mb-16">
+          <div
+            data-animate
+            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-xs font-medium mb-6 tracking-wider uppercase"
+          >
+            So arbeiten wir
+          </div>
+          <h2
+            data-animate
+            data-animate-delay="100"
+            class="text-4xl lg:text-5xl font-black tracking-tight mb-4"
+          >
+            Von der Idee zum
+            <span class="gradient-text">Launch</span>
+          </h2>
+          <p
+            data-animate
+            data-animate-delay="200"
+            class="text-slate-400 text-lg max-w-xl mx-auto"
+          >
+            Unser bewährter 4-Schritte-Prozess für erfolgreiche Projekte
+          </p>
+        </div>
+
+        <!-- Steps -->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+
+          <!-- Step 1 -->
+          <article
+            data-animate
+            data-animate-delay="100"
+            class="glass-card rounded-2xl p-7 relative"
+          >
+            <div class="text-5xl font-black text-slate-800 mb-4 leading-none" aria-hidden="true">01</div>
+            <div class="w-10 h-10 rounded-lg bg-cyan-500/20 border border-cyan-500/30 flex items-center justify-center mb-4" aria-hidden="true">
+              <svg class="w-5 h-5 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Erstgespräch</h3>
+            <p class="text-slate-400 text-sm">Wir lernen uns kennen, verstehen Ihre Ziele und definieren gemeinsam den Umfang.</p>
+          </article>
+
+          <!-- Step 2 -->
+          <article
+            data-animate
+            data-animate-delay="200"
+            class="glass-card rounded-2xl p-7 relative"
+          >
+            <div class="text-5xl font-black text-slate-800 mb-4 leading-none" aria-hidden="true">02</div>
+            <div class="w-10 h-10 rounded-lg bg-violet-500/20 border border-violet-500/30 flex items-center justify-center mb-4" aria-hidden="true">
+              <svg class="w-5 h-5 text-violet-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Design</h3>
+            <p class="text-slate-400 text-sm">Wir gestalten das visuelle Konzept — modern, markentreu und auf Ihr Publikum zugeschnitten.</p>
+          </article>
+
+          <!-- Step 3 -->
+          <article
+            data-animate
+            data-animate-delay="300"
+            class="glass-card rounded-2xl p-7 relative"
+          >
+            <div class="text-5xl font-black text-slate-800 mb-4 leading-none" aria-hidden="true">03</div>
+            <div class="w-10 h-10 rounded-lg bg-cyan-500/20 border border-cyan-500/30 flex items-center justify-center mb-4" aria-hidden="true">
+              <svg class="w-5 h-5 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Umsetzung</h3>
+            <p class="text-slate-400 text-sm">Technisch einwandfrei entwickelt — schnell, sicher, SEO-ready und mobiloptimiert.</p>
+          </article>
+
+          <!-- Step 4 -->
+          <article
+            data-animate
+            data-animate-delay="400"
+            class="glass-card rounded-2xl p-7 relative"
+          >
+            <div class="text-5xl font-black text-slate-800 mb-4 leading-none" aria-hidden="true">04</div>
+            <div class="w-10 h-10 rounded-lg bg-violet-500/20 border border-violet-500/30 flex items-center justify-center mb-4" aria-hidden="true">
+              <svg class="w-5 h-5 text-violet-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 3l14 9-14 9V3z" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Launch</h3>
+            <p class="text-slate-400 text-sm">Go-Live mit Qualitätsprüfung, Einweisung und dauerhafter Betreuung — wir bleiben an Ihrer Seite.</p>
+          </article>
+
+        </div>
+
+        <!-- CTA link -->
+        <div class="text-center" data-animate>
+          <a
+            href="/prozess/"
+            class="inline-flex items-center gap-2 text-slate-400 hover:text-cyan-400 font-medium transition-colors text-sm group"
+          >
+            Zum vollständigen Prozess
+            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECTION 8 · STATS
+    ============================================================ -->
+    <section
+      id="zahlen"
+      class="py-24 lg:py-32 relative overflow-hidden section-glow"
+      aria-label="Kennzahlen und Statistiken"
+    >
+      <!-- Gradient background -->
+      <div class="absolute inset-0 bg-gradient-to-r from-violet-900/15 via-[#08090f] to-cyan-900/15" aria-hidden="true"></div>
+      <div class="orb w-[600px] h-[400px] bg-violet-600/10 bottom-0 left-1/2 -translate-x-1/2" aria-hidden="true"></div>
+
+      <div class="relative container max-w-5xl mx-auto px-6">
+
+        <div class="text-center mb-16">
+          <h2
+            data-animate
+            class="text-4xl lg:text-5xl font-black tracking-tight mb-4"
+          >
+            Zahlen die
+            <span class="gradient-text"> sprechen</span>
+          </h2>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+          <!-- 15+ Jahre -->
+          <div
+            data-animate
+            data-animate-delay="100"
+            class="glass-card rounded-2xl p-8 text-center"
+          >
+            <p
+              class="stat-number text-5xl lg:text-6xl font-black text-white mb-2"
+              data-counter
+              data-target="15"
+              data-suffix="+"
+              aria-label="15+ Jahre Erfahrung"
+            >15<span class="text-cyan-400">+</span></p>
+            <p class="text-slate-400 text-sm font-medium">Jahre Erfahrung</p>
+          </div>
+
+          <!-- 200+ Projekte -->
+          <div
+            data-animate
+            data-animate-delay="200"
+            class="glass-card rounded-2xl p-8 text-center"
+          >
+            <p
+              class="stat-number text-5xl lg:text-6xl font-black text-white mb-2"
+              data-counter
+              data-target="200"
+              data-suffix="+"
+              aria-label="200+ Projekte"
+            >200<span class="text-violet-400">+</span></p>
+            <p class="text-slate-400 text-sm font-medium">Projekte umgesetzt</p>
+          </div>
+
+          <!-- 100% DSGVO -->
+          <div
+            data-animate
+            data-animate-delay="300"
+            class="glass-card rounded-2xl p-8 text-center"
+          >
+            <p
+              class="stat-number text-5xl lg:text-6xl font-black text-white mb-2"
+              data-counter
+              data-target="100"
+              data-suffix="%"
+              aria-label="100% DSGVO-konform"
+            >100<span class="text-cyan-400">%</span></p>
+            <p class="text-slate-400 text-sm font-medium">DSGVO-konform</p>
+          </div>
+
+          <!-- 24/7 -->
+          <div
+            data-animate
+            data-animate-delay="400"
+            class="glass-card rounded-2xl p-8 text-center"
+          >
+            <p
+              class="stat-number text-5xl lg:text-6xl font-black text-white mb-2"
+              aria-label="24/7 Support"
+            >24<span class="text-violet-400">/</span>7</p>
+            <p class="text-slate-400 text-sm font-medium">Support</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECTION 9 · FAQ
+    ============================================================ -->
+    <section
+      id="faq"
+      class="py-24 lg:py-32 bg-gradient-to-b from-[#08090f] to-[#0c0d17] section-glow"
+      aria-label="Häufig gestellte Fragen"
+    >
+      <div class="container max-w-3xl mx-auto px-6">
+
+        <div class="text-center mb-16">
+          <div
+            data-animate
+            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-xs font-medium mb-6 tracking-wider uppercase"
+          >
+            FAQ
+          </div>
+          <h2
+            data-animate
+            data-animate-delay="100"
+            class="text-4xl lg:text-5xl font-black tracking-tight mb-4"
+          >
+            Häufige
+            <span class="gradient-text"> Fragen</span>
+          </h2>
+          <p
+            data-animate
+            data-animate-delay="200"
+            class="text-slate-400 text-lg"
+          >
+            Alles Wichtige auf einen Blick — oder einfach direkt anfragen.
+          </p>
+        </div>
+
+        <!-- FAQ Items -->
+        <div
+          data-animate
+          class="space-y-3"
+          role="list"
+          aria-label="Häufige Fragen und Antworten"
+        >
+
+          <!-- FAQ 1 -->
+          <div class="faq-item glass-card rounded-xl overflow-hidden" role="listitem">
+            <button
+              class="faq-trigger w-full flex items-center justify-between gap-4 px-6 py-5 text-left"
+              aria-expanded="false"
+            >
+              <span class="font-semibold text-white">Was kostet eine neue Website?</span>
+              <span class="faq-icon flex-shrink-0 w-6 h-6 rounded-full border border-slate-600 flex items-center justify-center text-slate-400 text-lg leading-none" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <p class="px-6 pb-5 text-slate-400 text-sm leading-relaxed">
+                Die Kosten hängen von Umfang und Anforderungen ab. Eine einfache professionelle Website startet ab ca. 1.500 €, umfangreichere Projekte mit individuellen Funktionen entsprechend mehr. Im kostenlosen Erstgespräch erstellen wir Ihnen ein unverbindliches Angebot — transparent und ohne versteckte Kosten.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="faq-item glass-card rounded-xl overflow-hidden" role="listitem">
+            <button
+              class="faq-trigger w-full flex items-center justify-between gap-4 px-6 py-5 text-left"
+              aria-expanded="false"
+            >
+              <span class="font-semibold text-white">Wie lange dauert die Erstellung einer Website?</span>
+              <span class="faq-icon flex-shrink-0 w-6 h-6 rounded-full border border-slate-600 flex items-center justify-center text-slate-400 text-lg leading-none" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <p class="px-6 pb-5 text-slate-400 text-sm leading-relaxed">
+                Eine einfache Website ist in 2–4 Wochen fertig, komplexere Projekte können 6–10 Wochen in Anspruch nehmen. Der Zeitplan hängt vor allem davon ab, wie schnell wir Inhalte und Feedback von Ihnen erhalten. Wir arbeiten strukturiert und halten Sie immer auf dem Laufenden.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="faq-item glass-card rounded-xl overflow-hidden" role="listitem">
+            <button
+              class="faq-trigger w-full flex items-center justify-between gap-4 px-6 py-5 text-left"
+              aria-expanded="false"
+            >
+              <span class="font-semibold text-white">Für welche Branchen sind Sie tätig?</span>
+              <span class="faq-icon flex-shrink-0 w-6 h-6 rounded-full border border-slate-600 flex items-center justify-center text-slate-400 text-lg leading-none" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <p class="px-6 pb-5 text-slate-400 text-sm leading-relaxed">
+                Wir arbeiten branchenübergreifend — von Handwerk und Gastronomie über Dienstleistungen bis hin zu E-Commerce und Tech-Unternehmen. Unsere Erfahrung über 15+ Jahre umfasst über 200 Projekte in verschiedensten Branchen. Jedes Projekt wird individuell angegangen.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="faq-item glass-card rounded-xl overflow-hidden" role="listitem">
+            <button
+              class="faq-trigger w-full flex items-center justify-between gap-4 px-6 py-5 text-left"
+              aria-expanded="false"
+            >
+              <span class="font-semibold text-white">Was ist im SEO-Paket enthalten?</span>
+              <span class="faq-icon flex-shrink-0 w-6 h-6 rounded-full border border-slate-600 flex items-center justify-center text-slate-400 text-lg leading-none" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <p class="px-6 pb-5 text-slate-400 text-sm leading-relaxed">
+                Unser SEO-Service umfasst technische Optimierung, Keyword-Analyse, Content-Optimierung, lokales SEO (Google Business, Branchenbücher), Backlink-Aufbau und monatliche Reportings. Wir arbeiten nachhaltig — keine Black-Hat-Methoden, die Ihre Website riskieren.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="faq-item glass-card rounded-xl overflow-hidden" role="listitem">
+            <button
+              class="faq-trigger w-full flex items-center justify-between gap-4 px-6 py-5 text-left"
+              aria-expanded="false"
+            >
+              <span class="font-semibold text-white">Was bedeutet KI-Integration für mein Unternehmen?</span>
+              <span class="faq-icon flex-shrink-0 w-6 h-6 rounded-full border border-slate-600 flex items-center justify-center text-slate-400 text-lg leading-none" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <p class="px-6 pb-5 text-slate-400 text-sm leading-relaxed">
+                KI-Integration kann viele Formen annehmen: ein Chatbot der Ihre häufigsten Fragen beantwortet, automatische Leadqualifizierung, smarte Inhaltspflege oder Workflow-Automatisierungen. Wir analysieren Ihre Prozesse und empfehlen sinnvolle KI-Einsatzgebiete — keine Spielerei, sondern echter Mehrwert.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 6 -->
+          <div class="faq-item glass-card rounded-xl overflow-hidden" role="listitem">
+            <button
+              class="faq-trigger w-full flex items-center justify-between gap-4 px-6 py-5 text-left"
+              aria-expanded="false"
+            >
+              <span class="font-semibold text-white">Bieten Sie auch Hosting und Wartung an?</span>
+              <span class="faq-icon flex-shrink-0 w-6 h-6 rounded-full border border-slate-600 flex items-center justify-center text-slate-400 text-lg leading-none" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <p class="px-6 pb-5 text-slate-400 text-sm leading-relaxed">
+                Ja — wir bieten Hosting auf deutschen Servern (DSGVO-konform), Wartungsverträge mit regelmäßigen Updates und Sicherheitschecks sowie Betreuung nach dem Launch. Sie können sich auf Ihr Kerngeschäft konzentrieren, wir kümmern uns um die Technik.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 7 -->
+          <div class="faq-item glass-card rounded-xl overflow-hidden" role="listitem">
+            <button
+              class="faq-trigger w-full flex items-center justify-between gap-4 px-6 py-5 text-left"
+              aria-expanded="false"
+            >
+              <span class="font-semibold text-white">Kann ich meine bestehende Website modernisieren lassen?</span>
+              <span class="faq-icon flex-shrink-0 w-6 h-6 rounded-full border border-slate-600 flex items-center justify-center text-slate-400 text-lg leading-none" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <p class="px-6 pb-5 text-slate-400 text-sm leading-relaxed">
+                Absolut. Wir analysieren Ihre bestehende Website, identifizieren Schwachstellen und erarbeiten einen Modernisierungsplan — von kleinen Optimierungen bis zum kompletten Relaunch. Dabei achten wir auf einen nahtlosen Übergang ohne SEO-Verluste.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 8 -->
+          <div class="faq-item glass-card rounded-xl overflow-hidden" role="listitem">
+            <button
+              class="faq-trigger w-full flex items-center justify-between gap-4 px-6 py-5 text-left"
+              aria-expanded="false"
+            >
+              <span class="font-semibold text-white">Wie läuft das kostenlose Erstgespräch ab?</span>
+              <span class="faq-icon flex-shrink-0 w-6 h-6 rounded-full border border-slate-600 flex items-center justify-center text-slate-400 text-lg leading-none" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <p class="px-6 pb-5 text-slate-400 text-sm leading-relaxed">
+                Das 30-minütige Gespräch findet per Telefon oder Videocall statt — ganz unkompliziert. Wir hören zu, verstehen Ihre Situation und zeigen Ihnen konkrete Möglichkeiten auf. Kein Verkaufsdruck, keine versteckten Absichten — nur ehrliche Beratung. Termine über unser Kontaktformular oder direkt per Telefon.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECTION 10 · FINAL CTA
+    ============================================================ -->
+    <section
+      id="cta"
+      class="py-24 lg:py-32 relative overflow-hidden section-glow"
+      aria-label="Kontakt aufnehmen"
+    >
+      <!-- Strong gradient background -->
+      <div class="absolute inset-0 bg-gradient-to-br from-violet-900/30 via-[#08090f] to-cyan-900/20" aria-hidden="true"></div>
+      <div class="orb orb-1 w-[500px] h-[500px] bg-violet-600/20 top-0 left-0 -translate-x-1/2 -translate-y-1/2" aria-hidden="true"></div>
+      <div class="orb orb-2 w-[400px] h-[400px] bg-cyan-500/15 bottom-0 right-0 translate-x-1/3 translate-y-1/3" aria-hidden="true"></div>
+
+      <div class="relative container max-w-4xl mx-auto px-6 text-center">
+
+        <!-- Label -->
+        <div
+          data-animate
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-violet-500/30 bg-violet-500/10 text-violet-300 text-sm font-medium mb-8"
+        >
+          <span>✨</span>
+          <span>Kostenlos &amp; unverbindlich</span>
+        </div>
+
+        <h2
+          data-animate
+          data-animate-delay="100"
+          class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight mb-6"
+        >
+          Bereit für Ihren
+          <br /><span class="gradient-text">digitalen Neustart?</span>
+        </h2>
+
+        <p
+          data-animate
+          data-animate-delay="200"
+          class="text-slate-400 text-xl max-w-2xl mx-auto mb-12 leading-relaxed"
+        >
+          Vereinbaren Sie noch heute Ihr kostenloses Erstgespräch — wir zeigen Ihnen, wie wir
+          Ihr Unternehmen online erfolgreich machen.
+        </p>
+
+        <!-- CTAs -->
+        <div
+          data-animate
+          data-animate-delay="300"
+          class="flex flex-col sm:flex-row gap-4 justify-center mb-16"
+        >
+          <a
+            href="/kontakt/"
+            class="btn-primary inline-flex items-center justify-center gap-2 px-10 py-5 rounded-xl text-white font-bold text-lg shadow-2xl"
+          >
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            Termin buchen
+          </a>
+          <a
+            href="tel:+492303979732"
+            class="inline-flex items-center justify-center gap-2 px-10 py-5 rounded-xl border border-slate-600 hover:border-cyan-500/60 text-slate-300 hover:text-white font-bold text-lg transition-all duration-300 hover:bg-white/5"
+          >
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            Kontakt aufnehmen
+          </a>
+        </div>
+
+        <!-- Trust row -->
+        <div
+          data-animate
+          data-animate-delay="400"
+          class="flex flex-wrap justify-center gap-8 text-slate-500 text-sm"
+        >
+          <a
+            href="tel:+492303979732"
+            class="flex items-center gap-2 hover:text-cyan-400 transition-colors group"
+            aria-label="Telefon: 02303 / 97 97 329"
+          >
+            <svg class="w-4 h-4 text-cyan-500/60 group-hover:text-cyan-400 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            02303 / 97 97 329
+          </a>
+          <a
+            href="https://wa.me/4917661620866"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-2 hover:text-green-400 transition-colors group"
+            aria-label="WhatsApp schreiben"
+          >
+            <svg class="w-4 h-4 text-green-500/60 group-hover:text-green-400 transition-colors" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            WhatsApp schreiben
+          </a>
+          <a
+            href="/kontakt/"
+            class="flex items-center gap-2 hover:text-cyan-400 transition-colors group"
+            aria-label="Standort: Zechenstr. 80, 59425 Unna"
+          >
+            <svg class="w-4 h-4 text-cyan-500/60 group-hover:text-cyan-400 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+            Zechenstr. 80, 59425 Unna
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================================================
+       FOOTER — injected by footer.js
+  ================================================ -->
+  <div id="site-footer"></div>
+
+  <!-- ================================================
+       PAGE SCRIPT
+  ================================================ -->
+
+  <!-- Inline fallback: scroll reveal + FAQ (no module dependency) -->
+  <script>
+    // ========================================
+    // SCROLL REVEAL (IntersectionObserver)
+    // ========================================
+    (function () {
+      var elements = document.querySelectorAll('[data-animate]');
+      if (!elements.length) return;
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+      elements.forEach(function (el) { observer.observe(el); });
+    })();
+
+    // ========================================
+    // FAQ ACCORDION
+    // ========================================
+    (function () {
+      var triggers = document.querySelectorAll('.faq-trigger');
+      triggers.forEach(function (trigger) {
+        trigger.addEventListener('click', function () {
+          var item    = trigger.closest('.faq-item');
+          var answer  = item.querySelector('.faq-answer');
+          var icon    = item.querySelector('.faq-icon');
+          var isOpen  = item.classList.contains('open');
+
+          // Close all
+          document.querySelectorAll('.faq-item').forEach(function (fi) {
+            fi.classList.remove('open');
+            fi.querySelector('.faq-answer').classList.remove('open');
+            fi.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+          });
+
+          // Open clicked if it was closed
+          if (!isOpen) {
+            item.classList.add('open');
+            answer.classList.add('open');
+            trigger.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+    })();
+
+    // ========================================
+    // STAT COUNTER ANIMATION
+    // ========================================
+    (function () {
+      var counters = document.querySelectorAll('[data-counter]');
+      if (!counters.length) return;
+
+      var counterObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          var el     = entry.target;
+          var target = parseInt(el.getAttribute('data-target'), 10);
+          var suffix = el.getAttribute('data-suffix') || '';
+          var color  = el.querySelector('span') ? el.querySelector('span').outerHTML : '';
+          var start  = 0;
+          var duration = 1800;
+          var startTime = null;
+
+          function animate(timestamp) {
+            if (!startTime) startTime = timestamp;
+            var progress = Math.min((timestamp - startTime) / duration, 1);
+            var eased    = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+            var current  = Math.floor(eased * target);
+            el.textContent = current + suffix;
+            if (color) el.innerHTML = current + suffix.replace(suffix, '<span class="' + (el.querySelector('span') ? '' : '') + '">' + suffix + '</span>');
+            if (progress < 1) requestAnimationFrame(animate);
+          }
+
+          requestAnimationFrame(animate);
+          counterObserver.unobserve(el);
+        });
+      }, { threshold: 0.5 });
+
+      counters.forEach(function (c) { counterObserver.observe(c); });
+    })();
+  </script>
+
+</body>
+</html>

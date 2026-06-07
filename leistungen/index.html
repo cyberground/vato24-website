@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>Leistungen – Websites, SEO &amp; KI | VaTo24 Webagentur Unna</title>
+  <meta name="description" content="Alle Leistungen von VaTo24: Websites, SEO-Optimierung, KI-Integration, Google Business, Chatbots, Automatisierung und mehr aus Unna, NRW." />
+  <meta name="keywords" content="Webagentur Leistungen, Webdesign Unna, SEO Optimierung NRW, KI Chatbot, Google Business Optimierung, Landingpage erstellen, Automatisierung n8n" />
+  <meta name="author" content="Dennis Isermann – VaTo24" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://vato24.de/leistungen/" />
+
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vato24.de/leistungen/" />
+  <meta property="og:title" content="Leistungen – Websites, SEO &amp; KI | VaTo24 Webagentur Unna" />
+  <meta property="og:description" content="Alle Leistungen von VaTo24: Websites, SEO-Optimierung, KI-Integration, Google Business, Chatbots, Automatisierung und mehr aus Unna, NRW." />
+  <meta property="og:image" content="https://vato24.de/assets/og-image.jpg" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:site_name" content="VaTo24" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Leistungen – Websites, SEO &amp; KI | VaTo24" />
+  <meta name="twitter:description" content="Alle Leistungen von VaTo24 aus Unna, NRW: Websites, SEO, KI-Integration, Google Business und mehr." />
+  <meta name="twitter:image" content="https://vato24.de/assets/og-image.jpg" />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "VaTo24",
+      "url": "https://vato24.de",
+      "telephone": "+492303979732",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Zechenstr. 80",
+        "addressLocality": "Unna",
+        "postalCode": "59425",
+        "addressCountry": "DE"
+      }
+    },
+    "serviceType": ["Webdesign", "SEO", "KI-Integration", "Google Business", "Landingpages", "Automatisierung"],
+    "areaServed": "Nordrhein-Westfalen",
+    "url": "https://vato24.de/leistungen/"
+  }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Vite / Tailwind CSS -->
+
+  <style>
+    :root {
+      --bg:        #08090f;
+      --bg-card:   rgba(255, 255, 255, 0.04);
+      --bg-card-hover: rgba(255, 255, 255, 0.07);
+      --border:    rgba(255, 255, 255, 0.08);
+      --border-glow-cyan:  rgba(6, 182, 212, 0.35);
+      --border-glow-violet: rgba(139, 92, 246, 0.35);
+      --cyan:      #06b6d4;
+      --violet:    #8b5cf6;
+      --text:      #f1f5f9;
+      --text-muted: #94a3b8;
+    }
+
+    * { box-sizing: border-box; }
+    html { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); }
+    body { background-color: var(--bg); overflow-x: hidden; }
+
+    .gradient-text {
+      background: linear-gradient(135deg, var(--cyan) 0%, var(--violet) 100%);
+      background-size: 200% 200%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: gradient-text-anim 4s ease infinite;
+    }
+    @keyframes gradient-text-anim {
+      0%, 100% { background-position: 0% 50%; }
+      50%       { background-position: 100% 50%; }
+    }
+
+    .glass-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .glass-card:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--border-glow-cyan);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(6, 182, 212, 0.1);
+    }
+    .glass-card-violet:hover {
+      border-color: var(--border-glow-violet);
+      box-shadow: 0 20px 60px rgba(139, 92, 246, 0.12);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--violet) 0%, var(--cyan) 100%);
+      background-size: 200% 200%;
+      transition: background-position 0.4s ease, transform 0.2s ease, box-shadow 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.75rem;
+      border-radius: 0.75rem;
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .btn-primary:hover {
+      background-position: right center;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(6, 182, 212, 0.35);
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(100px);
+      animation: orb-drift 10s ease-in-out infinite;
+      pointer-events: none;
+    }
+    @keyframes orb-drift {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33%       { transform: translate(30px, -20px) scale(1.05); }
+      66%       { transform: translate(-20px, 15px) scale(0.95); }
+    }
+    .orb-1 { animation-delay: 0s; }
+    .orb-2 { animation-delay: -3s; }
+
+    [data-animate] {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    [data-animate].is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    [data-animate-delay="100"] { transition-delay: 0.1s; }
+    [data-animate-delay="200"] { transition-delay: 0.2s; }
+    [data-animate-delay="300"] { transition-delay: 0.3s; }
+    [data-animate-delay="400"] { transition-delay: 0.4s; }
+    [data-animate-delay="500"] { transition-delay: 0.5s; }
+    [data-animate-delay="600"] { transition-delay: 0.6s; }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+    }
+    .faq-answer.open { max-height: 500px; }
+    .faq-icon { transition: transform 0.3s ease; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+    .section-glow { position: relative; }
+    .section-glow::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 600px; max-width: 100%; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+      opacity: 0.4;
+    }
+
+    /* Service section alternating layout */
+    .service-section:nth-child(even) .service-grid { direction: rtl; }
+    .service-section:nth-child(even) .service-grid > * { direction: ltr; }
+
+    /* Feature check icon */
+    .feature-check {
+      flex-shrink: 0;
+      width: 1.25rem;
+      height: 1.25rem;
+      border-radius: 50%;
+      background: rgba(6,182,212,0.15);
+      border: 1px solid rgba(6,182,212,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 0.125rem;
+    }
+    .feature-check-violet {
+      background: rgba(139,92,246,0.15);
+      border-color: rgba(139,92,246,0.3);
+    }
+
+    /* Service nav pills */
+    .service-nav-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      padding: 0.375rem 0.875rem;
+      border-radius: 9999px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.03);
+      color: #94a3b8;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .service-nav-pill:hover {
+      border-color: rgba(6,182,212,0.4);
+      background: rgba(6,182,212,0.07);
+      color: #06b6d4;
+    }
+
+    #site-header { min-height: 0; }
+  </style>
+  <script type="module" crossorigin src="/assets/leistungen-CtE5oBPv.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/footer-UENtMA8A.js">
+  <link rel="stylesheet" crossorigin href="/assets/footer-B4l_Wcll.css">
+</head>
+
+<body class="bg-[#08090f] text-slate-100 font-inter antialiased">
+
+  <div id="site-header"></div>
+
+  <main>
+
+    <!-- ============================================================
+         HERO
+    ============================================================ -->
+    <section
+      class="relative py-20 lg:py-28 overflow-hidden"
+      aria-label="Leistungen Hero"
+    >
+      <div class="orb orb-1 w-[500px] h-[500px] bg-violet-600/15 top-[-100px] left-[-150px]"></div>
+      <div class="orb orb-2 w-[400px] h-[400px] bg-cyan-500/10 bottom-[-60px] right-[-80px]"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-[#08090f]/80 via-transparent to-[#08090f]"></div>
+
+      <div class="relative container max-w-5xl mx-auto px-6 text-center">
+        <!-- Breadcrumb -->
+        <nav aria-label="Breadcrumb" class="mb-6">
+          <ol class="flex items-center justify-center gap-2 text-sm text-slate-500">
+            <li><a href="/" class="hover:text-cyan-400 transition-colors">Startseite</a></li>
+            <li aria-hidden="true"><span class="text-slate-700">/</span></li>
+            <li class="text-slate-300" aria-current="page">Leistungen</li>
+          </ol>
+        </nav>
+
+        <div data-animate class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-sm font-medium mb-6">
+          <span>⚡</span>
+          <span>Alles aus einer Hand</span>
+        </div>
+
+        <h1
+          data-animate
+          data-animate-delay="100"
+          class="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight tracking-tight mb-6"
+        >
+          Unsere
+          <span class="gradient-text">Leistungen</span>
+        </h1>
+
+        <p
+          data-animate
+          data-animate-delay="200"
+          class="text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed"
+        >
+          Von der modernen Website über SEO und KI-Integration bis zur Prozessautomatisierung —
+          wir decken alles ab, was Ihr Unternehmen online erfolgreich macht.
+        </p>
+
+        <!-- Quick navigation pills -->
+        <div
+          data-animate
+          data-animate-delay="300"
+          class="flex flex-wrap justify-center gap-2 max-w-3xl mx-auto"
+          aria-label="Leistungs-Navigation"
+        >
+          <a href="#websites" class="service-nav-pill">🌐 Websites</a>
+          <a href="#seo" class="service-nav-pill">🔍 SEO</a>
+          <a href="#ki" class="service-nav-pill">🤖 KI-Integration</a>
+          <a href="#google-business" class="service-nav-pill">📍 Google Business</a>
+          <a href="#branchenbuch" class="service-nav-pill">📋 Branchenbuch</a>
+          <a href="#performance" class="service-nav-pill">⚡ Performance</a>
+          <a href="#landingpages" class="service-nav-pill">🎯 Landingpages</a>
+          <a href="#automatisierung" class="service-nav-pill">⚙️ Automatisierung</a>
+          <a href="#cms" class="service-nav-pill">💬 CMS-System</a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         1. WEBSITES
+    ============================================================ -->
+    <section
+      id="websites"
+      class="py-24 lg:py-32 section-glow service-section"
+      aria-label="Leistung: Websites"
+    >
+      <div class="container max-w-6xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-16 items-center service-grid">
+
+          <!-- Content -->
+          <div>
+            <div data-animate class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-xs font-medium mb-6 tracking-wider uppercase">
+              Leistung 01
+            </div>
+            <h2 data-animate data-animate-delay="100" class="text-4xl lg:text-5xl font-black leading-tight tracking-tight mb-6">
+              Moderne<br /><span class="gradient-text">Websites</span>
+            </h2>
+            <p data-animate data-animate-delay="200" class="text-slate-400 text-lg leading-relaxed mb-8">
+              Wir entwickeln professionelle Websites, die nicht nur gut aussehen,
+              sondern messbar mehr Kunden bringen. Schnell, sicher, mobiloptimiert
+              und von Anfang an für Suchmaschinen optimiert.
+            </p>
+
+            <ul data-animate data-animate-delay="300" class="space-y-3 mb-10">
+              <li class="flex items-start gap-3">
+                <span class="feature-check" aria-hidden="true">
+                  <svg class="w-3 h-3 text-cyan-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                </span>
+                <div><span class="text-white font-semibold">Technisch einwandfrei</span><span class="text-slate-400"> — sauberer Code, schnelle Ladezeiten, SSL-gesichert</span></div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="feature-check" aria-hidden="true">
+                  <svg class="w-3 h-3 text-cyan-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                </span>
+                <div><span class="text-white font-semibold">SEO-ready von Beginn an</span><span class="text-slate-400"> — Struktur, Meta-Daten, Schema.org, Core Web Vitals</span></div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="feature-check" aria-hidden="true">
+                  <svg class="w-3 h-3 text-cyan-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                </span>
+                <div><span class="text-white font-semibold">Responsive &amp; mobiloptimiert</span><span class="text-slate-400"> — perfekt auf allen Endgeräten</span></div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="feature-check" aria-hidden="true">
+                  <svg class="w-3 h-3 text-cyan-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                </span>
+                <div><span class="text-white font-semibold">CMS-Integration</span><span class="text-slate-400"> — Inhalte einfach selbst pflegen</span></div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="feature-check" aria-hidden="true">
+                  <svg class="w-3 h-3 text-cyan-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                </span>
+                <div><span class="text-white font-semibold">DSGVO-konform</span><span class="text-slate-400"> — Hosting auf deutschen Servern</span></div>
+              </li>
+            </ul>
+
+            <a href="/kontakt/" class="btn-primary">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+              Jetzt anfragen
+            </a>
+          </div>
+
+          <!-- Visual -->
+          <div data-animate data-animate-delay="200" class="relative">
+            <div class="glass-card rounded-2xl p-8 relative overflow-hidden">
+              <div class="absolute top-0 right-0 w-40 h-40 bg-cyan-500/8 blur-3xl rounded-full" aria-hidden="true"></div>
+              <div class="relative">
+                <div class="flex items-center gap-2 mb-6" aria-hidden="true">
+                  <div class="w-3 h-3 rounded-full bg-red-500/60"></div>
+                  <div class="w-3 h-3 rounded-full bg-yellow-500/60"></div>
+                  <div class="w-3 h-3 rounded-full bg-green-500/60"></div>
+                  <span class="ml-2 text-slate-500 text-xs font-mono">website-preview.vato24.de</span>
+                </div>
+                <div class="space-y-3" aria-hidden="true">
+                  <div class="h-8 bg-gradient-to-r from-violet-500/20 to-cyan-500/20 rounded-lg"></div>
+                  <div class="grid grid-cols-3 gap-2">
+                    <div class="h-24 bg-white/5 rounded-lg"></div>
+                    <div class="h-24 bg-white/5 rounded-lg col-span-2"></div>
+                  </div>
+                  <div class="h-4 bg-white/5 rounded w-3/4"></div>
+                  <div class="h-4 bg-white/5 rounded w-1/2"></div>
+                  <div class="h-10 bg-gradient-to-r from-cyan-500/30 to-violet-500/30 rounded-lg mt-4"></div>
+                </div>
+              </div>
+            </div>
+            <!-- Stat badge -->
+            <div class="absolute -top-4 -right-4 glass-card rounded-xl px-4 py-2.5 shadow-xl" aria-hidden="true">
+              <p class="text-lg font-black text-white leading-none">200<span class="text-cyan-400">+</span></p>
+              <p class="text-xs text-slate-400">Websites gebaut</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         2. SEO
+    ============================================================ -->
+    <section
+      id="seo"
+      class="py-24 lg:py-32 bg-gradient-to-b from-[#08090f] via-[#0c0d17] to-[#08090f] section-glow service-section"
+      aria-label="Leistung: SEO"
+    >
+      <div class="container max-w-6xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+          <!-- Visual (left on even) -->
+          <div data-animate class="relative order-last lg:order-first">
+            <div class="glass-card rounded-2xl p-8 relative overflow-hidden">
+              <div class="absolute top-0 left-0 w-40 h-40 bg-violet-500/8 blur-3xl rounded-full" aria-hidden="true"></div>
+              <div class="relative space-y-4" aria-hidden="true">
+                <p class="text-xs font-mono text-slate-500 mb-4">Google Search Rankings</p>
+                <!-- Ranking bars -->
+                <div class="space-y-3">
+                  <div class="flex items-center gap-3">
+                    <span class="text-xs text-green-400 font-bold w-5">#1</span>
+                    <div class="h-7 bg-gradient-to-r from-green-500/30 to-green-500/10 rounded flex-1 flex items-center px-3">
+                      <span class="text-xs text-green-300">vato24.de – Webagentur Unna</span>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <span class="text-xs text-cyan-400 font-bold w-5">#2</span>
+                    <div class="h-7 bg-white/5 rounded flex-1 flex items-center px-3">
+                      <span class="text-xs text-slate-500">competitor.de</span>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <span class="text-xs text-slate-500 font-bold w-5">#3</span>
+                    <div class="h-7 bg-white/5 rounded flex-1"></div>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <span class="text-xs text-slate-500 font-bold w-5">#4</span>
+                    <div class="h-7 bg-white/5 rounded flex-1"></div>
+                  </div>
+                </div>
+                <div class="mt-6 pt-4 border-t border-white/5 grid grid-cols-3 gap-3 text-center">
+                  <div><p class="text-lg font-black text-cyan-400">+180%</p><p class="text-xs text-slate-500">Mehr Traffic</p></div>
+                  <div><p class="text-lg font-black text-violet-400">#1</p><p class="text-xs text-slate-500">Position</p></div>
+                  <div><p class="text-lg font-black text-green-400">+65%</p><p class="text-xs text-slate-500">Conversions</p></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div>
+            <div data-animate class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-violet-500/30 bg-violet-500/10 text-violet-400 text-xs font-medium mb-6 tracking-wider uppercase">
+              Leistung 02
+            </div>
+            <h2 data-animate data-animate-delay="100" class="text-4xl lg:text-5xl font-black leading-tight tracking-tight mb-6">
+              <span class="gradient-text">SEO-Optimierung</span><br />die wirkt
+            </h2>
+            <p data-animate data-animate-delay="200" class="text-slate-400 text-lg leading-relaxed mb-8">
+              Nachhaltige Suchmaschinenoptimierung, die Ihre Website auf die vorderen
+              Positionen bringt und dort hält. Kein Black-Hat, keine kurzfristigen
+              Tricks — nur solide, messbare Ergebnisse.
+            </p>
+
+            <ul data-animate data-animate-delay="300" class="space-y-3 mb-10">
+              <li class="flex items-start gap-3">
+                <span class="feature-check feature-check-violet" aria-hidden="true">
+                  <svg class="w-3 h-3 text-violet-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                </span>
+                <div><span class="text-white font-semibold">Keyword-Recherche</span><span class="text-slate-400"> — Die richtigen Begriffe für Ihre Branche und Region</span></div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="feature-check feature-check-violet" aria-hidden="true">
+                  <svg class="w-3 h-3 text-violet-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                </span>
+                <div><span class="text-white font-semibold">On-Page Optimierung</span><span class="text-slate-400"> — Texte, Headlines, Meta-Tags, interne Verlinkung</span></div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="feature-check feature-check-violet" aria-hidden="true">
+                  <svg class="w-3 h-3 text-violet-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                </span>
+                <div><span class="text-white font-semibold">Lokales SEO</span><span class="text-slate-400"> — Google Maps, Local Pack, regionale Sichtbarkeit</span></div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="feature-check feature-check-violet" aria-hidden="true">
+                  <svg class="w-3 h-3 text-violet-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                </span>
+                <div><span class="text-white font-semibold">Off-Page &amp; Backlinks</span><span class="text-slate-400"> — Qualitätsstarke Verlinkungen aus relevanten Quellen</span></div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="feature-check feature-check-violet" aria-hidden="true">
+                  <svg class="w-3 h-3 text-violet-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                </span>
+                <div><span class="text-white font-semibold">Monatliches Reporting</span><span class="text-slate-400"> — Transparente Berichte über Rankings und Traffic</span></div>
+              </li>
+            </ul>
+
+            <a href="/kontakt/" class="btn-primary">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+              Jetzt anfragen
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         3. KI-INTEGRATION
+    ============================================================ -->
+    <section
+      id="ki"
+      class="py-24 lg:py-32 section-glow service-section"
+      aria-label="Leistung: KI-Integration"
+    >
+      <div class="container max-w-6xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+          <!-- Content -->
+          <div>
+            <div data-animate class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-violet-500/30 bg-violet-500/10 text-violet-400 text-xs font-medium mb-6 tracking-wider uppercase">
+              Leistung 03
+            </div>
+            <h2 data-animate data-animate-delay="100" class="text-4xl lg:text-5xl font-black leading-tight tracking-tight mb-6">
+              <span class="gradient-text">KI-Integration</span><br />für Ihr Unternehmen
+            </h2>
+            <p data-animate data-animate-delay="200" class="text-slate-400 text-lg leading-relaxed mb-8">
+              Künstliche Intelligenz ist kein Hype mehr — sie ist ein handfester
+              Wettbewerbsvorteil. Wir integrieren KI-Lösungen, die echte Arbeit
+              abnehmen, DSGVO-konform und sicher.
+            </p>
+
+            <ul data-animate data-animate-delay="300" class="space-y-3 mb-10">
+              <li class="flex items-start gap-3">
+                <span class="feature-check feature-check-violet" aria-hidden="true">
+                  <svg class="w-3 h-3 text-violet-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                </span>
+                <div><span class="text-white font-semibold">KI-Chatbots</span><span class="text-slate-400"> — 24/7 Kundenservice, Lead-Qualifizierung, FAQ-Beantwortung</span></div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="feature-check feature-check-violet" aria-hidden="true">
+                  <svg class="w-3 h-3 text-violet-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                </span>
+                <div><span class="text-white font-semibold">Smarte Workflows</span><span class="text-slate-400"> — Automatische Verarbeitung von Anfragen und Daten</span></div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="feature-check feature-check-violet" aria-hidden="true">
+                  <svg class="w-3 h-3 text-violet-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                </span>
+                <div><span class="text-white font-semibold">Content-Generierung</span><span class="text-slate-400"> — KI-gestützte Texte, Übersetzungen, SEO-Content</span></div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="feature-check feature-check-violet" aria-hidden="true">
+                  <svg class="w-3 h-3 text-violet-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                </span>
+                <div><span class="text-white font-semibold">DSGVO-konform</span><span class="text-slate-400"> — Europäische KI-Lösungen, keine Datenweitergabe an US-Anbieter ohne Rechtsgrundlage</span></div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="feature-check feature-check-violet" aria-hidden="true">
+                  <svg class="w-3 h-3 text-violet-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                </span>
+                <div><span class="text-white font-semibold">Powered by dynomic.ai</span><span class="text-slate-400"> — Unsere eigene KI-Plattform im Einsatz für Ihre Lösung</span></div>
+              </li>
+            </ul>
+
+            <a href="/kontakt/" class="btn-primary">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+              Jetzt anfragen
+            </a>
+          </div>
+
+          <!-- Visual -->
+          <div data-animate data-animate-delay="200" class="relative">
+            <div class="glass-card glass-card-violet rounded-2xl p-8 relative overflow-hidden">
+              <div class="absolute top-0 right-0 w-40 h-40 bg-violet-500/10 blur-3xl rounded-full" aria-hidden="true"></div>
+              <div class="relative space-y-4" aria-hidden="true">
+                <div class="flex items-center gap-3 mb-5">
+                  <div class="w-8 h-8 rounded-full bg-gradient-to-br from-violet-500 to-cyan-500 flex items-center justify-center text-sm font-bold text-white">KI</div>
+                  <span class="text-slate-400 text-sm">dynomic.ai Assistant</span>
+                  <span class="ml-auto w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                </div>
+                <div class="bg-violet-500/10 border border-violet-500/20 rounded-xl p-4 rounded-tl-none">
+                  <p class="text-sm text-slate-300">Willkommen! Wie kann ich Ihnen heute helfen?</p>
+                </div>
+                <div class="flex justify-end">
+                  <div class="bg-white/5 border border-white/10 rounded-xl p-4 rounded-tr-none max-w-[85%]">
+                    <p class="text-sm text-slate-300">Ich hätte gerne Informationen zu Ihren Preisen für SEO.</p>
+                  </div>
+                </div>
+                <div class="bg-violet-500/10 border border-violet-500/20 rounded-xl p-4 rounded-tl-none">
+                  <p class="text-sm text-slate-300">Gerne! Unsere SEO-Pakete starten ab 299 €/Monat. Soll ich Ihnen ein individuelles Angebot erstellen?</p>
+                  <div class="mt-3 flex gap-2">
+                    <span class="px-3 py-1 bg-violet-500/20 border border-violet-500/30 rounded-full text-xs text-violet-300 cursor-pointer">Ja, bitte</span>
+                    <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-400 cursor-pointer">Mehr erfahren</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         4–9: REMAINING SERVICES GRID
+    ============================================================ -->
+    <section
+      class="py-24 lg:py-32 bg-gradient-to-b from-[#08090f] via-[#0c0d17] to-[#08090f] section-glow"
+      aria-label="Weitere Leistungen"
+    >
+      <div class="container max-w-6xl mx-auto px-6">
+
+        <div class="text-center mb-16">
+          <h2 data-animate class="text-4xl lg:text-5xl font-black tracking-tight mb-4">
+            Weitere <span class="gradient-text">Leistungen</span>
+          </h2>
+          <p data-animate data-animate-delay="100" class="text-slate-400 text-lg max-w-2xl mx-auto">
+            Alles was Ihr Unternehmen online erfolgreich macht — aus einer Hand.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <!-- Google Business -->
+          <article id="google-business" data-animate data-animate-delay="100" class="glass-card rounded-2xl p-8 group scroll-mt-24">
+            <div class="text-4xl mb-4" aria-hidden="true">📍</div>
+            <h3 class="text-xl font-bold text-white mb-3">Google Business</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-5">
+              Lokale Sichtbarkeit ist Gold wert. Wir optimieren Ihr Google Business Profil
+              so, dass Sie in der Map-Box und im Local Pack ganz oben erscheinen.
+            </p>
+            <ul class="space-y-2 mb-6">
+              <li class="text-sm text-slate-400 flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 flex-shrink-0" aria-hidden="true"></span>
+                Profil-Optimierung &amp; vollständige Daten
+              </li>
+              <li class="text-sm text-slate-400 flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 flex-shrink-0" aria-hidden="true"></span>
+                Bewertungsmanagement &amp; Antwortstrategien
+              </li>
+              <li class="text-sm text-slate-400 flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 flex-shrink-0" aria-hidden="true"></span>
+                Lokale Keywords &amp; Kategorien
+              </li>
+              <li class="text-sm text-slate-400 flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 flex-shrink-0" aria-hidden="true"></span>
+                Fotos, Beiträge, Angebote
+              </li>
+            </ul>
+            <a href="/kontakt/" class="inline-flex items-center text-sm font-semibold text-cyan-400 hover:text-cyan-300 gap-1 group-hover:gap-2 transition-all">
+              Jetzt anfragen <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <!-- Branchenbuch -->
+          <article id="branchenbuch" data-animate data-animate-delay="200" class="glass-card rounded-2xl p-8 group scroll-mt-24">
+            <div class="text-4xl mb-4" aria-hidden="true">📋</div>
+            <h3 class="text-xl font-bold text-white mb-3">Branchenbuch</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-5">
+              Konsistente Präsenz in allen wichtigen Online-Verzeichnissen stärkt
+              Ihre lokale SEO und macht Sie überall auffindbar.
+            </p>
+            <ul class="space-y-2 mb-6">
+              <li class="text-sm text-slate-400 flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 flex-shrink-0" aria-hidden="true"></span>
+                Gelbe Seiten, Das Örtliche, Yelp &amp; mehr
+              </li>
+              <li class="text-sm text-slate-400 flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 flex-shrink-0" aria-hidden="true"></span>
+                Konsistente NAP-Daten (Name, Adresse, Telefon)
+              </li>
+              <li class="text-sm text-slate-400 flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 flex-shrink-0" aria-hidden="true"></span>
+                Branchenspezifische Verzeichnisse
+              </li>
+              <li class="text-sm text-slate-400 flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 flex-shrink-0" aria-hidden="true"></span>
+                50+ Portale in einem Schritt
+              </li>
+            </ul>
+            <a href="/kontakt/" class="inline-flex items-center text-sm font-semibold text-cyan-400 hover:text-cyan-300 gap-1 group-hover:gap-2 transition-all">
+              Jetzt anfragen <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <!-- Performance -->
+          <article id="performance" data-animate data-animate-delay="300" class="glass-card rounded-2xl p-8 group scroll-mt-24">
+            <div class="text-4xl mb-4" aria-hidden="true">⚡</div>
+            <h3 class="text-xl font-bold text-white mb-3">Performance</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-5">
+              Jede Sekunde Ladezeit kostet Besucher und Umsatz. Wir optimieren
+              Ihre Website technisch auf Höchstleistung.
+            </p>
+            <ul class="space-y-2 mb-6">
+              <li class="text-sm text-slate-400 flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 flex-shrink-0" aria-hidden="true"></span>
+                Core Web Vitals optimieren (LCP, FID, CLS)
+              </li>
+              <li class="text-sm text-slate-400 flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 flex-shrink-0" aria-hidden="true"></span>
+                Bild- und Code-Optimierung
+              </li>
+              <li class="text-sm text-slate-400 flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 flex-shrink-0" aria-hidden="true"></span>
+                Caching, CDN, Lazy Loading
+              </li>
+              <li class="text-sm text-slate-400 flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 flex-shrink-0" aria-hidden="true"></span>
+                PageSpeed 90+ garantiert
+              </li>
+            </ul>
+            <a href="/kontakt/" class="inline-flex items-center text-sm font-semibold text-cyan-400 hover:text-cyan-300 gap-1 group-hover:gap-2 transition-all">
+              Jetzt anfragen <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <!-- Landingpages -->
+          <article id="landingpages" data-animate data-animate-delay="100" class="glass-card glass-card-violet rounded-2xl p-8 group scroll-mt-24">
+            <div class="text-4xl mb-4" aria-hidden="true">🎯</div>
+            <h3 class="text-xl font-bold text-white mb-3">Landingpages</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-5">
+              Conversion-optimierte Seiten für ein klares Ziel — mehr Anfragen,
+              mehr Käufe, mehr Leads. Jedes Element ist auf Wirkung ausgerichtet.
+            </p>
+            <ul class="space-y-2 mb-6">
+              <li class="text-sm text-slate-400 flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-violet-400 flex-shrink-0" aria-hidden="true"></span>
+                A/B-Testing ready
+              </li>
+              <li class="text-sm text-slate-400 flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-violet-400 flex-shrink-0" aria-hidden="true"></span>
+                Psychologische Conversion-Prinzipien
+              </li>
+              <li class="text-sm text-slate-400 flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-violet-400 flex-shrink-0" aria-hidden="true"></span>
+                Tracking &amp; Analytics eingebaut
+              </li>
+              <li class="text-sm text-slate-400 flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-violet-400 flex-shrink-0" aria-hidden="true"></span>
+                Google Ads &amp; Social Media kompatibel
+              </li>
+            </ul>
+            <a href="/kontakt/" class="inline-flex items-center text-sm font-semibold text-violet-400 hover:text-violet-300 gap-1 group-hover:gap-2 transition-all">
+              Jetzt anfragen <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <!-- Automatisierung -->
+          <article id="automatisierung" data-animate data-animate-delay="200" class="glass-card glass-card-violet rounded-2xl p-8 group scroll-mt-24">
+            <div class="text-4xl mb-4" aria-hidden="true">⚙️</div>
+            <h3 class="text-xl font-bold text-white mb-3">Automatisierung</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-5">
+              Repetitive Aufgaben kosten Zeit und Geld. Wir automatisieren Ihre
+              Prozesse mit n8n, Zapier und eigenen Systemen.
+            </p>
+            <ul class="space-y-2 mb-6">
+              <li class="text-sm text-slate-400 flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-violet-400 flex-shrink-0" aria-hidden="true"></span>
+                n8n Workflow-Automatisierung
+              </li>
+              <li class="text-sm text-slate-400 flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-violet-400 flex-shrink-0" aria-hidden="true"></span>
+                CRM, E-Mail, Rechnungsstellung
+              </li>
+              <li class="text-sm text-slate-400 flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-violet-400 flex-shrink-0" aria-hidden="true"></span>
+                API-Integrationen &amp; Webhooks
+              </li>
+              <li class="text-sm text-slate-400 flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-violet-400 flex-shrink-0" aria-hidden="true"></span>
+                Lead-Nurturing Workflows
+              </li>
+            </ul>
+            <a href="/kontakt/" class="inline-flex items-center text-sm font-semibold text-violet-400 hover:text-violet-300 gap-1 group-hover:gap-2 transition-all">
+              Jetzt anfragen <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <!-- CMS-System -->
+          <article id="cms" data-animate data-animate-delay="300" class="glass-card rounded-2xl p-8 group scroll-mt-24">
+            <div class="text-4xl mb-4" aria-hidden="true">💬</div>
+            <h3 class="text-xl font-bold text-white mb-3">CMS-System</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-5">
+              Unser eigenes KI-gestütztes CMS macht Website-Pflege so einfach wie
+              das Schreiben einer Nachricht — für jeden Mitarbeiter sofort bedienbar.
+            </p>
+            <ul class="space-y-2 mb-6">
+              <li class="text-sm text-slate-400 flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 flex-shrink-0" aria-hidden="true"></span>
+                Bedienung per natürlicher Sprache
+              </li>
+              <li class="text-sm text-slate-400 flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 flex-shrink-0" aria-hidden="true"></span>
+                Keine IT-Kenntnisse erforderlich
+              </li>
+              <li class="text-sm text-slate-400 flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 flex-shrink-0" aria-hidden="true"></span>
+                Entwickelt in Deutschland
+              </li>
+              <li class="text-sm text-slate-400 flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 flex-shrink-0" aria-hidden="true"></span>
+                DSGVO-konform &amp; DACH-gehostet
+              </li>
+            </ul>
+            <a href="/kontakt/" class="inline-flex items-center text-sm font-semibold text-cyan-400 hover:text-cyan-300 gap-1 group-hover:gap-2 transition-all">
+              Jetzt anfragen <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         PRICING TEASER
+    ============================================================ -->
+    <section
+      class="py-24 lg:py-32 relative overflow-hidden section-glow"
+      aria-label="Preise"
+    >
+      <div class="absolute inset-0 bg-gradient-to-br from-violet-900/15 via-[#08090f] to-cyan-900/10" aria-hidden="true"></div>
+      <div class="orb w-[400px] h-[400px] bg-violet-600/10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" aria-hidden="true"></div>
+
+      <div class="relative container max-w-4xl mx-auto px-6 text-center">
+        <div data-animate class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-sm font-medium mb-8">
+          <span>💡</span>
+          <span>Transparent &amp; fair</span>
+        </div>
+
+        <h2
+          data-animate
+          data-animate-delay="100"
+          class="text-4xl sm:text-5xl font-black tracking-tight leading-tight mb-6"
+        >
+          Transparente Preise
+          <br /><span class="gradient-text">ab 990 €</span>
+        </h2>
+
+        <p
+          data-animate
+          data-animate-delay="200"
+          class="text-slate-400 text-xl max-w-2xl mx-auto mb-10 leading-relaxed"
+        >
+          Kein versteckter Kleindruck. Ein kostenloses Erstgespräch zeigt Ihnen,
+          welche Leistungen Sie wirklich brauchen — und was das kostet.
+        </p>
+
+        <div data-animate data-animate-delay="300" class="grid sm:grid-cols-3 gap-5 mb-12">
+          <div class="glass-card rounded-xl p-6 text-center">
+            <p class="text-3xl font-black text-white mb-1">990 €<span class="text-lg text-slate-500 font-normal">+</span></p>
+            <p class="text-slate-400 text-sm font-medium mb-2">Einfache Website</p>
+            <p class="text-slate-500 text-xs">Landing Page, Visitenkarte, kleines Business</p>
+          </div>
+          <div class="glass-card glass-card-violet rounded-xl p-6 text-center border-violet-500/30">
+            <div class="mb-2">
+              <span class="text-xs font-semibold text-violet-300 bg-violet-500/15 border border-violet-500/25 rounded-full px-2 py-0.5">Beliebt</span>
+            </div>
+            <p class="text-3xl font-black text-white mb-1">2.500 €<span class="text-lg text-slate-500 font-normal">+</span></p>
+            <p class="text-slate-400 text-sm font-medium mb-2">Business Website</p>
+            <p class="text-slate-500 text-xs">Multi-Page, CMS, SEO-Paket, Support</p>
+          </div>
+          <div class="glass-card rounded-xl p-6 text-center">
+            <p class="text-3xl font-black text-white mb-1">individuell</p>
+            <p class="text-slate-400 text-sm font-medium mb-2">Enterprise / KI-Projekte</p>
+            <p class="text-slate-500 text-xs">Chatbots, Automatisierung, Custom Development</p>
+          </div>
+        </div>
+
+        <a
+          href="/kontakt/"
+          data-animate
+          data-animate-delay="400"
+          class="btn-primary text-lg px-10 py-5 shadow-2xl"
+        >
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          Kostenloses Erstgespräch buchen
+        </a>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         FINAL CTA
+    ============================================================ -->
+    <section
+      class="py-20 lg:py-24 section-glow"
+      aria-label="Kontakt aufnehmen"
+    >
+      <div class="container max-w-3xl mx-auto px-6 text-center">
+        <h2 data-animate class="text-3xl sm:text-4xl font-black tracking-tight mb-4">
+          Welche Leistung brauchen <span class="gradient-text">Sie?</span>
+        </h2>
+        <p data-animate data-animate-delay="100" class="text-slate-400 text-lg mb-8">
+          Sprechen Sie mit uns — wir analysieren Ihre Situation und empfehlen,
+          was wirklich sinnvoll ist. Keine Beratung auf Vorrat.
+        </p>
+        <div data-animate data-animate-delay="200" class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/kontakt/" class="btn-primary px-8 py-4 text-base">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            Erstgespräch vereinbaren
+          </a>
+          <a href="tel:+492303979732" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl border border-slate-600 hover:border-cyan-500/60 text-slate-300 hover:text-white font-semibold text-base transition-all duration-300 hover:bg-white/5">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            02303 / 97 97 329
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="site-footer"></div>
+
+
+  <script>
+    // Scroll Reveal
+    (function () {
+      var els = document.querySelectorAll('[data-animate]');
+      if (!els.length) return;
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('is-visible'); obs.unobserve(e.target); }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+      els.forEach(function (el) { obs.observe(el); });
+    })();
+  </script>
+
+</body>
+</html>
